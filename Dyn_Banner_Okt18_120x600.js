@@ -1697,13 +1697,6 @@ var NFQDA = (function(my) {
                     '<img class="underscore" src="' + my.underscore + '">'+
                     '<img class="price" src="' + my.seqprice + '"></img>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
-                    //'<div class="pricefrom">'+ my.seqpricefrom +'</div>'+
-                    //'<div class="price">'+ my.seqprice +'</div>'+
-                    //'<div class="oldprice">'+ my.seqoldprice +
-                    //    '<img class="seqoldpriceline" src="' + my.seqoldpriceline + '">' +
-                    //    '<div class="seqoldpricetxt">' + my.seqoldpricetxt + '</div>' +
-                    //'</div>'+
-                    //'<div class="pricefooter">'+ my.pricefooter +'</div>'+
                 '</div>'+
 
                 '<div class="banner2BG"></div>' +
