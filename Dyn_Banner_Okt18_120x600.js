@@ -1698,7 +1698,6 @@ var NFQDA = (function(my) {
                     '<img class="price" src="' + my.seqprice + '"></img>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '</div>'+
-
                 '<div class="banner2BG"></div>' +
                 '<img class="seq01ProdImgName" src="' + my.seq01ProdImgName + '"></img>' +
                 '<img class="seq01ProdImg" src="' + my.seq01ProdImg + '"></img>' +
