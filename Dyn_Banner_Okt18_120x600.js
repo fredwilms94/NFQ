@@ -1703,7 +1703,7 @@ var NFQDA = (function(my) {
                 '<img class="seq01ProdImg" src="' + my.seq01ProdImg + '"></img>' +
                 
                 '<div class="seq01DisrTopBG">'+
-                   '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
+                '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
                 '</div>'+
                 '<img class="logo" src="' + my.logo + '">' +
             '</div>'
