@@ -15,6 +15,7 @@ var NFQDA = (function() {
     my.NFQBanners = {};
 
     // jQuery plugin refs
+
     my.fontSpy;
 
     // timestamp only for debugging output
@@ -771,7 +772,8 @@ var NFQDA = (function(my) {
         +'  height: auto;'
         +'  position: absolute;'
         +'  bottom: 30px;'
-        +'  right: 63px;'
+        +'  left: 50%;'
+        +'  transform: translate(-50%, 0%);'
         +'}'
 
         +'#BannerBG {'
@@ -955,9 +957,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken {'
         +'  position: absolute;'
-        +'  width: 180px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top: -70px;'
+        +'  top: -65px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBrokenAni;'
         +'  animation-duration: 15s;'
@@ -977,9 +979,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken2 {'
         +'  position: absolute;'
-        +'  width: 180px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top:-70px;'
+        +'  top:-65px;'
         +'  left: 0px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken2Ani;'
@@ -1000,9 +1002,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken3 {'
         +'  position: absolute;'
-        +'  width: 180px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top: -70px;'
+        +'  top: -65px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken3Ani;'
         +'  animation-duration: 15s;'
@@ -1050,7 +1052,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 26px;'
-        +'  padding-top:35px;'
+        +'  padding-top:32px;'
         +'  width:180px;'
         +'  padding-left:18px;'
         +'  left: 50%;'
@@ -1304,6 +1306,15 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
+        +'#seq03TextulHead_1{'
+        +'  margin-left: 12px;'
+        +'}'
+
+        +'#seq03TextulSub_1{'
+        +'  margin-left: 12px;'
+        +'}'
+        
+
         +'.seq03HeadTxt2 {'
         +'  position: absolute;'
         +'  font-size: ' + my.seq03HeadTxt2Size + ';'
@@ -1330,10 +1341,10 @@ var NFQDA = (function(my) {
 
         +'.seq03TextWall {'
         +'  position: absolute;'
-        +'  width: 100px;'
+        +'  width: 125px;'
         +'  height: auto;'
         +'  top:80px;'
-        +'  left: 50%;'
+        +'  left: 54%;'
         +'  transform: translate(-50%, 0);'
         +'  opacity: 0;'     
         +'  transform-origin: right center;'
@@ -1352,13 +1363,18 @@ var NFQDA = (function(my) {
         +'  100% {opacity: 1;}'
         +'}'
 
+        +'.seq03Textul{'
+        +'  margin-left: 12px;'
+        +'}'
         
         +'.seq03Textul2 {'
+        +'  margin-left: 12px;'
         +'  top: 45px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03Textul3 {'
+        +'  margin-left: 12px;'
         +'  top: 90px;'
         +'  position: absolute;'
         +'}'
@@ -1389,7 +1405,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'        
         +'  top: 135px;'
         +'  left: -4px;'
-        +'  width: 100px;'
+        +'  width: 125px;'
         +'  height:auto;'
         +'}'
 
@@ -1413,7 +1429,7 @@ var NFQDA = (function(my) {
         +'.price {'
         +'  position: absolute;'        
         +'  top: 150px;'
-        +'  left: -4px;'
+        +'  left: -1px;'
         +'  position: absolute;'
         +'  font-size: 24px;'
         +'  color: #F8EF1A;'
@@ -1694,8 +1710,8 @@ var NFQDA = (function(my) {
                 '<div class="seq03TextWall">'+
                     '<div class="seq03Textul">' + 
                         '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub">' + my.seq03TextulSub1 + '</div>' +
+                        '<div class="seq03TextulHead" id="seq03TextulHead_1">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub" id="seq03TextulSub_1">' + my.seq03TextulSub1 + '</div>' +
                     '</div>'+
                     '<div class="seq03Textul2">' + 
                         '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +

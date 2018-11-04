@@ -1054,7 +1054,7 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 24px;'
         +'  top:10px;'
-        +'  padding-left:3px;'
+        +'  padding-left:0px;'
         +'  left: 110px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1262,7 +1262,7 @@ var NFQDA = (function(my) {
         +'}'
 
         +'.seq03CtaTxt {'
-        +'  font-size: 19px;'
+        +'  font-size: 14px;'
         +'  line-height: 16px;'
         +'  text-align: center;'
         +'  color: ' + my.seq03CtaTxtCol + ';'

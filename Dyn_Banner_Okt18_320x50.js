@@ -1029,7 +1029,7 @@ var NFQDA = (function(my) {
 
         +'.footer_zwei {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 6.5px;'
+        +'  font-size: 7.6px;'
         +'  text-align: left;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
@@ -1058,7 +1058,7 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 15px;'
         +'  top: 15px;'
-        +'  padding-left: 35px;'
+        +'  padding-left: 32px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'

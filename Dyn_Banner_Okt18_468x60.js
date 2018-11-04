@@ -1028,7 +1028,7 @@ var NFQDA = (function(my) {
 
         +'.footer_zwei {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
+        +'  font-size: 8px;'
         +'  text-align: center;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
@@ -1204,7 +1204,7 @@ var NFQDA = (function(my) {
 
         +'.cta {'
         +'  position: absolute;'
-        +'  padding: 4px 6px 5px;'
+        +'  padding: 2px 6px 10px 6px;'
         +'  right: 15px;'
         +'  top:32px;'
         +'  width: 98px;'
@@ -1265,7 +1265,7 @@ var NFQDA = (function(my) {
 
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
+        +'  font-size: 8px;'
         +'  text-align: center;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
