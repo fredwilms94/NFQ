@@ -1673,7 +1673,9 @@ var NFQDA = (function(my) {
                     '<div class="seq02DisrRightTxtul2">' + my.seq02DisrRightTxtul2 + '</div>'+
                     '<div class="seq02DisrRightTxtul3">' + my.seq02DisrRightTxtul3 + '</div>'+
                 '</div>'+
+
                 '<div class="seq02HeadTxt">'+'<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+ my.seq02HeadTxt +'</div>'+
+
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt +'</div>'+
                 '<div class="seq03HeadTxt2">'+ my.seq03HeadTxt2 +'</div>'+
                 '<div class="seq03TextWall">'+
