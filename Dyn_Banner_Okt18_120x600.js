@@ -768,12 +768,11 @@ var NFQDA = (function(my) {
         +'.logo {'
         +'  background-repeat: no-repeat;'
         +'  background-size: contain;'
-        +'  width: 75px;'
+        +'  width: 70px;'
         +'  height: auto;'
         +'  position: absolute;'
         +'  bottom: 30px;'
-        +'  left: 50%;'
-        +'  transform: translate(-50%,0%);'
+        +'  right: 25px;'
         +'}'
 
         +'#BannerBG {'
@@ -1045,7 +1044,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 18px;'
-        +'  padding-top: 33px;'
+        +'  padding-top:35px;'
         +'  padding-left:10px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1206,7 +1205,7 @@ var NFQDA = (function(my) {
         +'  animation-fill-mode: forwards;'
         +'  animation-iteration-count: 2;'
         +'}'
-        
+
         +'@keyframes ctaAni {'
         +'  0% {bottom: 125px;opacity: 0;}'
         +'  62% {bottom: 125px;opacity: 0;}'
@@ -1698,21 +1697,13 @@ var NFQDA = (function(my) {
                     '<img class="underscore" src="' + my.underscore + '">'+
                     '<img class="price" src="' + my.seqprice + '"></img>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
-                    //'<div class="pricefrom">'+ my.seqpricefrom +'</div>'+
-                    //'<div class="price">'+ my.seqprice +'</div>'+
-                    //'<div class="oldprice">'+ my.seqoldprice +
-                    //    '<img class="seqoldpriceline" src="' + my.seqoldpriceline + '">' +
-                    //    '<div class="seqoldpricetxt">' + my.seqoldpricetxt + '</div>' +
-                    //'</div>'+
-                    //'<div class="pricefooter">'+ my.pricefooter +'</div>'+
                 '</div>'+
-
                 '<div class="banner2BG"></div>' +
                 '<img class="seq01ProdImgName" src="' + my.seq01ProdImgName + '"></img>' +
                 '<img class="seq01ProdImg" src="' + my.seq01ProdImg + '"></img>' +
                 
                 '<div class="seq01DisrTopBG">'+
-                   '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
+                '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
                 '</div>'+
                 '<img class="logo" src="' + my.logo + '">' +
             '</div>'
