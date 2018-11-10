@@ -451,10 +451,12 @@ var NFQDA = (function (my) {
         my.getTmplAttr('BannerBG_120', my.BannerBG_120, url);
         my.getTmplAttr('BannerBG2_120', my.BannerBG2_120, url);
         my.getTmplAttr('BannerBG3_120', my.BannerBG3_120, url);
+        my.getTmplAttr('bannerBGColor', emptyStr, str);
         my.getTmplAttr('finger', my.finger, url);
 
         // SEQUENCE 1        
         my.getTmplAttr('seq01DisrTopBG', my.seq01DisrTopBG, url);
+        my.getTmplAttr('seq01DisrTopBGColor', my.seq01DisrTopBGColor, str);
         my.getTmplAttr('seq01DisrTopTxt', emptyStr, str);
         my.getTmplAttr('seq01DisrTopTxtCol', my.seq01DisrTopTxtCol, str);
         my.getTmplAttr('seq01ProdImg', my.seq01ProdImg, url);
@@ -471,16 +473,17 @@ var NFQDA = (function (my) {
         my.getTmplAttr('seq02DisrRightTxtul2', emptyStr, str);
         my.getTmplAttr('seq02DisrRightTxtul3', emptyStr, str);
         my.getTmplAttr('seq02DisrRightTxtulBG', my.seq02DisrRightTxtulBG, url);
-        my.getTmplAttr('footer_zwei', emptyStr, str);
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02DisrRightBGColor', emptyStr, str);
 
         // SEQUENCE 3
         my.getTmplAttr('seq03CtaTxt', my.seq03CtaTxt, str);
         my.getTmplAttr('seq03CtaTxtCol', my.defseq03CtaTxtCol, str);
         my.getTmplAttr('seq03CtaBgCol', my.defseq03CtaBgCol, str);
         my.getTmplAttr('footer', emptyStr, str);
+        my.getTmplAttr('footer_zwei', emptyStr, str);
         my.getTmplAttr('SmallProduct1', my.SmallProduct1, url);
         my.getTmplAttr('SmallProduct2', my.SmallProduct2, url);
         my.getTmplAttr('SmallProduct3', my.SmallProduct3, url);
@@ -497,16 +500,15 @@ var NFQDA = (function (my) {
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
-        my.getTmplAttr('pricefooter', my.pricefooter, str);
-        my.getTmplAttr('pricekomma', my.pricekomma, str);
         my.getTmplAttr('pricefootnote', my.pricefootnote, str);
-        my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
-        my.getTmplAttr('seqoldpricetxt', my.seqoldpricetxt, str);
+        my.getTmplAttr('pricekomma', my.pricekomma, str);
+        my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
         my.getTmplAttr('seqoldpricetxt', my.seqoldpricetxt, str);
         my.getTmplAttr('sternchentext', my.sternchentext, str);
         my.getTmplAttr('sternchentext2', my.sternchentext2, str);
         my.getTmplAttr('sternchentext3', my.sternchentext3, str);
+
 
         my.getTmplAttr('FirstDisrRight', my.FirstDisrRight, url);
         my.getTmplAttr('SecondDisrRight120', my.SecondDisrRight120, url);
@@ -736,7 +738,7 @@ var NFQDA = (function (my) {
             '.logo {' +
             '  background-repeat: no-repeat;' +
             '  background-size: contain;' +
-            '  width: 76px;' +
+            '  width: 75px;' +
             '  height: auto;' +
             '  position: absolute;' +
             '  bottom: 30px;' +
@@ -747,7 +749,7 @@ var NFQDA = (function (my) {
             +
             '#BannerBG {' +
             '  background-image: url(' + my.BannerBG_120 + ');' +
-            '  background-color: #0d3374;' +
+            '  background-color: ' + my.bannerBGColor + ';' +
             '  width: 100%;' +
             '  height: 100%;' +
             '  left: 0px;' +
@@ -771,7 +773,7 @@ var NFQDA = (function (my) {
             +
             '#BannerBG2 {' +
             '  background-image: url(' + my.BannerBG2_120 + ');' +
-            '  background-color: #0d3374;' +
+            '  background-color: ' + my.bannerBGColor + ';' +
             '  width: 100%;' +
             '  height: 100%;' +
             '  left: 0px;' +
@@ -796,7 +798,7 @@ var NFQDA = (function (my) {
             +
             '#BannerBG3 {' +
             '  background-image: url(' + my.BannerBG3_120 + ');' +
-            '  background-color: #0d3374;' +
+            '  background-color: ' + my.bannerBGColor + ';' +
             '  background-repeat: no-repeat;' +
             '  width: 100%;' +
             '  height: 100%;' +
@@ -824,6 +826,7 @@ var NFQDA = (function (my) {
             +
             '.banner2BG {' +
             '  background-image: url(' + my.BannerBG_120 + ');' +
+            '  background-color: ' + my.bannerBGColor + ';' +
             '  width: 100%;' +
             '  height: 100%;' +
             '  top: 0px;' +
@@ -850,7 +853,8 @@ var NFQDA = (function (my) {
             '  width: auto;' +
             '  height: 216px;' +
             '  top: 150px;' +
-            '  left: 9px;' +
+            '  left: 50%;' +
+            '  margin-left: -50.5px;' +
             '  animation-name: smartphoneAni;' +
             '  animation-duration: 15s;' +
             '  animation-timing-function: ease-in-out();' +
@@ -860,11 +864,11 @@ var NFQDA = (function (my) {
 
             +
             '@keyframes smartphoneAni {' +
-            '  0% {opacity: 0; left:-120px;}' +
-            '  5% {opacity: 1; left:9px;}' +
-            '  25% {opacity: 1; left:9px;}' +
-            '  30% {opacity: 0; left:9px;}' +
-            '  100% {opacity: 0; left:9px;}' +
+            '  0% {opacity: 0; left:0%;}' +
+            '  5% {opacity: 1; left: 50%; margin-left: -50.5px;}' +
+            '  25% {opacity: 1;left: 50%; margin-left: -50.5px;}' +
+            '  30% {opacity: 0;left: 50%; margin-left: -50.5px;}' +
+            '  100% {opacity: 0;left: 50%; margin-left: -50.5px;}' +
             '}'
 
             +
@@ -885,20 +889,23 @@ var NFQDA = (function (my) {
             +
             '@keyframes smartphoneTitleAni {' +
             '  0% {margin-left:-120px;opacity: 0;}' +
-            '  5% {margin-left:-45px;margin-right:auto;opacity: 1;}' +
-            '  25%{margin-left:-45px;margin-right:auto;opacity: 1;}' +
-            '  30%{margin-left:-45px;margin-right:auto;opacity: 0;}' +
-            '  100% {margin-left:-45px;margin-right:auto;opacity: 0;}' +
+            '  5% {margin-left: -45px;opacity: 1;}' +
+            '  25%{margin-left: -45px;opacity: 1;}' +
+            '  30%{margin-left: -45px;opacity: 0;}' +
+            '  100% {margin-left: -45px;opacity: 0;}' +
             '}'
 
             +
             '.seq01DisrTopBG {' +
             '  position: absolute;' +
-            '  background-image: url(' + my.seq01DisrTopBG + ');' +
-            '  width: 120px;' +
-            '  height: 56px;' +
+            '  mask: url(' + my.seq01DisrTopBG + ') no-repeat top center;' +
+            '  -webkit-mask: url(' + my.seq01DisrTopBG + ') no-repeat top center;' +
+            '  background-color: ' + my.seq01DisrTopBGColor + ';' +
+            '  width: 160px;' +
+            '  height: 96px;' +
             '  right: 0;' +
-            '  padding-top: 10px;' +
+            '  top: -10px;' +
+            '  padding-top: 20px;' +
             '  transform-origin: left top;' +
             '  animation-name: disturberTopAni;' +
             '  animation-duration: 15s;' +
@@ -914,17 +921,21 @@ var NFQDA = (function (my) {
             '  font-size: 14px;' +
             '  line-height: 16px;' +
             '  letter-spacing: 0px;' +
+            '  width: 120px;' +
+            '  margin-left: 20px;'
+
+            +
             '  text-align: center;' +
             '  color: ' + my.seq01DisrTopTxtCol + ';' +
             '}'
 
             +
             '@keyframes disturberTopAni {' +
-            '  0% {top:0px;opacity:0;}' +
-            '  5% {top:0px;opacity:1;}' +
-            '  25%{top:0px;opacity:1;}' +
-            '  30%{top:0px;opacity:0;}' +
-            '  100% {top:0px;opacity:0;}' +
+            '  0% {opacity:0;}' +
+            '  5% {opacity:1;}' +
+            '  25%{opacity:1;}' +
+            '  30%{opacity:0;}' +
+            '  100% {opacity:0;}' +
             '}'
 
 
@@ -933,7 +944,7 @@ var NFQDA = (function (my) {
             +
             '.smartphoneBroken {' +
             '  position: absolute;' +
-            '  width: 120px;' +
+            '  width: 140px;' +
             '  height: auto;' +
             '  top: 0px;' +
             '  opacity: 0;' +
@@ -957,9 +968,9 @@ var NFQDA = (function (my) {
             +
             '.smartphoneBroken2 {' +
             '  position: absolute;' +
-            '  width: 120px;' +
+            '  width: 140px;' +
             '  height: auto;' +
-            '  top: 0px;' +
+            '  top:0px;' +
             '  left: 0px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneBroken2Ani;' +
@@ -982,9 +993,9 @@ var NFQDA = (function (my) {
             +
             '.smartphoneBroken3 {' +
             '  position: absolute;' +
-            '  width: 120px;' +
+            '  width: 140px;' +
             '  height: auto;' +
-            '  top: 00px;' +
+            '  top: 0px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneBroken3Ani;' +
             '  animation-duration: 15s;' +
@@ -1004,55 +1015,29 @@ var NFQDA = (function (my) {
             '}'
 
             +
-            '.footer_zwei {' +
-            '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
-            '  font-size: 10px;' +
-            '  line-height: 10px;' +
-            '  text-align: center;' +
-            '  letter-spacing: 0px;' +
-            '  left: 0px;' +
-            '  width: 120px;' +
-            '  bottom: 3px;' +
-            '  position: absolute;' +
-            '  opacity: 0;' +
-            '  animation-name: footer_zweiAni;' +
-            '  animation-duration: 15s;' +
-            '  animation-timing-function: ease-in-out();' +
-            '  animation-fill-mode: forwards;' +
-            '  animation-iteration-count: 2;' +
-            '}'
-
-            +
-            '@keyframes footer_zweiAni {' +
-            '  0% {bottom: 5px;opacity: 0;}' +
-            '  30% {bottom: 5px;opacity: 0;}' +
-            '  34% {bottom: 5px;opacity: 1;}' +
-            '  56% {bottom: 5px;opacity: 1;}' +
-            '  60% {bottom: 5px;opacity: 0;}' +
-            '  100% {bottom: 5px;opacity: 0}' +
-            '}'
-
-            +
             '.seq02HeadTxt {' +
             '  position: absolute;' +
             '  font-family: FrutigerLTPro-77BlkCn;' +
             '  font-size: 18px;' +
             '  padding-top:37px;' +
-            '  padding-left:10px;' +
+            '  padding-left: 10px;' +
+            '  width: 140px;' +
             '  animation-name: headlineAni;' +
             '  animation-duration: 15s;' +
             '  animation-timing-function: ease-in-out();' +
             '  animation-fill-mode: forwards;' +
             '  animation-delay: .1s;' +
             '  animation-iteration-count: 2;' +
+            '  display: inline-block;' +
+            '  text-align: center;' +
+            '  line-height: 16px;' +
             '}'
 
             +
             '.seq02HeadTxtBG {' +
             '  position: absolute;' +
-            '  width:50px;' +
-            '  left: 35px;' +
-            '  top: 10px;' +
+            '  width: 50px;' +
+            '  left: 55px;' +
             '  height:auto;' +
             '  animation-name: headlineAni;' +
             '  animation-duration: 15s;' +
@@ -1080,19 +1065,24 @@ var NFQDA = (function (my) {
             '  letter-spacing: 0px;' +
             '  text-align: left;' +
             '  padding-top: 20px;' +
-            '  padding-left: 10px;' +
+            '  margin-left: 25px;' +
+            '  margin-top: 10px;' +
+            '  width: 130px;' +
             '  color: ' + my.seq02DisrRightTxtCol + ';' +
             '}'
 
             +
             '.seq02DisrRightBG {' +
             '  position: absolute;' +
-            '  width: 120px;' +
-            '  height: 137px;' +
-            '  top:90px;' +
             '  right: 0px;' +
+            '  width: 160px;' +
+            '  height: 185px;' +
+            '  top: 90px;' +
             '  opacity: 0;' +
-            '  background: url(' + my.seq02DisrRightBG + ') no-repeat center center / contain;' +
+            '  mask: url(' + my.seq02DisrRightBG + ') no-repeat center center;' +
+            '  -webkit-mask: url(' + my.seq02DisrRightBG + ') no-repeat center center;' +
+            '  background-color: ' + my.seq02DisrRightBGColor + ';' +
+            '  background-size: cover;' +
             '  transform-origin: right center;' +
             '  animation-name: disturberRightAni;' +
             '  animation-duration: 15s;' +
@@ -1108,9 +1098,9 @@ var NFQDA = (function (my) {
             '  line-height: 16px;' +
             '  letter-spacing: 0px;' +
             '  text-align: left;' +
-            '  margin-top: 10px;' +
+            '  margin-top: 18px;' +
             '  padding-left: 20px;' +
-            '  margin-left: 10px;' +
+            '  margin-left: 25px;' +
             '  animation-name: seq02DisrRightTxtAni;' +
             '  animation-duration: 15s;' +
             '  animation-timing-function: ease-in-out();' +
@@ -1127,9 +1117,9 @@ var NFQDA = (function (my) {
             '  line-height: 16px;' +
             '  letter-spacing: 0px;' +
             '  text-align: left;' +
-            '  margin-top: 2px;' +
+            '  margin-top: 5px;' +
             '  padding-left: 20px;' +
-            '  margin-left: 10px;' +
+            '  margin-left: 25px;' +
             '  animation-name: seq02DisrRightTxtAni2;' +
             '  animation-duration: 15s;' +
             '  animation-timing-function: ease-in-out();' +
@@ -1146,9 +1136,9 @@ var NFQDA = (function (my) {
             '  line-height: 16px;' +
             '  letter-spacing: 0px;' +
             '  text-align: left;' +
-            '  margin-top: 2px;' +
+            '  margin-top: 5px;' +
             '  padding-left: 20px;' +
-            '  margin-left: 10px;' +
+            '  margin-left: 25px;' +
             '  animation-name: seq02DisrRightTxtAni3;' +
             '  animation-duration: 15s;' +
             '  animation-timing-function: ease-in-out();' +
@@ -1194,14 +1184,13 @@ var NFQDA = (function (my) {
 
             // Step 3
 
+
             +
             '.cta {' +
-            '  font-family: FrutigerLTPro-77BlkCn;' +
             '  position: absolute;' +
-            '  padding: 4px 6px 2px 6px;' +
-            '  left: 50%;' +
-            '  transform: translate(-50%,0%);' +
-            '  width: 107px;' +
+            '  padding: 3px 6px 3px 6px;' +
+            '  left: 28px;' +
+            '  width: 106px;' +
             '  text-align: left;' +
             '  background-color: ' + my.seq03CtaBgCol + ';' +
             '  animation-name: ctaAni;' +
@@ -1213,15 +1202,15 @@ var NFQDA = (function (my) {
 
             +
             '@keyframes ctaAni {' +
-            '  0% {bottom: 116px;opacity: 0;}' +
-            '  62% {bottom: 116px;opacity: 0;}' +
-            '  68% {bottom: 116px;opacity: 1;}' +
-            '  69% {bottom: 114px;opacity: 1;}' +
-            '  70% {bottom: 116px;opacity: 1;}' +
-            '  73% {bottom: 116px;opacity: 1;}' +
-            '  74% {bottom: 114px;opacity: 1;}' +
-            '  75% {bottom: 116px;opacity: 1}' +
-            '  100% {bottom: 116px;opacity: 1}' +
+            '  0% {bottom: 115px;opacity: 0;}' +
+            '  62% {bottom: 115px;opacity: 0;}' +
+            '  68% {bottom: 115px;opacity: 1;}' +
+            '  69% {bottom: 113px;opacity: 1;}' +
+            '  70% {bottom: 115px;opacity: 1;}' +
+            '  73% {bottom: 115px;opacity: 1;}' +
+            '  74% {bottom: 113px;opacity: 1;}' +
+            '  75% {bottom: 115px;opacity: 1}' +
+            '  100% {bottom: 115px;opacity: 1}' +
             '}'
 
             +
@@ -1249,25 +1238,24 @@ var NFQDA = (function (my) {
             +
             '@keyframes fingerani {' +
             '  62% {bottom: 0px;left:160px;opacity: 0;}' +
-            '  68% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  69% {bottom: 112px;left:102px;opacity: 1;}' +
-            '  70% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  73% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  74% {bottom: 112px;left:102px;opacity: 1;}' +
-            '  75% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  99.8% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  100% {bottom: 114px;left:102px;opacity: 0;}' +
+            '  68% {bottom: 113px;left:125px;opacity: 1;}' +
+            '  69% {bottom: 111px;left:125px;opacity: 1;}' +
+            '  70% {bottom: 113px;left:125px;opacity: 1;}' +
+            '  73% {bottom: 113px;left:125px;opacity: 1;}' +
+            '  74% {bottom: 111px;left:125px;opacity: 1;}' +
+            '  75% {bottom: 113px;left:125px;opacity: 1;}' +
+            '  99.8% {bottom: 113px;left:125px;opacity: 1;}' +
+            '  100% {bottom: 113px;left:125px;opacity: 0;}' +
             '}'
 
             +
             '.footer {' +
             '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
-            '  font-size: 7.8px;' +
+            '  font-size: 8.5px;' +
             '  text-align: center;' +
             '  line-height: 10px;' +
             '  letter-spacing: 0px;' +
-            '  left: 0px;' +
-            '  width: 120px;' +
+            '  width: 160px;' +
             '  position: absolute;' +
             '  opacity: 0;' +
             '  animation-name: footerAni;' +
@@ -1286,14 +1274,42 @@ var NFQDA = (function (my) {
             '}'
 
             +
+            '.footer_zwei {' +
+            '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+            '  font-size: 10px;' +
+            '  text-align: center;' +
+            '  line-height: 10px;' +
+            '  letter-spacing: 0px;' +
+            '  left: 5px;' +
+            '  width: 150px;' +
+            '  bottom: 3px;' +
+            '  position: absolute;' +
+            '  opacity: 0;' +
+            '  animation-name: footer_zweiAni;' +
+            '  animation-duration: 15s;' +
+            '  animation-timing-function: ease-in-out();' +
+            '  animation-fill-mode: forwards;' +
+            '  animation-iteration-count: 2;' +
+            '}'
+
+            +
+            '@keyframes footer_zweiAni {' +
+            '  0% {bottom: 5px;opacity: 0;}' +
+            '  30% {bottom: 5px;opacity: 0;}' +
+            '  34% {bottom: 5px;opacity: 1;}' +
+            '  56% {bottom: 5px;opacity: 1;}' +
+            '  60% {bottom: 5px;opacity: 0;}' +
+            '  100% {bottom: 5px;opacity: 0}' +
+            '}'
+
+            +
             '.seq03HeadTxt {' +
             '  position: absolute;' +
             '  font-size: ' + my.seq03HeadTxtSize + ';' +
-            '  max-width: 120px;' +
-            '  top: 15px;' +
-            '  left: 12px;' +
+            '  max-width:120px;' +
+            '  top:15px;' +
+            '  left:33px;' +
             '  line-height: 28px;' +
-            '  letter-spacing: -0.5px;' +
             '  text-align: center;' +
             '  animation-name: headline2Ani;' +
             '  animation-duration: 15s;' +
@@ -1308,10 +1324,9 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  font-size: ' + my.seq03HeadTxt2Size + ';' +
             '  max-width:120px;' +
-            '  left:15px;' +
+            '  left:36px;' +
             '  top:40px;' +
             '  line-height: 28px;' +
-            '  letter-spacing: -0.8px;' +
             '  text-align: center;' +
             '  animation-name: headline2Ani;' +
             '  animation-duration: 15s;' +
@@ -1332,10 +1347,10 @@ var NFQDA = (function (my) {
             +
             '.seq03TextWall {' +
             '  position: absolute;' +
-            '  width: 100px;' +
+            '  width: 122px;' +
             '  height: auto;' +
             '  top:80px;' +
-            '  left: 8px;' +
+            '  right: 15px;' +
             '  opacity: 0;' +
             '  transform-origin: right center;' +
             '  animation-name: disturberRight2Ani;' +
@@ -1354,28 +1369,33 @@ var NFQDA = (function (my) {
             '  100% {opacity: 1;}' +
             '}'
 
+            +
+            '.seq03Textul {' +
+            '  top: -4px;' +
+            '  left: 17px;' +
+            '  position: absolute;' +
+            '}'
 
             +
             '.seq03Textul2 {' +
-            '  top: 45px;' +
+            '  top: 40px;' +
+            '  left:17px;' +
             '  position: absolute;' +
             '}'
 
             +
             '.seq03Textul3 {' +
-            '  top: 90px;' +
+            '  top: 84px;' +
+            '  left:17px;' +
             '  position: absolute;' +
             '}'
 
             +
             '.seq03TextulBG {' +
             '  position: absolute;' +
-            '  left: 5px;' +
-            '  top: -7px;' +
             '  width: 27px;' +
+            '  left: 4px;' +
             '  height: auto;' +
-            '  margin-top: 3px;' +
-            '  margin-left: 8px;' +
             '  background: url(' + my.seq03TextulImg + ') no-repeat left center / contain;' +
             '}'
 
@@ -1384,24 +1404,23 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  font-size: 24px;' +
             '  color: #ffed00;' +
-            '  left: 42px;' +
-            '  top: -6px;' +
+            '  left: 30px;' +
             '}'
 
             +
             '.seq03TextulSub {' +
             '  position: absolute;' +
             '  font-size: 12px;' +
-            '  left: 42px;' +
-            '  top: 20px;' +
+            '  left: 31px;' +
+            '  top: 24px;' +
             '  text-transform: uppercase;' +
             '}'
 
             +
             '.underscore {' +
             '  position: absolute;' +
-            '  top: 130px;' +
-            '  left: 6px;' +
+            '  top: 131px;' +
+            '  left: 14px;' +
             '  width: 96px;' +
             '  height: auto;' +
             '}'
@@ -1410,8 +1429,8 @@ var NFQDA = (function (my) {
             '.price {' +
             '  font-family: websans_extra_black, Arial, sans-serif;' +
             '  position: absolute;' +
-            '  top: 127px;' +
-            '  left: 12px;' +
+            '  top: 129px;' +
+            '  left: 24px;' +
             '  position: absolute;' +
             '  font-size: 65px;' +
             '  color: #ffed00;' +
@@ -1420,8 +1439,8 @@ var NFQDA = (function (my) {
             +
             '.seqpricefrom {' +
             '  position: absolute;' +
-            '  top: 173px;' +
-            '  left: -2px;' +
+            '  top: 175px;' +
+            '  left: 10px;' +
             '  position: absolute;' +
             '  font-size: 15px;' +
             '  color: #ffed00;' +
@@ -1437,11 +1456,10 @@ var NFQDA = (function (my) {
             '  font-size: 64px;' +
             '  font-family: websans_extra_black, Arial, sans-serif;' +
             '  position: absolute;' +
-            '  top: 123px;' +
-            '  left: 42px;' +
+            '  top: 125px;' +
+            '  left: 56px;' +
             '  color: #ffed00;' +
             '}'
-
             +
             '.hovertext {' +
             '  width:60px;' +
@@ -1449,7 +1467,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  opacity:1;' +
             '  left:50px;' +
-            '  top:245px;' +
+            '  top:250px;' +
             '  transition: 0.3s;' +
             '  animation-name: hovertextani;' +
             '  animation-duration: 15s;' +
@@ -1463,8 +1481,8 @@ var NFQDA = (function (my) {
             '@keyframes hovertextani {' +
             '  0% {opacity: 0; left:-120px;}' +
             '  60% {opacity: 0; left:-120px;}' +
-            '  61% {opacity: 1; left:50px;}' +
-            '  100% {opacity: 1; left:50px;}' +
+            '  61% {opacity: 1; left:90px;}' +
+            '  100% {opacity: 1; left:90px;}' +
             '}'
 
             +
@@ -1478,13 +1496,14 @@ var NFQDA = (function (my) {
             +'.sternchentext{'
             +'  font-family: Arial;'
             +'  text-align:justify;'
+            +'  line-height: 12px;'
             +'  width:100%;'
             +'  background-color:white;'
             +'  position:absolute;'
             +'  bottom:0px;'
             +'  left:-120px;'
-            +'  padding:5px 2px 3px;'
-            +'  font-size:8.2px;'
+            +'  padding:5px 4px 4px;'
+            +'  font-size:9px;'
             +'  color:#000;'
             +'  display:inline;'
             +'  opacity:0;'
@@ -1495,20 +1514,20 @@ var NFQDA = (function (my) {
             'sup {' +
             ' vertical-align: middle;' +
             ' position: relative;' +
-            ' top: -95px;' +
+            ' top: -16px;' +
             ' font-size: 60%;' +
-            ' left: 37px;' +
+            ' left: -14px;' +
             '}'
 
             +
             '.pricefootnote {' +
             '  position: absolute;' +
-            '  font-size: 10.5px;' +
+            '  font-size: 12px;' +
             '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
-            '  top: 172px;' +
-            '  left: 61px;' +
+            '  top: 174px;' +
+            '  left: 75px;' +
             '  width: 65px;' +
-            '  line-height: 11px;' +
+            '  line-height: 12px;' +
             '}'
 
             +
@@ -1516,7 +1535,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: auto;' +
             '  height: 93px;' +
-            '  left: 15px;' +
+            '  left: 35px;' +
             '  top: 333px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneSmallAni;' +
@@ -1531,7 +1550,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: auto;' +
             '  height: 110px;' +
-            '  left: 35px;' +
+            '  left: 55px;' +
             '  top: 320px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneSmallAni;' +
@@ -1546,7 +1565,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: auto;' +
             '  height: 124px;' +
-            '  left: 55px;' +
+            '  left: 75px;' +
             '  top: 310px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneSmallAni;' +
@@ -1740,6 +1759,7 @@ var NFQDA = (function (my) {
             '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
             '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
             '</div>' +
+
             '<div class="banner2BG"></div>' +
             '<img class="seq01ProdImgName" src="' + my.seq01ProdImgName + '"></img>' +
             '<img class="seq01ProdImg" src="' + my.seq01ProdImg + '"></img>' +
@@ -1760,10 +1780,9 @@ var NFQDA = (function (my) {
             '</div>'
         );
     };
+
     return my;
 }(NFQDA || {}));
-
-
 // debug functions module
 /* eslint-disable no-magic-numbers */
 /* global */
