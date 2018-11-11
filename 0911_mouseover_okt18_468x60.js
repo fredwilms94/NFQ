@@ -1351,8 +1351,8 @@ var NFQDA = (function(my) {
         '@keyframes hovertextani {' +
         '  0% {opacity: 0; left:-120px;}' +
         '  60% {opacity: 0; left:-120px;}' +
-        '  61% {opacity: 1; left:420px;}' +
-        '  100% {opacity: 1; left:420px;}' +
+        '  61% {opacity: 1; left:250px;}' +
+        '  100% {opacity: 1; left:250px;}' +
         '}'
 
         +
@@ -1366,14 +1366,14 @@ var NFQDA = (function(my) {
         +'.sternchentext{'
         +'  font-family: Arial;'
         // +'  text-align:justify;'
-        +'  line-height: 11px;'
-        +'  width:75%;'
+        +'  line-height: 7.8px;'
+        +'  width:100%;'
         +'  background-color:white;'
         +'  position:absolute;'
         +'  bottom: -120px;'
         +'  left:0px;'
-        +'  padding:5px 8px 8px 5px;'
-        +'  font-size:10px;'
+        +'  padding:5px 8px 3px 5px;'
+        +'  font-size:8px;'
         +'  color:#000;'
         +'  display:inline;'
         +'  opacity:0;'
