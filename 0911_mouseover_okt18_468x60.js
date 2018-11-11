@@ -187,62 +187,6 @@ var NFQDA = (function(my) {
         my.tilLastLookTime += t;
     };*/
 
-    // TODO: move this function to line_functions
-    // looks might differ from line to line
-    /**
-     * setGdnStop - calculate and set gdn stop time
-     */
-    my.setGdnStop = function() {
-        var lk, t;
-        var gdnt = 29000;
-        var l = my.loopTime + my.tilLastLookTime;
-        var n = my.looks.length - 1; // eslint-disable-line no-magic-numbers
-        var loopTime1 = my.loopTime;
-
-        //my.debug("loop time: " + my.loopTime + " - my.tilLastLookTime: " + my.tilLastLookTime);
-        clearTimeout(my.gdnStop);
-        my.gdnStopTime = 0;
-
-        while (my.gdnStopTime < gdnt) {
-            my.gdnStopTime += l;
-        }
-        do {
-            my.gdnStopTime -= l;
-        } while (my.gdnStopTime > gdnt);
-
-        // if too many looks, we try to reach last look
-        if (my.gdnStopTime === 0) { // eslint-disable-line no-magic-numbers
-            while (loopTime1 > gdnt) {
-                lk = my.looks[n];
-
-                switch (lk) {
-                case 'look01':
-                    t = my.look01Time;
-                    break;
-                case 'look02':
-                    t = my.look02Time;
-                    break;
-                case 'look03':
-                    t = my.look03Time;
-                    break;
-                case 'intro':
-                    t = my.introTime;
-                    break;
-                // no default
-                }
-
-                loopTime1 -= t;
-                n--;
-            }
-            my.gdnStopTime = loopTime1;
-        }
-
-        // set timeout to stop look timer
-        my.debug('- gdn animation stop: ' + (my.gdnStopTime / 1000) + 's\n\n'); // eslint-disable-line no-magic-numbers
-        my.gdnStop = setTimeout(my.killLookTimer, my.gdnStopTime);
-    };
-
-
     /**
      * killLookTimer - kills looks timer
      */
@@ -520,6 +464,9 @@ var NFQDA = (function(my) {
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
         my.getTmplAttr('seqoldpricetxt', my.seqoldpricetxt, str);
+        my.getTmplAttr('sternchentext', my.sternchentext, str);
+        my.getTmplAttr('sternchentext2', my.sternchentext2, str);
+        my.getTmplAttr('sternchentext3', my.sternchentext3, str);
         
                
         my.getTmplAttr('FirstDisrRight', my.FirstDisrRight, url);
@@ -532,40 +479,6 @@ var NFQDA = (function(my) {
         my.getTmplAttr('ProductTitle', my.ProductTitle, url);
         
         my.getTmplAttr('Cta', my.Cta, url);
-
-
-
-
-
-        
-        my.getTmplAttr('lk01BgImg', my.emptyPng, url);
-        my.getTmplAttr('lk01HlTxt', emptyStr, str);
-        my.getTmplAttr('lk01HlTxtCol', my.defLk01HlTxtCol, str);
-        my.getTmplAttr('lk01DisrLeftBgImg', my.defLk01DisrLeftBgImg, url);
-        my.getTmplAttr('lk01DisrLeftAnim', my.defLk01DisrLeftAnim, str);
-        my.getTmplAttr('lk01DisrRightTxt', emptyStr, str);
-        my.getTmplAttr('lk01DisrRightTxtCol', my.defLk01DisrRightTxtCol, str);
-        my.getTmplAttr('lk01DisrRightTxtBgCol', my.defLk01DisrRightTxtBgCol, str);
-        my.getTmplAttr('lk01DisrRightBgImg', my.defLk01DisrRightBgImg, url);
-        my.getTmplAttr('lk01DisrRightAnim', my.defLk01DisrRightAnim, str);
-        my.getTmplAttr('lk01SmallprintTxt', emptyStr, str);
-        my.getTmplAttr('lk01SmallprintTxtCol', my.defLk01SmallprintTxtCol, str);
-
-        my.getTmplAttr('lk02BgImg', my.emptyPng, url);
-        my.getTmplAttr('lk02HlTxt', emptyStr, str);
-        my.getTmplAttr('lk02HlTxtCol', my.defLk02HlTxtCol, str);
-        my.getTmplAttr('lk02HlBgImg', my.emptyPng, url);
-
-
-
-        my.getTmplAttr('introImg', emptyStr, url);
-        if (my.introImg !== '') {
-            my.loadIntro = true;
-            my.hasIntro = true;
-        }
-        my.getTmplAttr('showIntro', 'defShowIntro', bool);
-        my.getTmplAttr('introLink', 'defIntroLink', str);
-        my.getTmplAttr('introTime', 'introTime', num);
 
         // ************************************************************
         // products
@@ -1416,6 +1329,61 @@ var NFQDA = (function(my) {
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
+        +
+        '.hovertext {' +
+        '  width:70px;' +
+        '  height:30px;' +
+        '  position: absolute;' +
+        '  opacity:1;' +
+        '  left:50px;' +
+        '  bottom:0px;' +
+        '  z-index:999;'+
+        '  transition: 0.3s;' +
+        '  animation-name: hovertextani;' +
+        '  animation-duration: 15s;' +
+        '  animation-timing-function: ease-in-out();' +
+        '  animation-fill-mode: forwards;' +
+        '  animation-iteration-count: 2;' +
+        '  animation-delay: .2s;' +
+        '}'
+
+        +
+        '@keyframes hovertextani {' +
+        '  0% {opacity: 0; left:-120px;}' +
+        '  60% {opacity: 0; left:-120px;}' +
+        '  61% {opacity: 1; left:420px;}' +
+        '  100% {opacity: 1; left:420px;}' +
+        '}'
+
+        +
+        '.hovertext:hover +.sternchentext {' +
+        '  display:inline;' +
+        '  opacity:1;' +
+        '  bottom:0px;' +
+        '  transition: bottom 0.3s;' +
+        '}'
+
+        +'.sternchentext{'
+        +'  font-family: Arial;'
+        // +'  text-align:justify;'
+        +'  line-height: 11px;'
+        +'  width:75%;'
+        +'  background-color:white;'
+        +'  position:absolute;'
+        +'  bottom: -120px;'
+        +'  left:0px;'
+        +'  padding:5px 8px 8px 5px;'
+        +'  font-size:10px;'
+        +'  color:#000;'
+        +'  display:inline;'
+        +'  opacity:0;'
+        +'  z-index:998;'
+        +'  transition: all 0.3s;'
+        +'  -webkit-user-select: none;'
+        +'  -moz-user-select: none;'
+        +'  -ms-user-select: none;'
+        +'  user-select: none;'
+        +'}'
 
         +'.seqpricefrom span{'
         +'  font-size: 150px;'
@@ -1532,208 +1500,6 @@ var NFQDA = (function(my) {
         + '.lk01BgImgCtr {'
         + '    background: url(' + my.lk01BgImg + ') no-repeat center center / contain;'
         + '}'
-
-        + '.lk01HlTxtCtr {'
-        + '    position: absolute;'
-        + '    top: 6px;'
-        + '    left: 0px;'
-        + '    width: ' + my.bannerW + 'px;'
-        + '}'
-
-        + '.lk01HlTxtTblCtr {'
-        + '    display: table-cell;'
-        + '    width: ' + my.bannerW + 'px;'
-        + '    vertical-align: middle;'
-        + '}'
-
-        + '.lk01HlTxt {'
-        + '    font-size: 28px;'
-        + '    letter-spacing: 0px;'
-        + '    text-align: center;'
-        + '    color: ' + my.lk01HlTxtCol + ';'
-        + '}'
-
-        + '.lk01SPrintCtr {'
-        + '    position: absolute;'
-        + '    top: 228px;'
-        + '    left: 3px;'
-        + '    width: 240px;'
-        + '    text-align: left;'
-        + '}'
-
-        + '.lk01SPrintTxt {'
-        + '    font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        + '    font-weight: 400;'
-        + '    font-size: 10px;'
-        + '    letter-spacing: -0.1px;'
-        + '    text-shadow: 0px 0px 2px rgba(0,0,0,0.6);'
-        + '}'
-
-        + '.lk01DisrLeftCtr {'
-        + '    width: 155px;'
-        + '    height: 170px;'
-        + '    position: absolute;'
-        + '    top: 51px;'
-        + '    left: 0;'
-        + '    background: url(' + my.lk01DisrLeftBgImg + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk01DisrLeftCtr.flip {'
-        + '    perspective: 1000px;'
-        + '    transform: rotateY(-90deg);'
-        + '    transform-style: preserve-3d;'
-        + '    transform-origin: left;'
-        + '    transition: transform 666ms cubic-bezier(0.56, 0.56, 0.27, 1.55)'
-        + '}'
-
-        + '.lk01DisrLeftCtr.flip.showFlip {'
-        + '    transform: rotateY(0deg);'
-        + '}'
-
-        + '.lk01DisrRightCtr {'
-        + '    width: 130px;'
-        + '    height: 118px;'
-        + '    position: absolute;'
-        + '    top: 69px;'
-        + '    right: 0px;'
-        + '    background: url(' + my.lk01DisrRightBgImg + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk01DisrRightCtr.flip {'
-        + '    perspective: 1000px;'
-        + '    transform: rotateY(90deg);'
-        + '    transform-style: preserve-3d;'
-        + '    transform-origin: right;'
-        + '    transition: transform 666ms cubic-bezier(0.56, 0.56, 0.27, 1.55)'
-        + '}'
-
-        + '.lk01DisrRightCtr.flip.showFlip {'
-        + '    transform: rotateY(0deg);'
-        + '}'
-
-        + '.lk01DisrRightTxt {'
-        + '    display: inline-block;'
-        + '    max-width: 108px;'
-        + '    font-size: 14px;'
-        + '    line-height: 15px;'
-        + '    white-space: nowrap;'
-        + '    letter-spacing: 0px;'
-        + '    padding: 2px 3px 1px;'
-        + '    color: ' + my.lk01DisrRightTxtCol + ';'
-        + '    background: ' + my.lk01DisrRightTxtBgCol + ';'
-        + '    position: absolute;'
-        + '    top: 18px;'
-        + '    left: 14px;'
-        + '}'
-
-
-        + '.lk02BgImgCtr {'
-        + '    background: url(' + my.lk02BgImg + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk02HlTxtCtr {'
-        + '    position: absolute;'
-        + '    top: 0px;'
-        + '    left: 0px;'
-        + '    width: ' + my.bannerW + 'px;'
-        + '    height: ' + my.bannerH + 'px;'
-        + '    background: url(' + my.lk02HlBgImg + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk02HlTxtTblCtr {'
-        + '    display: table-cell;'
-        + '    width: 132px;'
-        + '    height: 56px;'
-        + '    vertical-align: middle;'
-        + '    position: relative;'
-        + '    top: 0px;'
-        + '    left: 155px;'
-        + '}'
-
-        + '.lk02HlTxt {'
-        + '    font-size: 16px;'
-        + '    line-height: 19px;'
-        + '    letter-spacing: 0px;'
-        + '    text-align: left;'
-        + '    color: ' + my.lk02HlTxtCol + ';'
-        + '}'
-
-        + '.lk02ProdImg {'
-        + '    width: 102px;'
-        + '    height: 192px;'
-        + '    position: absolute;'
-        + '    left: 10px;'
-        + '    top: 22px;'
-        + '    background: url(' + p.image + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk02ProdManuImg {'
-        + '    width: 73px;'
-        + '    height: 12px;'
-        + '    position: absolute;'
-        + '    left: 125px;'
-        + '    top: 96px;'
-        + '    background: url(' + p.manufacturerImage + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk02ProdNameImg {'
-        + '    width: 149px;'
-        + '    height: 28px;'
-        + '    position: absolute;'
-        + '    left: 125px;'
-        + '    top: 115px;'
-        + '    background: url(' + p.productNameImage + ') no-repeat center center / contain;'
-        + '}'
-
-        + '.lk02CtaCtr {'
-        + '    width: 100px;'
-        + '    height: 43px;'
-        + '    position: absolute;'
-        + '    top: 196px;'
-        + '    left: 128px;'
-        + '    transform: translateY(60px);'
-        + '}'
-
-        + '.lk02CtaCtrShow {'
-        + '    opacity: 1;'
-        + '    transform: translateY(0px);'
-        + '    transition: transform 466ms cubic-bezier(0.175, 0.885, 0.350, 1.415), opacity 333ms;'
-        + '}'
-
-
-
-        + '.lk02CtaTxt:before {'
-        + '    display: inline-block;'
-        + '    content: "»";'
-        + '    font-size: 15px;'
-        + '    position: relative;'
-        + '    top: -2px;'
-        + '    margin-right: 2px;'
-        + '    height: 30px;'
-        + '    float: left;'
-        + '}'
-
-        + '.obaCtr {'
-        + '    position: absolute;'
-        + '    top: 0;'
-        + '    left: 4px;'
-        + '    color: ' + my.obaCol + ';'
-        + '    font-size: 10px;'
-        + '    display: none;'
-        + '}'
-
-        + '.introCtr {'
-        + '    transition: opacity 0.5s ease-out;'
-        + '}'
-
-        + '#lk01Wrap, #lk02Wrap {'
-        + '    transition: opacity 0.66s;'
-        + '}'
-
-        + '.opac0 {'
-        + '    opacity: 0;'
-        + '}'
-
 
         // loader
         + '#html-loader {'
@@ -1943,306 +1709,17 @@ var NFQDA = (function(my) {
                    '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
                 '</div>'+
                 '<img class="logo" src="' + my.logo + '">' +
+                '<div class="pricetag">' +
+                '<div class="hovertext">' + '</div>' +
+                    '<div class="sternchentext">' +
+                        '<span>' + my.sternchentext + '</span>' +
+                        '<span>' + my.sternchentext2 + '</span>' +
+                        '<span>' + my.sternchentext3 + '</span>' +
+                        '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
+                    '</div>' +
+                '</div>' +
             '</div>'
         );
-
-        my.lk01Wrap = $(my.targetCtr).find('#lk01Wrap');
-        my.lk01BgImgCtr = $(my.targetCtr).find('.lk01BgImgCtr');
-        my.lk01HLImgCtr = $(my.targetCtr).find('.lk01HLImgCtr');
-        my.lk01DisrLeftCtr = $(my.targetCtr).find('.lk01DisrLeftCtr');
-        my.lk01DisrRightCtr = $(my.targetCtr).find('.lk01DisrRightCtr');
-        my.lk01SPrintCtr = $(my.targetCtr).find('.lk01SPrintCtr');
-
-        my.lk02Wrap = $(my.targetCtr).find('#lk02Wrap');
-        my.lk02BgImgCtr = $(my.targetCtr).find('.lk02BgImgCtr');
-        my.lk02HlTxtCtr = $(my.targetCtr).find('.lk02HlTxtCtr');
-        my.lk02ProdImg = $(my.targetCtr).find('.lk02ProdImg');
-        my.lk02ProdManuImg = $(my.targetCtr).find('.lk02ProdManuImg');
-        my.lk02ProdNameImg = $(my.targetCtr).find('.lk02ProdNameImg');
-        my.lk02CtaCtr = $(my.targetCtr).find('.lk02CtaCtr');
-
-        my.introCtr = $(my.targetCtr).find('.introCtr');
-        my.obaCtr = $(my.targetCtr).find('.obaCtr');
-        if (my.showOBA) {
-            my.obaCtr.append(my.obaTxt);
-            my.obaCtr.css('display', 'block');
-        }
-
-        my.clickButton = $(my.targetCtr).find('#clickButton');
-
-        // check disrupter left anim type
-        switch (my.lk01DisrLeftAnim) {
-        case 'pop':
-            my.lk01DisrLeftCtr.addClass('pop');
-            break;
-        case 'slide':
-            my.lk01DisrLeftCtr.addClass('slide');
-            break;
-        case 'flip':
-        default:
-            my.lk01DisrLeftCtr.addClass('flip');
-            break;
-        }
-
-        // check disrupter right anim type
-        switch (my.lk01DisrRightAnim) {
-        case 'pop':
-            my.lk01DisrRightCtr.addClass('pop');
-            break;
-        case 'slide':
-            my.lk01DisrRightCtr.addClass('slide');
-            break;
-        case 'flip':
-        default:
-            my.lk01DisrRightCtr.addClass('flip');
-            break;
-        }
-
-        // intro look
-        if (my.hasIntro && my.showIntro) {
-            h = ''
-            + '<div id="intro_1" class="introImg">'
-                + '<img id="intro" src="' + my.introImg + '" alt="" />'
-            + '</div>';
-            my.introCtr.append(h);
-            my.introCtr.find('#intro').load(function() {
-                my.introLoaded = true;
-                my.addIntroLook();
-            }).error(function() {
-                my.hasIntro = false;
-            });
-        }
-    };
-
-    return my;
-}(NFQDA || {}));
-// create format html module
-/* eslint-disable no-magic-numbers */
-/* global */
-
-/************************************************************
- * animation module
- * animates the looks
- */
-var NFQDA = (function(my) {
-    'use strict';
-
-    /**
-     * showLook - animation depending on current look
-     * @param {boolean} dir - direction of animation loop, true: forward, false: backward
-     */
-    my.showLook = function() {
-        my.runTime = new Date().getTime() - my.startTime;
-
-        //my.debug(my.lookName + ' ' + my.runTime);
-
-        switch (my.lookName) {
-        case 'intro':
-            // set custom clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtnCstm(my.introLink, 'intro_link');
-
-            // show intro container
-            my.introCtr.removeClass('opac0');
-
-            // animate intro image
-            my.showIntroOutroImg(my.introCtr.find('#intro_1'), 'introImgShow', 0, true);
-
-            // set interval
-            my.currLoopTime = my.introTime;
-            my.setNewTimeout(my.introTime);
-
-            break;
-
-        case 'look01':
-            // set clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtn(my.products[0]);
-
-            // hide possible previous look
-            my.hideIntro();
-
-            // show look01
-            my.lk01Wrap.removeClass('opac0');
-
-            // show right disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrRightAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrRightCtr.addClass('showFlip');
-                    break;
-                }
-            }, 700);
-
-            // show left disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrLeftAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrLeftCtr.addClass('showFlip');
-                    break;
-                }
-            }, 900);
-
-            // hide left right disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrRightAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrRightCtr.removeClass('showFlip');
-                    break;
-                }
-                switch (my.lk01DisrLeftAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrLeftCtr.removeClass('showFlip');
-                    break;
-                }
-            }, my.look01Time - 200);
-
-            // set timeout for next animation
-            my.currLoopTime = my.look01Time;
-            my.setNewTimeout(my.look01Time);
-
-            break;
-
-        case 'look02':
-            // set clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtn(my.products[0]);
-
-            // show look02
-            my.lk02Wrap.removeClass('opac0');
-
-            // show cta
-            setTimeout(function() {
-                my.lk02CtaCtr.addClass('lk02CtaCtrShow');
-            }, 1000);
-
-            //************************************************************
-            // reset elements to be reset and start end animation or stop animation if needed
-            if (my.gdnStopTime === 0 || (my.runTime + my.look02Time < my.gdnStopTime)) {
-                my.lk01Wrap.addClass('opac0');
-                setTimeout(function() {
-                    my.lk02Wrap.addClass('opac0');
-                    switch (my.lk01DisrRightAnim) {
-                    case 'flip':
-                    default:
-                        my.lk01DisrRightCtr.removeClass('showFlip');
-                        break;
-                    }
-                    switch (my.lk01DisrLeftAnim) {
-                    case 'flip':
-                    default:
-                        my.lk01DisrLeftCtr.removeClass('showFlip');
-                        break;
-                    }
-                }, my.look02Time - 300);
-
-                setTimeout(function() {
-                    my.lk02CtaCtr.removeClass('lk02CtaCtrShow');
-                }, my.look02Time + 800);
-            } else {
-                // gdn brake
-                my.killLookTimer();
-
-                return;
-            }
-
-            // set timeout for next animation
-            my.currLoopTime = my.look02Time;
-            my.setNewTimeout(my.look02Time);
-
-            break;
-        // no default
-        }
-    };
-
-    return my;
-}(NFQDA || {}));
-// create format html module
-/* global */
-
-/* ***********************************************************
- * animation helper functions module
- */
-var NFQDA = (function(my) {
-    'use strict';
-
-    /**
-     * startAnimation - start (init) animation
-     */
-    my.startAnimation = function() {
-        my.debug('- starting animation\n\n', true);
-        // remove loader display
-        $(my.targetCtr).find('#html-loader').remove();
-
-        // start animation
-        my.startTime = new Date().getTime();
-
-        setTimeout(function() {
-            my.showNextLook();
-        }, 10); // eslint-disable-line no-magic-numbers
-    };
-
-    /**
-     * showNextLook - show next look
-     * @param {boolean} user - flag for user initiated look switch
-     */
-    my.showNextLook = function(user) {
-        if (++my.currLook > my.numAllLooks) {
-            my.currLook = 1;
-        }
-        my.lookName = my.looks[my.currLook - 1]; // eslint-disable-line no-magic-numbers
-        if (user && my.lookName === 'intro') {
-            my.showNextLook();
-        } else {
-            my.showLook(true);
-        }
-    };
-
-    /**
-     * hideIntro - hide intro look
-     */
-    my.hideIntro = function() {
-        if (my.hasIntro && my.introLoaded && my.showIntro) {
-            // hide intro container
-            my.showIntroOutroImg(my.introCtr.find('#intro_1'), 'introImgShow', 0, false); // eslint-disable-line no-magic-numbers
-            // hide intro container
-            my.introCtr.addClass('opac0');
-        }
-    };
-
-    /**
-     * showIntroOutroImg - show or hide intro image
-     * @param {object} img - image element
-     * @param {string} c - class name
-     * @param {number} d - delay
-     * @param {boolean} p - flag for add or remove class
-     */
-    my.showIntroOutroImg = function(img, c, d, p) {
-        setTimeout(function() {
-            if (p) {
-                img.addClass(c);
-            } else {
-                img.removeClass(c);
-            }
-        }, d);
-    };
-
-    /**
-     * setNewTimeout - set new interval
-     * @param {number} ms - milliseconds of interval
-     */
-    my.setNewTimeout = function(ms) {
-        clearTimeout(my.lookTimer);
-        if (my.gdnStopped) {
-            return;
-        }
-        my.lookTimer = setTimeout(function() {
-            my.showNextLook();
-        }, ms);
     };
 
     return my;
