@@ -1309,7 +1309,7 @@ var NFQDA = (function(my) {
         +'  width: 160px;'
         +'  height: 172px;'
         +'  background: url(' + my.seq02DisrRightBlue + ') no-repeat left center / contain;'
-        +'  top:40px;'
+        +'  top:30px;'
         +'  right: 0px;'
         +'  opacity: 0;'     
         +'  transform-origin: right center;'
@@ -1330,18 +1330,18 @@ var NFQDA = (function(my) {
 
         
         +'.seq03Textul2 {'
-        +'  top: 27px;'
+        +'  top: 24px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03Textul3 {'
-        +'  top: 55px;'
+        +'  top: 48px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03TextulBG {'
         +'  position: absolute;'
-        +'  width: 27px;'
+        +'  width: 19px;'
         +'  top: 20px;'
         +'  left: 30px;'
         +'  height: auto;'
@@ -1350,24 +1350,24 @@ var NFQDA = (function(my) {
 
         +'.seq03TextulHead {'
         +'  position: absolute;'
-        +'  font-size: 24px;'
+        +'  font-size: 22px;'
         +'  color: #ffed00;'
-        +'  left: 60px;'
-        +'  top: 19px;'
+        +'  left: 53px;'
+        +'  top: 18px;'
         +'}'
         
         +'.seq03TextulSub {'
         +'  position: absolute;'
         +'  font-size: 10px;'
-        +'  left: 110px;'
-        +'  top: 32px;'
+        +'  left: 100px;'
+        +'  top: 28px;'
         +'  text-transform: uppercase;'
         +'}'
         
         +'.underscore {'
         +'  position: absolute;'        
-        +'  top: 105px;'
-        +'  left: 29px;'
+        +'  top: 97px;'
+        +'  left: 24px;'
         +'  width: 120px;'
         +'  height:auto;'
         +'}'
@@ -1382,30 +1382,30 @@ var NFQDA = (function(my) {
 
         +'.price {'
         +'  position: absolute;'        
-        +'  top: -64px;'
-        +'  left: 61px;'
+        +'  top: 96px;'
+        +'  left: 41px;'
         +'  width: 140px;'
         +'  position: absolute;'
-        +'  font-size: 66px;'
+        +'  font-size: 60px;'
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
 
         +'.seqpricefrom {'
         +'  position: absolute;'        
-        +'  top: 179px;'
-        +'  left: 30px;'
+        +'  top: 139px;'
+        +'  left: 24px;'
         +'  position: absolute;'
-        +'  font-size: 26px;'
+        +'  font-size: 16px;'
         +'  color: #ffed00;'
         +'}'
 
         +'.pricekomma{'
-        +'  font-size: 93px;'
+        +'  font-size: 75px;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'  position: absolute;'
-        +'  top: 106px;'
-        +'  left: 108px;'
+        +'  top: 74px;'
+        +'  left: 73px;'
         +'  color: #ffed00;'
         +'}'
         +
@@ -1415,8 +1415,9 @@ var NFQDA = (function(my) {
         '  position: absolute;' +
         '  opacity:1;' +
         '  left:50px;' +
-        '  top:267px;' +
+        '  top:168px;' +
         '  transition: 0.3s;' +
+        '  z-index:999;'+
         '  animation-name: hovertextani;' +
         '  animation-duration: 15s;' +
         '  animation-timing-function: ease-in-out();' +
@@ -1429,8 +1430,8 @@ var NFQDA = (function(my) {
         '@keyframes hovertextani {' +
         '  0% {opacity: 0; left:-120px;}' +
         '  60% {opacity: 0; left:-120px;}' +
-        '  61% {opacity: 1; left:220px;}' +
-        '  100% {opacity: 1; left:220px;}' +
+        '  61% {opacity: 1; left:230px;}' +
+        '  100% {opacity: 1; left:230px;}' +
         '}'
 
         +
@@ -1442,29 +1443,32 @@ var NFQDA = (function(my) {
         '}'
 
         +'.sternchentext{'
-        +'  font-family: Arial;'
-        // +'  text-align:justify;'
-        +'  line-height: 15px;'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
+        +'  line-height: 16px;'
         +'  width:100%;'
         +'  background-color:white;'
         +'  position:absolute;'
         +'  bottom:0px;'
         +'  left:-120px;'
-        +'  padding:5px 8px 8px;'
-        +'  font-size:12px;'
+        +'  padding:7px 6px 4px 8px;'
+        +'  font-size:12.5px;'
         +'  color:#000;'
         +'  display:inline;'
         +'  opacity:0;'
         +'  transition: all 0.3s;'
-        +'}'
+        +'  z-index:998;'
+        +'  -webkit-user-select: none;'
+        +'  -moz-user-select: none;'
+        +'  -ms-user-select: none;'
+        +'  user-select: none;'
         +'}'
         
         +'.pricefootnote {'
         +'  position: absolute;'
-        +'  font-size: 9px;'
+        +'  font-size: 10px;'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  top: 164px;'
-        +'  left: 212px;'
+        +'  top: 132px;'
+        +'  left: 97px;'
         +'  width: 56px;'
         +'  z-index: 2;'
         +'  animation-name: disturberRight2Ani;'
@@ -1473,6 +1477,10 @@ var NFQDA = (function(my) {
         +'  animation-fill-mode: forwards;'
         +'  animation-iteration-count: 2;'
         +'  animation-delay: .2s;'
+        +'  -webkit-user-select: none;'
+        +'  -moz-user-select: none;'
+        +'  -ms-user-select: none;'
+        +'  user-select: none;'
         +'}'
 
         +'.smartphoneSmall1 {'

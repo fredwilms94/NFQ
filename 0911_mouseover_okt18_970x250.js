@@ -1404,8 +1404,7 @@ var NFQDA = (function(my) {
         '}'
 
         +'.sternchentext{'
-        +'  font-family: Arial;'
-        // +'  text-align:justify;'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
         +'  line-height: 15px;'
         +'  width:75%;'
         +'  background-color:white;'

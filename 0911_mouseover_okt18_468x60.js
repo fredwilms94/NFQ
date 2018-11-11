@@ -986,7 +986,7 @@ var NFQDA = (function(my) {
 
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
-        +'  width:35px;'
+        +'  width:30px;'
         +'  top: 23px;'
         +'  left: 70px;'
         +'  height:auto;'
@@ -1288,7 +1288,7 @@ var NFQDA = (function(my) {
         +'.seq03TextulHead {'
         +'  position: absolute;'
         +'  font-size: 24px;'
-        +'  color: #F8EF1A;'
+        +'  color: #ffed00;'
         +'  left: 30px;'
         +'}'
         
@@ -1364,8 +1364,7 @@ var NFQDA = (function(my) {
         '}'
 
         +'.sternchentext{'
-        +'  font-family: Arial;'
-        // +'  text-align:justify;'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
         +'  line-height: 7.8px;'
         +'  width:100%;'
         +'  background-color:white;'
@@ -1373,7 +1372,7 @@ var NFQDA = (function(my) {
         +'  bottom: -120px;'
         +'  left:0px;'
         +'  padding:5px 8px 3px 5px;'
-        +'  font-size:8px;'
+        +'  font-size:9px;'
         +'  color:#000;'
         +'  display:inline;'
         +'  opacity:0;'

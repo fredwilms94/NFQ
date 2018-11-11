@@ -972,8 +972,8 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxt {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 15px;'
-        +'  top: 15px;'
+        +'  font-size: 14px;'
+        +'  top: 17px;'
         +'  padding-left: 32px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1134,17 +1134,17 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
-        +'@keyframes ctaAni {'
-        +'  0% {top: 9px;opacity: 0}'
-        +'  89% {top: 9px;opacity: 0}'
-        +'  91% {top: 9px;opacity: 1}'
-        +'  92% {top: 11px;opacity: 1}'
-        +'  93% {top: 9px;opacity: 1}'
-        +'  96% {top: 9px;opacity: 1}'
-        +'  97% {top: 11px;opacity: 1}'
-        +'  98% {top: 9px;opacity: 1}'
-        +'  100% {top: 9px;opacity: 1}'
-        +'}'
+        // +'@keyframes ctaAni {'
+        // +'  0% {top: 9px;opacity: 0}'
+        // +'  89% {top: 9px;opacity: 0}'
+        // +'  91% {top: 9px;opacity: 1}'
+        // +'  92% {top: 11px;opacity: 1}'
+        // +'  93% {top: 9px;opacity: 1}'
+        // +'  96% {top: 9px;opacity: 1}'
+        // +'  97% {top: 11px;opacity: 1}'
+        // +'  98% {top: 9px;opacity: 1}'
+        // +'  100% {top: 9px;opacity: 1}'
+        // +'}'
 
         +'.seq03CtaTxt {'
         +'  font-size: 8px;'
@@ -1166,18 +1166,18 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
-        +'@keyframes fingerani {'
-        +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
-        +'}'
+        // +'@keyframes fingerani {'
+        // +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
+        // +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
+        // +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
+        // +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
+        // +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
+        // +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
+        // +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
+        // +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
+        // +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
+        // +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
+        // +'}'
 
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
@@ -1258,14 +1258,15 @@ var NFQDA = (function(my) {
         +'  animation-delay: .2s;'
         +'}'
 
-        +'@keyframes disturberRight2Ani {'
-        +'  0% {opacity: 0;}'
-        +'  70% {opacity: 0;}'
-        +'  75% {opacity: 1;}'
-        +'  85% {opacity: 1;}'
-        +'  90% {opacity: 0;}'
-        +'  100% {opacity: 0;}'
-        +'}'
+        // +'@keyframes disturberRight2Ani {'
+        // +'  0% {opacity: 0;}'
+        // +'  70% {opacity: 0;}'
+        // +'  75% {opacity: 0;}'
+        // +'  85% {opacity: 0;}'
+        // +'  90% {opacity: 1;}'
+        // +'  99.8% {opacity: 1;}'
+        // +'  100% {opacity: 0;}'
+        // +'}'
 
         
         +'.seq03Textul2 {'
@@ -1288,7 +1289,7 @@ var NFQDA = (function(my) {
         +'.seq03TextulHead {'
         +'  position: absolute;'
         +'  font-size: 24px;'
-        +'  color: #F8EF1A;'
+        +'  color: #ffed00;'
         +'  left: 30px;'
         +'}'
         
@@ -1338,11 +1339,11 @@ var NFQDA = (function(my) {
         +'}'
         +
         '.hovertext {' +
-        '  width:70px;' +
-        '  height:30px;' +
+        '  width:320px;' +
+        '  height:50px;' +
         '  position: absolute;' +
         '  opacity:1;' +
-        '  left:50px;' +
+        '  left:0px;' +
         '  bottom:0px;' +
         '  z-index:999;'+
         '  transition: 0.3s;' +
@@ -1354,33 +1355,32 @@ var NFQDA = (function(my) {
         '  animation-delay: .2s;' +
         '}'
 
-        +
-        '@keyframes hovertextani {' +
-        '  0% {opacity: 0; left:-120px;}' +
-        '  60% {opacity: 0; left:-120px;}' +
-        '  61% {opacity: 1; left:420px;}' +
-        '  100% {opacity: 1; left:420px;}' +
-        '}'
+        // +
+        // '@keyframes hovertextani {' +
+        // '  0% {opacity: 0; left:-120px;}' +
+        // '  60% {opacity: 0; left:-120px;}' +
+        // '  61% {opacity: 1; left:420px;}' +
+        // '  100% {opacity: 1; left:420px;}' +
+        // '}'
 
         +
         '.hovertext:hover +.sternchentext {' +
         '  display:inline;' +
         '  opacity:1;' +
         '  bottom:0px;' +
-        '  transition: bottom 0.3s;' +
+        '  transition: bottom 3s;' +
         '}'
 
         +'.sternchentext{'
-        +'  font-family: Arial;'
-        // +'  text-align:justify;'
-        +'  line-height: 11px;'
-        +'  width:75%;'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
+        +'  line-height: 8px;'
+        +'  width:100%;'
         +'  background-color:white;'
         +'  position:absolute;'
         +'  bottom: -120px;'
         +'  left:0px;'
-        +'  padding:5px 8px 8px 5px;'
-        +'  font-size:10px;'
+        +'  padding:3px 3px 3px 3px;'
+        +'  font-size:9px;'
         +'  color:#000;'
         +'  display:inline;'
         +'  opacity:0;'
@@ -1683,13 +1683,13 @@ var NFQDA = (function(my) {
                 '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
-                '<div class="seq03TextWall">'+
-                    '<img class="underscore" src="' + my.underscore + '">'+
-                    '<div class="price">' + my.price + '</div>' +
-                    '<div class="pricekomma">' + my.pricekomma + '</div>' +
-                    '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
-                    '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
-                '</div>'+
+                // '<div class="seq03TextWall">'+
+                //     '<img class="underscore" src="' + my.underscore + '">'+
+                //     '<div class="price">' + my.price + '</div>' +
+                //     '<div class="pricekomma">' + my.pricekomma + '</div>' +
+                //     '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
+                //     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                // '</div>'+
 
 
                 '<div class="banner2BG"></div>' +

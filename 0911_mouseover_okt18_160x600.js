@@ -946,7 +946,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: 140px;' +
             '  height: auto;' +
-            '  top: 0px;' +
+            '  top: 10px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneBrokenAni;' +
             '  animation-duration: 15s;' +
@@ -970,7 +970,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: 140px;' +
             '  height: auto;' +
-            '  top:0px;' +
+            '  top:10px;' +
             '  left: 0px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneBroken2Ani;' +
@@ -995,7 +995,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  width: 140px;' +
             '  height: auto;' +
-            '  top: 0px;' +
+            '  top: 10px;' +
             '  opacity: 0;' +
             '  animation-name: smartphoneBroken3Ani;' +
             '  animation-duration: 15s;' +
@@ -1019,6 +1019,7 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  font-family: FrutigerLTPro-77BlkCn;' +
             '  font-size: 18px;' +
+            '  text-align-last: center;'+
             '  padding-top:37px;' +
             '  padding-left: 10px;' +
             '  width: 140px;' +
@@ -1494,8 +1495,7 @@ var NFQDA = (function (my) {
             '}'
 
             +'.sternchentext{'
-            +'  font-family: Arial;'
-            +'  text-align:justify;'
+            +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
             +'  line-height: 12px;'
             +'  width:100%;'
             +'  background-color:white;'
@@ -1503,7 +1503,7 @@ var NFQDA = (function (my) {
             +'  bottom:0px;'
             +'  left:-120px;'
             +'  padding:5px 4px 4px;'
-            +'  font-size:9px;'
+            +'  font-size:10px;'
             +'  color:#000;'
             +'  display:inline;'
             +'  opacity:0;'
