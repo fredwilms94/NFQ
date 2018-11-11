@@ -1037,6 +1037,8 @@ var NFQDA = (function (my) {
             '  position: absolute;' +
             '  font-family: FrutigerLTPro-77BlkCn;' +
             '  font-size: 18px;' +
+            '  line-height: 16px;'+
+            '  text-align-last: center;' +
             '  padding-top:37px;' +
             '  padding-left:10px;' +
             '  animation-name: headlineAni;' +

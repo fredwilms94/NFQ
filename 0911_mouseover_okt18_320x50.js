@@ -187,7 +187,7 @@ var NFQDA = (function(my) {
         my.tilLastLookTime += t;
     };*/
 
-    /**
+     /**
      * killLookTimer - kills looks timer
      */
     my.killLookTimer = function() {
@@ -407,12 +407,13 @@ var NFQDA = (function(my) {
         my.getTmplAttr('obaTxt', my.defObaTxt, str);
 
         my.getTmplAttr('logo', my.logo, url);
-        my.getTmplAttr('BannerBG_300x250', my.BannerBG_300x250, url);
-        my.getTmplAttr('BannerBG2_300x250', my.BannerBG2_300x250, url);
-        my.getTmplAttr('BannerBG3_300x250', my.BannerBG3_300x250, url);
+        my.getTmplAttr('BannerBG_320', my.BannerBG_320, url);
+        my.getTmplAttr('BannerBG2_320', my.BannerBG2_320, url);
+        my.getTmplAttr('BannerBG3_320', my.BannerBG3_320, url);
         my.getTmplAttr('finger', my.finger, url);
         
         // SEQUENCE 1        
+        my.getTmplAttr('seq01DisrTop2BG', my.seq01DisrTop2BG, url);
         my.getTmplAttr('seq01DisrTopBG', my.seq01DisrTopBG, url);
         my.getTmplAttr('seq01DisrTopTxt', emptyStr, str);
         my.getTmplAttr('seq01DisrTopTxtCol', my.seq01DisrTopTxtCol, str);
@@ -420,10 +421,10 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq01ProdImgName', my.seq01ProdImgName, url);
         
         // SEQUENCE 2  
-        my.getTmplAttr('SecondProduct_300x250', my.SecondProduct_300x250, url);
-        my.getTmplAttr('SecondProduct2_300x250', my.SecondProduct2_300x250, url);
-        my.getTmplAttr('SecondProduct3_300x250', my.SecondProduct3_300x250, url);
-        my.getTmplAttr('seq02DisrRight2BG', my.seq02DisrRight2BG, url);
+        my.getTmplAttr('SecondProduct_768', my.SecondProduct_768, url);
+        my.getTmplAttr('SecondProduct2_768', my.SecondProduct2_768, url);
+        my.getTmplAttr('SecondProduct3_768', my.SecondProduct3_768, url);
+        my.getTmplAttr('seq02DisrRightBG', my.seq02DisrRightBG, url);
         my.getTmplAttr('seq02DisrRightTxt', emptyStr, str);
         my.getTmplAttr('seq02DisrRightTxtCol', my.seq02DisrRightTxtCol, str);        
         my.getTmplAttr('seq02DisrRightTxtul1', emptyStr, str);
@@ -436,9 +437,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
     
         // SEQUENCE 3
-
-        my.getTmplAttr('seq02DisrRightBlue', my.seq02DisrRightBlue, url);
-        my.getTmplAttr('seq03CtaTxt', my.seq03CtaTxt, str);
+        my.getTmplAttr('seq03CtaTxtSmall', my.seq03CtaTxtSmall, str);
         my.getTmplAttr('seq03CtaTxtCol', my.defseq03CtaTxtCol, str);
         my.getTmplAttr('seq03CtaBgCol', my.defseq03CtaBgCol, str);
         my.getTmplAttr('footer', emptyStr, str);
@@ -450,8 +449,8 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq03HeadTxt2', my.seq03HeadTxt2, str);
         my.getTmplAttr('seq03HeadTxt2Size', my.seq03HeadTxt2Size, str);
         my.getTmplAttr('seq03HeadTxt768', my.seq03HeadTxt768, str);
-        my.getTmplAttr('seq02DisrRightBlue', my.seq02DisrRightBlue, url); 
-       
+        my.getTmplAttr('pricefootnote', my.pricefootnote, str);
+        
         my.getTmplAttr('seq03TextulImg', my.seq03TextulImg, url);
         my.getTmplAttr('seq03TextulHead1', my.seq03TextulHead1, str);
         my.getTmplAttr('seq03TextulSub1', my.seq03TextulSub1, str);
@@ -461,9 +460,6 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
         my.getTmplAttr('seqprice', my.seqprice, url);
-        my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
-        my.getTmplAttr('pricefootnote', my.pricefootnote, str);
-        my.getTmplAttr('pricekomma', my.pricekomma, str);
         
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
@@ -673,7 +669,6 @@ var NFQDA = (function(my) {
         + '    font-family: websans_extra_black;'
         + '    src: url("http://1u1.dynamic-ads.de/api/uploads/assets_files/5bbc9df0bc608.woff") format("opentype");'
         + '}'
-
         + '* {'
         + '    box-sizing: border-box;'
         + '    margin: 0;'
@@ -690,15 +685,15 @@ var NFQDA = (function(my) {
         +'.logo {'
         +'  background-repeat: no-repeat;'
         +'  background-size: contain;'
-        +'  width: 45px;'
+        +'  width: 35px;'
         +'  height: auto;'
         +'  position: absolute;'
-        +'  bottom: 10px;'
-        +'  right: 10px;'
+        +'  bottom: 6px;'
+        +'  left: 5px;'
         +'}'
 
         +'#BannerBG {'
-        +'  background-image: url('+ my.BannerBG_300x250 +');'
+        +'  background-image: url('+ my.BannerBG_320 +');'
         +'  background-color: #0d3374;'
         +'  background-size: cover;'
         +'  width: 100%;'
@@ -715,13 +710,13 @@ var NFQDA = (function(my) {
         +'@keyframes bannerBGAni {'
         +'  0% {opacity: 0;}'
         +'  5% {opacity: 1;}'
-        +'  30% {opacity: 1;}'
-        +'  35% {opacity: 0;}'
+        +'  15% {opacity: 1;}'
+        +'  20% {opacity: 0;}'
         +'  100% {opacity: 0;}'
         +'}'
 
         +'#BannerBG2 {'
-        +'  background-image: url('+ my.BannerBG2_300x250 +');'
+        +'  background-image: url('+ my.BannerBG2_320 +');'
         +'  background-color: #0d3374;'
         +'  background-size: cover;'
         +'  width: 100%;'
@@ -739,13 +734,15 @@ var NFQDA = (function(my) {
         +'@keyframes bannerBG2Ani {'
         +'  0% {opacity: 0;}'
         +'  5% {opacity: 0;}'
-        +'  30% {opacity: 0;}'
-        +'  35% {opacity: 1;}'
-        +'  100% {opacity: 1;}'
+        +'  15% {opacity: 0;}'
+        +'  20% {opacity: 1;}'
+        +'  70% {opacity: 1;}'
+        +'  75% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
 
         +'#BannerBG3 {'
-        +'  background-image: url('+ my.BannerBG3_300x250 +');'
+        +'  background-image: url('+ my.BannerBG3_320 +');'
         +'  background-color: #0d3374;'
         +'  background-repeat: no-repeat;'
         +'  background-size: cover;'
@@ -764,15 +761,17 @@ var NFQDA = (function(my) {
         +'@keyframes bannerBG3Ani {'
         +'  0% {opacity: 0;}'
         +'  5% {opacity: 0;}'
-        +'  60% {opacity: 0;}'
-        +'  65% {opacity: 1;}'
-        +'  100% {opacity: 1;}'
+        +'  55% {opacity: 0;}'
+        +'  60% {opacity: 1;}'
+        +'  70% {opacity: 1;}'
+        +'  75% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
     
         // Step 1
 
         +'.banner2BG {'
-        +'  background-image: url('+ my.BannerBG_300x250 +');'
+        +'  background-image: url('+ my.BannerBG_320 +');'
         +'  background-size: cover;'
         +'  width: 100%;'
         +'  height: 100%;'
@@ -796,9 +795,9 @@ var NFQDA = (function(my) {
         +'.seq01ProdImg {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 190px;'
-        +'  top: 30px;'
-        +'  left: 18px;'
+        +'  height: 95px;'
+        +'  top: 3px;'
+        +'  right: 48px;'
         +'  animation-name: smartphoneAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -807,20 +806,19 @@ var NFQDA = (function(my) {
         +'}'
      
         +'@keyframes smartphoneAni {'
-        +'  0% {opacity: 0;}'
-        +'  5% {opacity: 1;}'
-        +'  25% {opacity: 1;}'
-        +'  30% {opacity: 0;}'
-        +'  100% {opacity: 0;}'
+        +'  0% {opacity: 0;top:100px;}'
+        +'  5% {opacity: 1;top:3px;}'
+        +'  10% {opacity: 1;top:3px;}'
+        +'  20% {opacity: 0;top:3px;}'
+        +'  100% {opacity: 0;top:3px;}'
         +'}'
 
         +'.seq01ProdImgName {'
         +'  position: absolute;'
-        +'  width: 140px;'
+        +'  width: 80px;'
         +'  height: auto;'
-        +'  left: 50%;'
-        +'  margin-left: -20px;'
-        +'  top: 100px;'
+        +'  left: 105px;'
+        +'  top: 12px;'
         +'  animation-name: smartphoneTitleAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in();'
@@ -829,23 +827,23 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes smartphoneTitleAni {'
-        +'  0% {opacity: 0;}'
-        +'  5% {opacity: 1;}'
-        +'  25%{opacity: 1;}'
-        +'  30%{opacity: 0;}'
-        +'  100% {opacity: 0;}'
+        +'  0% {opacity: 0;top: -50px;}'
+        +'  5% {opacity: 1;top: 12px;}'
+        +'  10% {opacity: 1;top: 12px;}'
+        +'  20% {opacity: 0;top: 12px;}'
+        +'  100% {opacity: 0;top: 12px;}'
         +'}'
 
         +'.seq01DisrTopBG {'
         +'  position: absolute;'
-        +'  background-image: url('+ my.seq01DisrTopBG +');'
+        +'  background-image: url('+ my.seq01DisrTop2BG +');'
         +'  background-repeat: no-repeat;'
-        +'  width: 170px;'
-        +'  height: 90px;'
-        +'  right: 0px;'
-        +'  top: -10px;'
-        +'  padding-top: 20px;'
-        +'  transform-origin: right top;'
+        +'  width: 95px;'
+        +'  height: 50px;'
+        +'  left: 70px;'
+        +'  top: 0px;'
+        +'  padding-top: 0px;'
+        +'  transform-origin: left top;'
         +'  animation-name: disturberTopAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -856,11 +854,11 @@ var NFQDA = (function(my) {
 
         +'.seq01DisrTopTxt {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 15px;'
+        +'  font-size: 12px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
-        +'  width: 120px;'
-        +'  margin-left: 40px;'
+        +'  width: 90px;'
+        +'  margin-left: 10px;'
         +'  text-align: left;'
         +'  color: ' + my.seq01DisrTopTxtCol + ';'
         +'}'
@@ -878,9 +876,10 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken {'
         +'  position: absolute;'
-        +'  width: 300px;'
+        +'  width: 468px;'
         +'  height: auto;'
         +'  top: 0px;'
+        +'  left: -40px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBrokenAni;'
         +'  animation-duration: 15s;'
@@ -891,19 +890,19 @@ var NFQDA = (function(my) {
 
         +'@keyframes smartphoneBrokenAni {'
         +'  0% {opacity: 0;}'
-        +'  30% {opacity: 0;}'
+        +'  15% {opacity: 0;}'
+        +'  20% {opacity: 1;}'
         +'  35% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  58% {opacity: 0;}'
+        +'  40% {opacity: 0;}'
         +'  100% {opacity: 0;}'
         +'}'
 
         +'.smartphoneBroken2 {'
         +'  position: absolute;'
-        +'  width: 300px;'
+        +'  width: 468px;'
         +'  height: auto;'
-        +'  top:0px;'
-        +'  left: 0px;'
+        +'  top: 0px;'
+        +'  left: -40px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken2Ani;'
         +'  animation-duration: 15s;'
@@ -914,18 +913,19 @@ var NFQDA = (function(my) {
 
         +'@keyframes smartphoneBroken2Ani {'
         +'  0% {opacity: 0;}'
-        +'  35% {opacity: 0;}'
-        +'  40% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  58% {opacity: 0;}'
+        +'  23% {opacity: 0;}'
+        +'  28% {opacity: 1;}'
+        +'  35% {opacity: 1;}'
+        +'  40% {opacity: 0;}'
         +'  100% {opacity: 0;}'
         +'}'
 
         +'.smartphoneBroken3 {'
         +'  position: absolute;'
-        +'  width: 300px;'
+        +'  width: 468px;'
         +'  height: auto;'
         +'  top: 0px;'
+        +'  left: -40px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken3Ani;'
         +'  animation-duration: 15s;'
@@ -936,46 +936,45 @@ var NFQDA = (function(my) {
 
         +'@keyframes smartphoneBroken3Ani {'
         +'  0% {opacity: 0;}'
+        +'  28% {opacity: 0;}'
+        +'  32% {opacity: 1;}'
+        +'  35% {opacity: 1;}'
         +'  40% {opacity: 0;}'
-        +'  45% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  58% {opacity: 0;}'
         +'  100% {opacity: 0;}'
         +'}'
 
         +'.footer_zwei {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 10px;'
-        +'  text-align: center;'
+        +'  font-size: 7.6px;'
+        +'  text-align: left;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
         +'  left: 50px;'
-        +'  bottom: 5px;'
+        +'  bottom: 2px;'
         +'  position: absolute;'
         +'  opacity: 0;'
         +'  animation-name: footer_zweiAni;'
         +'  animation-duration: 15s;'
-        +'  animation-timing-function: ease-in-out();'
+        +'  animation-timing-function: linear;'
         +'  animation-fill-mode: forwards;'
         +'  animation-iteration-count: 2;'
         +'}'
 
         +'@keyframes footer_zweiAni {'
-        +'  0% {bottom: 5px;opacity: 0;}'
-        +'  30% {bottom: 5px;opacity: 0;}'
-        +'  34% {bottom: 5px;opacity: 1;}'
-        +'  56% {bottom: 5px;opacity: 1;}'
-        +'  60% {bottom: 5px;opacity: 0;}'
-        +'  100% {bottom: 5px;opacity: 0}'
+        +'  0% {opacity: 0;}'
+        +'  40% {opacity: 0;}'
+        +'  42% {opacity: 1;}'
+        +'  50% {opacity: 1;}'
+        +'  55% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
 
         +'.seq02HeadTxt {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 21px;'
-        +'  top:12px;'
-        +'  padding-left:0px;'
-        +'  left: 90px;'
+        +'  font-size: 15px;'
+        +'  top: 15px;'
+        +'  padding-left: 32px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -986,9 +985,9 @@ var NFQDA = (function(my) {
 
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
-        +'  width:50px;'
-        +'  left: 35px;'
-        +'  top: 12px;'
+        +'  width:30px;'
+        +'  top: 17px;'
+        +'  left: 50px;'
         +'  height:auto;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -999,36 +998,35 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes headlineAni {'
-        +'  0% {opacity: 0;}'
-        +'  30% {opacity: 0;}'
-        +'  35% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  60% {opacity: 0;}'
-        +'  100% {opacity: 0;}'
+        +'  0% {opacity: 0;left: 50px;}'
+        +'  15% {opacity: 0;left: 350px;}'
+        +'  20% {opacity: 1;left: 50px;}'
+        +'  50% {opacity: 1;left: 50px;}'
+        +'  55% {opacity: 0;left: 50px;}'
+        +'  100% {opacity: 0;left: 50px;}'
         +'}'
          
         +'.seq02DisrRightTxt {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 16px;'
+        +'  font-size: 8px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  width:100px;'
-        +'  padding-top: 30px;'
-        +'  margin-left: 35px;'
+        +'  padding-top: 5px;'
+        +'  margin-left: 5px;'
         +'  color: ' + my.seq02DisrRightTxtCol + ';'
         +'}'
 
         +'.seq02DisrRightBG {'
         +'  position: absolute;'
-        +'  width: 200px;'
-        +'  height: 171px;'
-        +'  top:40px;'
+        +'  width: 140px;'
+        +'  height: 60px;'
+        +'  top:-5px;'
         +'  right:-30px;'
         +'  opacity: 0;'
-        +'  background: url(' + my.seq02DisrRight2BG + ') no-repeat;'
+        +'  background: url(' + my.seq01DisrTopBG + ') no-repeat;'
         +'  background-size: contain;'
-        +'  transform-origin: right center;'
+        +'  transform-origin: right top;'
         +'  animation-name: disturberRightAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1038,13 +1036,12 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul1 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 16px;'
-        +'  line-height: 16px;'
+        +'  font-size: 7.5px;'
+        +'  line-height: 9px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 10px;'
-        +'  padding-left: 20px;'
-        +'  margin-left: 35px;'
+        +'  padding-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1056,13 +1053,12 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul2 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 16px;'
-        +'  line-height: 16px;'
+        +'  font-size: 7.5px;'
+        +'  line-height: 9px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 5px;'
-        +'  padding-left: 20px;'
-        +'  margin-left: 35px;'
+        +'  padding-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni2;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1074,13 +1070,12 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul3 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 16px;'
-        +'  line-height: 16px;'
+        +'  font-size: 7.5px;'
+        +'  line-height: 9px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 5px;'
-        +'  padding-left: 20px;'
-        +'  margin-left: 35px;'
+        +'  padding-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni3;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1091,65 +1086,45 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes disturberRightAni {'
-        +'  0% {opacity: 0;transform: rotateY(90deg);}'
-        +'  32% {opacity: 0;transform: rotateY(90deg);}'
-        +'  37% {opacity: 1;transform: rotateY(0deg);}'
-        +'  55% {opacity: 1;transform: rotateY(0deg);}'
-        +'  60% {opacity: 0;transform: rotateY(90deg);}'
+        +'  0% {opacity: 0;transform: rotateY(-90deg);}'
+        +'  38% {opacity: 0;transform: rotateY(-90deg);}'
+        +'  42% {opacity: 1;transform: rotateY(0deg);}'
+        +'  50% {opacity: 1;transform: rotateY(0deg);}'
+        +'  55% {opacity: 0;transform: rotateY(0deg);}'
         +'  100% {opacity: 0;}'
         +'}'
 
         +'@keyframes seq02DisrRightTxtAni {'
-        +'  34% {opacity: 0;}'
-        +'  42% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  60% {opacity: 0;}'
-        +'}'
-
-        +'@keyframes seq02DisrRightTxtAni2 {'
-        +'  36% {opacity: 0;}'
-        +'  44% {opacity: 1;}'
-        +'  55% {opacity: 1;}'
-        +'  60% {opacity: 0;}'
-        +'}'
-
-        +'@keyframes seq02DisrRightTxtAni3 {'
-        +'  38% {opacity: 0;}'
+        +'  40% {opacity: 0;}'
         +'  46% {opacity: 1;}'
         +'  55% {opacity: 1;}'
         +'  60% {opacity: 0;}'
         +'}'
 
-        // Step 3
-        
-        +'.seq02DisrRightBlue {'
-        +'  position: absolute;'
-        +'  width: 160px;'
-        +'  height: 170px;'
-        +'  top:40px;'
-        +'  right: -2px;'
-        +'  opacity: 0;'
-        +'  transform-origin: right center;'
-        +'  animation-name: disturberRightBlueAni;'
-        +'  animation-duration: 15s;'
-        +'  animation-timing-function: ease-in-out();'
-        +'  animation-fill-mode: forwards;'
-        +'  animation-iteration-count: 2;'
+        +'@keyframes seq02DisrRightTxtAni2 {'
+        +'  42% {opacity: 0;}'
+        +'  48% {opacity: 1;}'
+        +'  55% {opacity: 1;}'
+        +'  60% {opacity: 0;}'
         +'}'
 
-        +'@keyframes disturberRightBlueAni {'
-        +'  0% {opacity: 0;transform: rotateY(90deg);}'
-        +'  60% {opacity: 0;transform: rotateY(90deg);}'
-        +'  65% {opacity: 1;transform: rotateY(0deg);}'
-        +'  100% {opacity: 1;transform: rotateY(0deg);}'
+        +'@keyframes seq02DisrRightTxtAni3 {'
+        +'  44% {opacity: 0;}'
+        +'  50% {opacity: 1;}'
+        +'  55% {opacity: 1;}'
+        +'  60% {opacity: 0;}'
         +'}'
+
+        // Step 3
+
 
         +'.cta {'
         +'  position: absolute;'
         +'  padding: 6px 6px 5px;'
-        +'  left: 32%;'
-        +'  transform: translate(-50%, 0);'
-        +'  width: 165px;'
+        +'  right: 15px;'
+        +'  top:9px;'
+        +'  width: 70px;'
+        +'  height: 30px;'
         +'  text-align: left;'
         +'  background-color: ' + my.seq03CtaBgCol + ';'
         +'  animation-name: ctaAni;'
@@ -1160,30 +1135,20 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes ctaAni {'
-        +'  0% {bottom: 0px;opacity: 0;}'
-        +'  65% {bottom: -100px;opacity: 0;}'
-        +'  70% {bottom: 25px;opacity: 1;}'
-        +'  78% {bottom: 25px;opacity: 1;}'
-        +'  79% {bottom: 23px;opacity: 1;}'
-        +'  80% {bottom: 25px;opacity: 1;}'
-        +'  100% {bottom: 25px;opacity: 1}'
-        +'}'
-
-        +'@keyframes ctaAni {'
-        +'  0% {bottom: 25px;opacity: 0;}'
-        +'  62% {bottom: 25px;opacity: 0;}'
-        +'  68% {bottom: 25px;opacity: 1;}'
-        +'  69% {bottom: 23px;opacity: 1;}'
-        +'  70% {bottom: 25px;opacity: 1;}'
-        +'  73% {bottom: 25px;opacity: 1;}'
-        +'  74% {bottom: 23px;opacity: 1;}'
-        +'  75% {bottom: 25px;opacity: 1}'
-        +'  100% {bottom: 25px;opacity: 1}'
+        +'  0% {top: 9px;opacity: 0}'
+        +'  89% {top: 9px;opacity: 0}'
+        +'  91% {top: 9px;opacity: 1}'
+        +'  92% {top: 11px;opacity: 1}'
+        +'  93% {top: 9px;opacity: 1}'
+        +'  96% {top: 9px;opacity: 1}'
+        +'  97% {top: 11px;opacity: 1}'
+        +'  98% {top: 9px;opacity: 1}'
+        +'  100% {top: 9px;opacity: 1}'
         +'}'
 
         +'.seq03CtaTxt {'
-        +'  font-size: 14px;'
-        +'  line-height: 16px;'
+        +'  font-size: 8px;'
+        +'  line-height: 10px;'
         +'  text-align: center;'
         +'  color: ' + my.seq03CtaTxtCol + ';'
         +'}'
@@ -1192,8 +1157,8 @@ var NFQDA = (function(my) {
         +'  width: 20px;'
         +'  height: auto;'
         +'  position: absolute;'
-        +'  bottom: 0px;'
-        +'  left: 200px;'
+        +'  bottom: 6px;'
+        +'  right: 15px;'
         +'  animation-name: fingerani;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1202,30 +1167,29 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes fingerani {'
-        +'  0% {bottom: 5px;left:200px;opacity: 0;}'
-        +'  64% {bottom: 5px;left:200px;opacity: 0;}'
-        +'  68% {bottom: 20px;left:170px;opacity: 1;}'
-        +'  69% {bottom: 17px;left:170px;opacity: 1;}'
-        +'  70% {bottom: 20px;left:170px;opacity: 1;}'
-        +'  73% {bottom: 20px;left:170px;opacity: 1;}'
-        +'  74% {bottom: 17px;left:170px;opacity: 1;}'
-        +'  75% {bottom: 20px;left:170px;opacity: 1;}'
-        +'  99.8% {bottom: 20px;left:170px;opacity: 1;}'
-        +'  100% {bottom: 20px;left:170px;opacity: 0;}'
+        +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
         +'}'
 
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 10px;'
-        +'  text-align: center;'
+        +'  font-size: 8px;'
+        +'  text-align: left;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
         +'  position: absolute;'
         +'  max-width:190px;'
         +'  width:180px;'
-        +'  left: 32%;'
-        +'  bottom:5px;'
-        +'  transform: translate(-50%, 0);'
+        +'  left:60px;'
+        +'  bottom: 2px;'
         +'  opacity: 0;'
         +'  animation-name: footerAni;'
         +'  animation-duration: 15s;'
@@ -1235,43 +1199,21 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes footerAni {'
-        +'  0% {bottom: 3px;opacity: 0;}'
-        +'  60% {bottom: 3px;opacity: 0;}'
-        +'  65% {bottom: 3px;opacity: 1;}'
-        +'  100% {bottom: 3px;opacity: 1}'
-        +'.seq03DisrRightBlueBG{'
-        +'  position: absolute;'
-        +'  background: url(' + my.seq02DisrRightBlue + ') no-repeat left center / contain;'
-        +'  width: 210px;'
-        +'  height: 230px;'
-        +'  top:90px;'
-        +'  right:0px;'
-        +'  opacity: 0;'
-        +'  transform-origin: right center;'
-        +'  animation-name: disturberRightBlueAni;'
-        +'  animation-duration: 15s;'
-        +'  animation-timing-function: ease-in-out();'
-        +'  animation-fill-mode: forwards;'
-        +'  animation-iteration-count: 2;'
-        +'}'
-
-        +'@keyframes disturberRightBlueAni {'
-        +'  0% {opacity: 0;transform: rotateY(90deg);}'
-        +'  60% {opacity: 0;transform: rotateY(90deg);}'
-        +'  65% {opacity: 1;transform: rotateY(0deg);}'
-        +'  100% {opacity: 1;transform: rotateY(0deg);}'
-        +'}'
+        +'  0% {opacity: 0;}'
+        +'  70% {opacity: 0;}'
+        +'  75% {opacity: 1;}'
+        +'  85% {opacity: 1;}'
+        +'  90% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
         
         +'.seq03HeadTxt {'
         +'  position: absolute;'
-        +'  font-size: 23px;'
-        +'  width: 320px;'
-        +'  top:10px;'
-        +'  left: 50%;'
-        +'  transform: translate(-50%, 0);'
+        +'  font-size: 18px;'
+        +'  top: 9px;'
+        +'  left: 63px;'
         +'  line-height: 28px;'
-        +'  text-align: center;'
+        +'  text-align: left;'
         +'  animation-name: headline2Ani;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1284,9 +1226,8 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-size: ' + my.seq03HeadTxt2Size + ';'
         +'  max-width:120px;'
-        +'  left: 50%;'
-        +'  transform: translate(-50%, 0);'
-        +'  top:40px;'
+        +'  top: 4px;'
+        +'  left: 407px;'
         +'  line-height: 28px;'
         +'  text-align: center;'
         +'  animation-name: headline2Ani;'
@@ -1299,19 +1240,15 @@ var NFQDA = (function(my) {
 
         +'@keyframes headline2Ani {'
         +'  0% {opacity: 0;}'
-        +'  60% {opacity: 0;}'
-        +'  65% {opacity: 1;}'
+        +'  55% {opacity: 0;}'
+        +'  60% {opacity: 1;}'
+        +'  85% {opacity: 1;}'
+        +'  90% {opacity: 1;}'
         +'  100% {opacity: 1;}'
         +'}'
 
         +'.seq03TextWall {'
         +'  position: absolute;'
-        +'  width: 160px;'
-        +'  height: 172px;'
-        +'  background: url(' + my.seq02DisrRightBlue + ') no-repeat left center / contain;'
-        +'  top:40px;'
-        +'  right: 0px;'
-        +'  opacity: 0;'     
         +'  transform-origin: right center;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
@@ -1323,27 +1260,27 @@ var NFQDA = (function(my) {
 
         +'@keyframes disturberRight2Ani {'
         +'  0% {opacity: 0;}'
-        +'  60% {opacity: 0;}'
-        +'  65% {opacity: 1;}'
-        +'  100% {opacity: 1;}'
+        +'  70% {opacity: 0;}'
+        +'  75% {opacity: 1;}'
+        +'  85% {opacity: 1;}'
+        +'  90% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
 
         
         +'.seq03Textul2 {'
-        +'  top: 27px;'
+        +'  top: 45px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03Textul3 {'
-        +'  top: 55px;'
+        +'  top: 90px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03TextulBG {'
         +'  position: absolute;'
         +'  width: 27px;'
-        +'  top: 20px;'
-        +'  left: 30px;'
         +'  height: auto;'
         +'  background: url(' + my.seq03TextulImg + ') no-repeat left center / contain;'
         +'}'
@@ -1351,33 +1288,42 @@ var NFQDA = (function(my) {
         +'.seq03TextulHead {'
         +'  position: absolute;'
         +'  font-size: 24px;'
-        +'  color: #ffed00;'
-        +'  left: 60px;'
-        +'  top: 19px;'
+        +'  color: #F8EF1A;'
+        +'  left: 30px;'
         +'}'
         
         +'.seq03TextulSub {'
         +'  position: absolute;'
-        +'  font-size: 10px;'
-        +'  left: 110px;'
-        +'  top: 32px;'
+        +'  font-size: 12px;'
+        +'  left: 30px;'
+        +'  top: 26px;'
         +'  text-transform: uppercase;'
         +'}'
         
         +'.underscore {'
         +'  position: absolute;'        
-        +'  top: 105px;'
-        +'  left: 29px;'
-        +'  width: 120px;'
+        +'  top: 135px;'
+        +'  left: -4px;'
+        +'  width: 100px;'
         +'  height:auto;'
         +'}'
 
-        +'.pricefrom {'
+        +'.seqpricefrom {'
         +'  position: absolute;'        
-        +'  top: 140px;'
-        +'  position: absolute;'
-        +'  font-size: 12px;'
+        +'  top: -18px;'
+        +'  left: 42px;'
+        +'  font-size: 16px;'
         +'  color: #ffed00;'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
+        +'}'
+
+        +'.pricekomma {'
+        +'  position: absolute;'        
+        +'  top: -68px;'
+        +'  left: 91px;'
+        +'  font-size: 66px;'
+        +'  color: #ffed00;'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
 
         +'.price {'
@@ -1390,24 +1336,6 @@ var NFQDA = (function(my) {
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
-
-        +'.seqpricefrom {'
-        +'  position: absolute;'        
-        +'  top: 179px;'
-        +'  left: 30px;'
-        +'  position: absolute;'
-        +'  font-size: 26px;'
-        +'  color: #ffed00;'
-        +'}'
-
-        +'.pricekomma{'
-        +'  font-size: 93px;'
-        +'  font-family: websans_extra_black, Arial, sans-serif;'
-        +'  position: absolute;'
-        +'  top: 106px;'
-        +'  left: 108px;'
-        +'  color: #ffed00;'
-        +'}'
         +
         '.hovertext {' +
         '  width:70px;' +
@@ -1415,7 +1343,8 @@ var NFQDA = (function(my) {
         '  position: absolute;' +
         '  opacity:1;' +
         '  left:50px;' +
-        '  top:267px;' +
+        '  bottom:0px;' +
+        '  z-index:999;'+
         '  transition: 0.3s;' +
         '  animation-name: hovertextani;' +
         '  animation-duration: 15s;' +
@@ -1429,33 +1358,38 @@ var NFQDA = (function(my) {
         '@keyframes hovertextani {' +
         '  0% {opacity: 0; left:-120px;}' +
         '  60% {opacity: 0; left:-120px;}' +
-        '  61% {opacity: 1; left:220px;}' +
-        '  100% {opacity: 1; left:220px;}' +
+        '  61% {opacity: 1; left:420px;}' +
+        '  100% {opacity: 1; left:420px;}' +
         '}'
 
         +
         '.hovertext:hover +.sternchentext {' +
         '  display:inline;' +
         '  opacity:1;' +
-        '  left:0px;' +
-        '  transition: left 0.3s;' +
+        '  bottom:0px;' +
+        '  transition: bottom 0.3s;' +
         '}'
 
         +'.sternchentext{'
         +'  font-family: Arial;'
         // +'  text-align:justify;'
-        +'  line-height: 15px;'
-        +'  width:100%;'
+        +'  line-height: 11px;'
+        +'  width:75%;'
         +'  background-color:white;'
         +'  position:absolute;'
-        +'  bottom:0px;'
-        +'  left:-120px;'
-        +'  padding:5px 8px 8px;'
-        +'  font-size:12px;'
+        +'  bottom: -120px;'
+        +'  left:0px;'
+        +'  padding:5px 8px 8px 5px;'
+        +'  font-size:10px;'
         +'  color:#000;'
         +'  display:inline;'
         +'  opacity:0;'
+        +'  z-index:998;'
         +'  transition: all 0.3s;'
+        +'  -webkit-user-select: none;'
+        +'  -moz-user-select: none;'
+        +'  -ms-user-select: none;'
+        +'  user-select: none;'
         +'}'
         +'}'
         
@@ -1463,10 +1397,14 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-size: 9px;'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  top: 164px;'
-        +'  left: 212px;'
+        +'  top: 22px;'
+        +'  left: 255px;'
         +'  width: 56px;'
         +'  z-index: 2;'
+        +'  -webkit-user-select: none;'
+        +'  -moz-user-select: none;'
+        +'  -ms-user-select: none;'
+        +'  user-select: none;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1478,9 +1416,9 @@ var NFQDA = (function(my) {
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 88px;'
-        +'  left: 25px;'
-        +'  top: 85px;'
+        +'  height: 55px;'
+        +'  left: 220px;'
+        +'  top: 10px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
         +'  animation-duration: 15s;'
@@ -1492,9 +1430,9 @@ var NFQDA = (function(my) {
         +'.smartphoneSmall2 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 105px;'
-        +'  left: 50px;'
-        +'  top: 75px;'
+        +'  height: 61px;'
+        +'  left: 232px;'
+        +'  top: 4px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
         +'  animation-duration: 15s;'
@@ -1506,9 +1444,9 @@ var NFQDA = (function(my) {
         +'.smartphoneSmall3 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 115px;'
-        +'  left: 70px;'
-        +'  top: 70px;'
+        +'  height: 71px;'
+        +'  left: 248px;'
+        +'  top: 2px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
         +'  animation-duration: 15s;'
@@ -1519,9 +1457,11 @@ var NFQDA = (function(my) {
         
         +'@keyframes smartphoneSmallAni {'
         +'  0% {opacity: 0;}'
-        +'  60% {opacity: 0;}'
-        +'  65% {opacity: 1;}'
-        +'  100% {opacity: 1;}'
+        +'  55% {opacity: 0;}'
+        +'  60% {opacity: 1;}'
+        +'  70% {opacity: 1;}'
+        +'  75% {opacity: 0;}'
+        +'  100% {opacity: 0;}'
         +'}'
 
         + 'sup {'
@@ -1540,6 +1480,7 @@ var NFQDA = (function(my) {
         + '    height: ' + my.bannerH + 'px;'
         + '    overflow: hidden;'
         +'  border: 1px solid #000000;'
+        +'  background-color: #0d3374;'
         + '}'
 
         + '#html-loader, #clickButton, .lk01BgImgCtr, .lk01HlImgCtr, .lk02BgImgCtr, .introCtr, .introImg {'
@@ -1720,15 +1661,18 @@ var NFQDA = (function(my) {
                 +'<div id="BannerBG"></div>' +
                 '<div id="BannerBG2"></div>' +
                 '<div id="BannerBG3"></div>' +
-
+                '<div class="cta">'+
+                  '<div class="seq03CtaTxt">' + my.seq03CtaTxtSmall + '</div>'+
+                '</div>'+
+                '<img class="finger" src="' + my.finger + '"></img>' +
                 '<div class="footer">' + my.footer + '</div>' +
                 '<div class="footer_zwei">' + my.footer_zwei + '</div>' +
                 '<img class="smartphoneSmall1" src="' + my.SmallProduct3 + '"></img>' +
                 '<img class="smartphoneSmall2" src="' + my.SmallProduct2 + '"></img>' +
                 '<img class="smartphoneSmall3" src="' + my.SmallProduct1 + '"></img>' +
-                '<img class="smartphoneBroken" src="' + my.SecondProduct_300x250 + '"></img>' +
-                '<img class="smartphoneBroken2" src="' + my.SecondProduct2_300x250 + '"></img>' +
-                '<img class="smartphoneBroken3" src="' + my.SecondProduct3_300x250 + '"></img>' +
+                '<img class="smartphoneBroken" src="' + my.SecondProduct_768 + '"></img>' +
+                '<img class="smartphoneBroken2" src="' + my.SecondProduct2_768 + '"></img>' +
+                '<img class="smartphoneBroken3" src="' + my.SecondProduct3_768 + '"></img>' +
 
                 '<div class="seq02DisrRightBG">'+
                     '<div class="seq02DisrRightTxt">' + my.seq02DisrRightTxt + '</div>'+
@@ -1736,25 +1680,10 @@ var NFQDA = (function(my) {
                     '<div class="seq02DisrRightTxtul2">' + my.seq02DisrRightTxtul2 + '</div>'+
                     '<div class="seq02DisrRightTxtul3">' + my.seq02DisrRightTxtul3 + '</div>'+
                 '</div>'+
-                '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG"></img>'+
+                '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
                 '<div class="seq03TextWall">'+
-                    '<div class="seq03Textul">' + 
-                        '<img class="seq03TextulBG" id="seq03TextulBG_1" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead" id="seq03TextulHead_1">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub" id="seq03TextulSub_1">' + my.seq03TextulSub1 + '</div>' +
-                    '</div>'+
-                    '<div class="seq03Textul2">' + 
-                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub">' + my.seq03TextulSub2 + '</div>' +
-                    '</div>'+
-                    '<div class="seq03Textul3">' + 
-                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub">' + my.seq03TextulSub3 + '</div>' +
-                    '</div>'+
                     '<img class="underscore" src="' + my.underscore + '">'+
                     '<div class="price">' + my.price + '</div>' +
                     '<div class="pricekomma">' + my.pricekomma + '</div>' +
@@ -1762,17 +1691,11 @@ var NFQDA = (function(my) {
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '</div>'+
 
+
                 '<div class="banner2BG"></div>' +
                 '<img class="seq01ProdImgName" src="' + my.seq01ProdImgName + '"></img>' +
                 '<img class="seq01ProdImg" src="' + my.seq01ProdImg + '"></img>' +
                 
-                '<div class="seq01DisrTopBG">'+
-                   '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
-                '</div>'+
-                '<div class="cta">'+
-                    '<div class="seq03CtaTxt">' + my.seq03CtaTxt + '</div>'+
-                '</div>'+
-                '<img class="finger" src="' + my.finger + '"></img>' +
                 '<img class="logo" src="' + my.logo + '">' +
                 '<div class="pricetag">' +
                 '<div class="hovertext">' + '</div>' +
