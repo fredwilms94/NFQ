@@ -1054,7 +1054,7 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 24px;'
         +'  top:10px;'
-        +'  padding-left:3px;'
+        +'  padding-left:0px;'
         +'  left: 110px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1262,7 +1262,7 @@ var NFQDA = (function(my) {
         +'}'
 
         +'.seq03CtaTxt {'
-        +'  font-size: 19px;'
+        +'  font-size: 14px;'
         +'  line-height: 16px;'
         +'  text-align: center;'
         +'  color: ' + my.seq03CtaTxtCol + ';'
@@ -1927,14 +1927,11 @@ var NFQDA = (function(my) {
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
                 '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
-                '<img class="seq02DisrRightBlue" src="' + my.seq02DisrRightBlue + '">'+
-               /* '<div class="seq03TextWall">'+
-                
-
-                  '<div class="seq03Textul">' + 
-                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub">' + my.seq03TextulSub1 + '</div>' +
+                '<div class="seq03TextWall">'+
+                    '<div class="seq03Textul">' + 
+                        '<img class="seq03TextulBG" id="seq03TextulBG_1" src="' + my.seq03TextulImg + '"></img>' +
+                        '<div class="seq03TextulHead" id="seq03TextulHead_1">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub" id="seq03TextulSub_1">' + my.seq03TextulSub1 + '</div>' +
                     '</div>'+
                     '<div class="seq03Textul2">' + 
                         '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
@@ -1947,14 +1944,10 @@ var NFQDA = (function(my) {
                         '<div class="seq03TextulSub">' + my.seq03TextulSub3 + '</div>' +
                     '</div>'+
                     '<img class="underscore" src="' + my.underscore + '">'+
-                    '<img class="price" src="' + my.seqprice + '"></img>' + */
-                    //'<div class="pricefrom">'+ my.seqpricefrom +'</div>'+
-                    //'<div class="price">'+ my.seqprice +'</div>'+
-                    //'<div class="oldprice">'+ my.seqoldprice +
-                    //    '<img class="seqoldpriceline" src="' + my.seqoldpriceline + '">' +
-                    //    '<div class="seqoldpricetxt">' + my.seqoldpricetxt + '</div>' +
-                    //'</div>'+
-                    //'<div class="pricefooter">'+ my.pricefooter +'</div>'+
+                    '<div class="price">' + my.price + '</div>' +
+                    '<div class="pricekomma">' + my.pricekomma + '</div>' +
+                    '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
+                    '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '</div>'+
 
                 '<div class="banner2BG"></div>' +
