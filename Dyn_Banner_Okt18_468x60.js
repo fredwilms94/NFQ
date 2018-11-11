@@ -502,8 +502,6 @@ var NFQDA = (function(my) {
         my.getTmplAttr('SmallProduct3', my.SmallProduct3, url);
         my.getTmplAttr('seq03HeadTxt', my.seq03HeadTxt, str);
         my.getTmplAttr('seq03HeadTxtSize', my.seq03HeadTxtSize, str);
-        my.getTmplAttr('seq03HeadTxt2', my.seq03HeadTxt2, str);
-        my.getTmplAttr('seq03HeadTxt2Size', my.seq03HeadTxt2Size, str);
         my.getTmplAttr('seq03HeadTxt768', my.seq03HeadTxt768, str);
         my.getTmplAttr('pricefootnote', my.pricefootnote, str);
         
@@ -516,8 +514,9 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
-        my.getTmplAttr('seqprice', my.seqprice, url);
-        
+        my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
+        my.getTmplAttr('pricefootnote', my.pricefootnote, str);
+        my.getTmplAttr('pricekomma', my.pricekomma, str);
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
         my.getTmplAttr('seqoldpricetxt', my.seqoldpricetxt, str);
@@ -752,6 +751,11 @@ var NFQDA = (function(my) {
         + '@font-face {'
         + '    font-family: FrutigerLTPro-77BlkCn;'
         + '    src: url("http://1u1.dynamic-ads.de/api/uploads/assets_files/5baa793ee20a9.woff") format("opentype");'
+        + '}'
+
+        + '@font-face {'
+        + '    font-family: websans_extra_black;'
+        + '    src: url("http://1u1.dynamic-ads.de/api/uploads/assets_files/5bbc9df0bc608.woff") format("opentype");'
         + '}'
 
         + '* {'
@@ -1028,7 +1032,7 @@ var NFQDA = (function(my) {
 
         +'.footer_zwei {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
+        +'  font-size: 8px;'
         +'  text-align: center;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
@@ -1204,7 +1208,7 @@ var NFQDA = (function(my) {
 
         +'.cta {'
         +'  position: absolute;'
-        +'  padding: 4px 6px 5px;'
+        +'  padding: 2px 6px 10px 6px;'
         +'  right: 15px;'
         +'  top:32px;'
         +'  width: 98px;'
@@ -1259,13 +1263,13 @@ var NFQDA = (function(my) {
         +'  73% {bottom: 11px;left:446px;opacity: 1;}'
         +'  74% {bottom: 8px;left:446px;opacity: 1;}'
         +'  75% {bottom: 11px;left:446px;opacity: 1;}'
-        +'  99.8% {bottom: 11px;left:446px;opacity: 0;}'
+        +'  99.8% {bottom: 11px;left:446px;opacity: 1;}'
         +'  100% {bottom: 11px;left:446px;opacity: 0;}'
         +'}'
 
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
+        +'  font-size: 8px;'
         +'  text-align: center;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
@@ -1291,8 +1295,8 @@ var NFQDA = (function(my) {
         +'.seq03HeadTxt {'
         +'  position: absolute;'
         +'  font-size: 16px;'
-        +'  top:-2px;'
-        +'  left: 201px;'
+        +'  top:-5px;'
+        +'  left: 204px;'
         +'  line-height: 28px;'
         +'  text-align: center;'
         +'  animation-name: headline2Ani;'
@@ -1383,45 +1387,66 @@ var NFQDA = (function(my) {
         +'  text-transform: uppercase;'
         +'}'
         
+// underscore not used in this format 
         +'.underscore {'
+        +'  display: none;'        
         +'  position: absolute;'        
-        +'  top: 135px;'
-        +'  left: -4px;'
-        +'  width: 100px;'
-        +'  height:auto;'
-        +'}'
-
-        +'.pricefrom {'
-        +'  position: absolute;'        
-        +'  top: 140px;'
-        +'  position: absolute;'
-        +'  font-size: 12px;'
-        +'  color: #F8EF1A;'
+        +'  top: 131px;'
+        +'  left: 14px;'
+        +'  width: 96px;'
+        +'  height: auto;'
         +'}'
 
         +'.price {'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'  position: absolute;'        
-        +'  top:-59px;'
-        +'  left: 20px;'
-        +'  width:96px;'
+        +'  top: -70px;'
+        +'  left: 44px;'
         +'  position: absolute;'
-        +'  font-size: 24px;'
-        +'  color: #F8EF1A;'
+        +'  font-size: 45px;'
+        +'  color: #ffed00;'
         +'}'
-        
+
+        +'.seqpricefrom {'
+        +'  position: absolute;'        
+        +'  top: -42px;'
+        +'  left: 28px;'
+        +'  position: absolute;'
+        +'  font-size: 15px;'
+        +'  color: #ffed00;'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
+        +'}'
+
+        +'.seqpricefrom span{'
+        +'  font-size: 150px;'
+        +'}'
+
+        +'.pricekomma{'
+        +'  font-size: 48px;'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
+        +'  position: absolute;'
+        +'  top: -78px;'
+        +'  left: 66px;'
+        +'  color: #ffed00;'
+        +'}'
+
+// superscripted numbers of price
+        + 'sup {'
+        + ' vertical-align: middle;'
+        + ' position: absolute;'
+        + ' top: 4px;'
+        + ' font-size: 53%;'
+        + ' left: 26px;'
+        + '}'
+
         +'.pricefootnote {'
         +'  position: absolute;'
-        +'  font-size: 8px;'
+        +'  font-size: 10px;'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  top: 37px;'
-        +'  left: 242px;'
-        +'  width: 59px;'
-        +'  animation-name: disturberRight2Ani;'
-        +'  animation-duration: 15s;'
-        +'  animation-timing-function: ease-in-out();'
-        +'  animation-fill-mode: forwards;'
-        +'  animation-iteration-count: 2;'
-        +'  animation-delay: .2s;'
+        +'  top: -41px;'
+        +'  left: 82px;'
+        +'  width: 65px;'
+        +'  line-height: 9px;'
         +'}'
 
 
@@ -1429,7 +1454,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  width: auto;'
         +'  height: 93px;'
-        +'  left: 82px;'
+        +'  left: 75px;'
         +'  top: 18px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
@@ -1442,8 +1467,8 @@ var NFQDA = (function(my) {
         +'.smartphoneSmall2 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 98px;'
-        +'  left: 103px;'
+        +'  height: 96px;'
+        +'  left: 94px;'
         +'  top: 10px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
@@ -1457,7 +1482,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  width: auto;'
         +'  height: 89px;'
-        +'  left: 125px;'
+        +'  left: 116px;'
         +'  top: 5px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
@@ -1473,15 +1498,7 @@ var NFQDA = (function(my) {
         +'  65% {margin-left: 15px;opacity: 1;}'
         +'  100% {margin-left: 15px;opacity: 1;}'
         +'}'
-
-        + 'sup {'
-        + '    vertical-align: middle;'
-        + '    position: relative;'
-        + '    top: -0.6em;'
-        + '    font-size: 45%;'
-        + '}'
-
-        
+       
         + '.bannerHTML5, .lkWrap, #bannerBg {'
         + '    position: absolute;'
         + '    top: 0;'
@@ -1895,9 +1912,27 @@ var NFQDA = (function(my) {
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
 
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
-                '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '<div class="seq03TextWall">'+
-                    '<img class="price" src="' + my.seqprice + '"></img>' +
+                    '<div class="seq03Textul">' + 
+                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
+                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub">' + my.seq03TextulSub1 + '</div>' +
+                    '</div>'+
+                    '<div class="seq03Textul2">' + 
+                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
+                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub">' + my.seq03TextulSub2 + '</div>' +
+                    '</div>'+
+                    '<div class="seq03Textul3">' + 
+                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
+                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub">' + my.seq03TextulSub3 + '</div>' +
+                    '</div>'+
+                    '<img class="underscore" src="' + my.underscore + '">'+
+                    '<div class="price">' + my.price + '</div>' +
+                    '<div class="pricekomma">' + my.pricekomma + '</div>' +
+                    '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
+                    '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '</div>'+
 
                 '<div class="banner2BG"></div>' +
