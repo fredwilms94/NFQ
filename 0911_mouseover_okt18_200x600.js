@@ -15,6 +15,7 @@ var NFQDA = (function() {
     my.NFQBanners = {};
 
     // jQuery plugin refs
+
     my.fontSpy;
 
     // timestamp only for debugging output
@@ -187,63 +188,7 @@ var NFQDA = (function(my) {
         my.tilLastLookTime += t;
     };*/
 
-    // TODO: move this function to line_functions
-    // looks might differ from line to line
-    /**
-     * setGdnStop - calculate and set gdn stop time
-     */
-    my.setGdnStop = function() {
-        var lk, t;
-        var gdnt = 29000;
-        var l = my.loopTime + my.tilLastLookTime;
-        var n = my.looks.length - 1; // eslint-disable-line no-magic-numbers
-        var loopTime1 = my.loopTime;
-
-        //my.debug("loop time: " + my.loopTime + " - my.tilLastLookTime: " + my.tilLastLookTime);
-        clearTimeout(my.gdnStop);
-        my.gdnStopTime = 0;
-
-        while (my.gdnStopTime < gdnt) {
-            my.gdnStopTime += l;
-        }
-        do {
-            my.gdnStopTime -= l;
-        } while (my.gdnStopTime > gdnt);
-
-        // if too many looks, we try to reach last look
-        if (my.gdnStopTime === 0) { // eslint-disable-line no-magic-numbers
-            while (loopTime1 > gdnt) {
-                lk = my.looks[n];
-
-                switch (lk) {
-                case 'look01':
-                    t = my.look01Time;
-                    break;
-                case 'look02':
-                    t = my.look02Time;
-                    break;
-                case 'look03':
-                    t = my.look03Time;
-                    break;
-                case 'intro':
-                    t = my.introTime;
-                    break;
-                // no default
-                }
-
-                loopTime1 -= t;
-                n--;
-            }
-            my.gdnStopTime = loopTime1;
-        }
-
-        // set timeout to stop look timer
-        my.debug('- gdn animation stop: ' + (my.gdnStopTime / 1000) + 's\n\n'); // eslint-disable-line no-magic-numbers
-        my.gdnStop = setTimeout(my.killLookTimer, my.gdnStopTime);
-    };
-
-
-    /**
+     /**
      * killLookTimer - kills looks timer
      */
     my.killLookTimer = function() {
@@ -463,9 +408,9 @@ var NFQDA = (function(my) {
         my.getTmplAttr('obaTxt', my.defObaTxt, str);
 
         my.getTmplAttr('logo', my.logo, url);
-        my.getTmplAttr('BannerBG_120', my.BannerBG_120, url);
-        my.getTmplAttr('BannerBG2_120', my.BannerBG2_120, url);
-        my.getTmplAttr('BannerBG3_120', my.BannerBG3_120, url);
+        my.getTmplAttr('BannerBG_200', my.BannerBG_200, url);
+        my.getTmplAttr('BannerBG2_200', my.BannerBG2_200, url);
+        my.getTmplAttr('BannerBG3_200', my.BannerBG3_200, url);
         my.getTmplAttr('finger', my.finger, url);
         
         // SEQUENCE 1        
@@ -479,7 +424,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('SecondProduct_120', my.SecondProduct_120, url);
         my.getTmplAttr('SecondProduct2_120', my.SecondProduct2_120, url);
         my.getTmplAttr('SecondProduct3_120', my.SecondProduct3_120, url);
-        my.getTmplAttr('seq02DisrRightBG', my.seq02DisrRightBG, url);
+        my.getTmplAttr('seq02DisrRight2BG', my.seq02DisrRight2BG, url);
         my.getTmplAttr('seq02DisrRightTxt', emptyStr, str);
         my.getTmplAttr('seq02DisrRightTxtCol', my.seq02DisrRightTxtCol, str);        
         my.getTmplAttr('seq02DisrRightTxtul1', emptyStr, str);
@@ -502,10 +447,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq03HeadTxt', my.seq03HeadTxt, str);
         my.getTmplAttr('seq03HeadTxtSize', my.seq03HeadTxtSize, str);
         my.getTmplAttr('seq03HeadTxt2', my.seq03HeadTxt2, str);
-        my.getTmplAttr('seq03HeadTxt2Size', my.seq03HeadTxt2Size, str);
-        my.getTmplAttr('pricefootnote', my.pricefootnote, str);
-        
-        
+        my.getTmplAttr('seq03HeadTxt2Size', my.seq03HeadTxt2Size, str);        
         my.getTmplAttr('seq03TextulImg', my.seq03TextulImg, url);
         my.getTmplAttr('seq03TextulHead1', my.seq03TextulHead1, str);
         my.getTmplAttr('seq03TextulSub1', my.seq03TextulSub1, str);
@@ -514,57 +456,21 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
-        my.getTmplAttr('seqprice', my.seqprice, url);
-        
+        my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
+        my.getTmplAttr('pricefootnote', my.pricefootnote, str);
+        my.getTmplAttr('pricekomma', my.pricekomma, str);
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
-        my.getTmplAttr('oldpricetxt', my.oldpricetxt, str);
-        
-               
+        my.getTmplAttr('seqoldpricetxt', my.seqoldpricetxt, str);
+        my.getTmplAttr('sternchentext', my.sternchentext, str);
+        my.getTmplAttr('sternchentext2', my.sternchentext2, str);
+        my.getTmplAttr('sternchentext3', my.sternchentext3, str);
         my.getTmplAttr('FirstDisrRight', my.FirstDisrRight, url);
         my.getTmplAttr('SecondDisrRight120', my.SecondDisrRight120, url);
-
-        
         my.getTmplAttr('FirstHeadline120', my.FirstHeadline120, url);
         my.getTmplAttr('SecondHeadline120',  my.SecondHeadline120, url);
-
         my.getTmplAttr('ProductTitle', my.ProductTitle, url);
-        
         my.getTmplAttr('Cta', my.Cta, url);
-
-
-
-
-
-        
-        my.getTmplAttr('lk01BgImg', my.emptyPng, url);
-        my.getTmplAttr('lk01HlTxt', emptyStr, str);
-        my.getTmplAttr('lk01HlTxtCol', my.defLk01HlTxtCol, str);
-        my.getTmplAttr('lk01DisrLeftBgImg', my.defLk01DisrLeftBgImg, url);
-        my.getTmplAttr('lk01DisrLeftAnim', my.defLk01DisrLeftAnim, str);
-        my.getTmplAttr('lk01DisrRightTxt', emptyStr, str);
-        my.getTmplAttr('lk01DisrRightTxtCol', my.defLk01DisrRightTxtCol, str);
-        my.getTmplAttr('lk01DisrRightTxtBgCol', my.defLk01DisrRightTxtBgCol, str);
-        my.getTmplAttr('lk01DisrRightBgImg', my.defLk01DisrRightBgImg, url);
-        my.getTmplAttr('lk01DisrRightAnim', my.defLk01DisrRightAnim, str);
-        my.getTmplAttr('lk01SmallprintTxt', emptyStr, str);
-        my.getTmplAttr('lk01SmallprintTxtCol', my.defLk01SmallprintTxtCol, str);
-
-        my.getTmplAttr('lk02BgImg', my.emptyPng, url);
-        my.getTmplAttr('lk02HlTxt', emptyStr, str);
-        my.getTmplAttr('lk02HlTxtCol', my.defLk02HlTxtCol, str);
-        my.getTmplAttr('lk02HlBgImg', my.emptyPng, url);
-
-
-
-        my.getTmplAttr('introImg', emptyStr, url);
-        if (my.introImg !== '') {
-            my.loadIntro = true;
-            my.hasIntro = true;
-        }
-        my.getTmplAttr('showIntro', 'defShowIntro', bool);
-        my.getTmplAttr('introLink', 'defIntroLink', str);
-        my.getTmplAttr('introTime', 'introTime', num);
 
         // ************************************************************
         // products
@@ -752,6 +658,11 @@ var NFQDA = (function(my) {
         + '    src: url("http://1u1.dynamic-ads.de/api/uploads/assets_files/5baa793ee20a9.woff") format("opentype");'
         + '}'
 
+        + '@font-face {'
+        + '    font-family: websans_extra_black;'
+        + '    src: url("http://1u1.dynamic-ads.de/api/uploads/assets_files/5bbc9df0bc608.woff") format("opentype");'
+        + '}'
+
         + '* {'
         + '    box-sizing: border-box;'
         + '    margin: 0;'
@@ -773,12 +684,13 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  bottom: 30px;'
         +'  left: 50%;'
-        +'  transform: translate(-50%,0%);'
+        +'  transform: translate(-50%, 0%);'
         +'}'
 
         +'#BannerBG {'
-        +'  background-image: url('+ my.BannerBG_120 +');'
+        +'  background-image: url('+ my.BannerBG_200 +');'
         +'  background-color: #0d3374;'
+        +'  background-size: cover;'
         +'  width: 100%;'
         +'  height: 100%;'
         +'  left: 0px;'
@@ -799,8 +711,9 @@ var NFQDA = (function(my) {
         +'}'
 
         +'#BannerBG2 {'
-        +'  background-image: url('+ my.BannerBG2_120 +');'
+        +'  background-image: url('+ my.BannerBG2_200 +');'
         +'  background-color: #0d3374;'
+        +'  background-size: cover;'
         +'  width: 100%;'
         +'  height: 100%;'
         +'  left: 0px;'
@@ -822,9 +735,10 @@ var NFQDA = (function(my) {
         +'}'
 
         +'#BannerBG3 {'
-        +'  background-image: url('+ my.BannerBG3_120 +');'
+        +'  background-image: url('+ my.BannerBG3_200 +');'
         +'  background-color: #0d3374;'
         +'  background-repeat: no-repeat;'
+        +'  background-size: cover;'
         +'  width: 100%;'
         +'  height: 100%;'
         +'  left: 0px;'
@@ -848,7 +762,8 @@ var NFQDA = (function(my) {
         // Step 1
 
         +'.banner2BG {'
-        +'  background-image: url('+ my.BannerBG_120 +');'
+        +'  background-image: url('+ my.BannerBG_200 +');'
+        +'  background-size: cover;'
         +'  width: 100%;'
         +'  height: 100%;'
         +'  top: 0px;'
@@ -871,9 +786,9 @@ var NFQDA = (function(my) {
         +'.seq01ProdImg {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 216px;'
-        +'  top: 150px;'
-        +'  left: 9px;'
+        +'  height: 240px;'
+        +'  top: 175px;'
+        +'  left: 42px;'
         +'  animation-name: smartphoneAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -883,19 +798,19 @@ var NFQDA = (function(my) {
      
         +'@keyframes smartphoneAni {'
         +'  0% {opacity: 0; left:-120px;}'
-        +'  5% {opacity: 1; left:9px;}'
-        +'  25% {opacity: 1; left:9px;}'
-        +'  30% {opacity: 0; left:9px;}'
-        +'  100% {opacity: 0; left:9px;}'
+        +'  5% {opacity: 1; left:42px;}'
+        +'  25% {opacity: 1; left:42px;}'
+        +'  30% {opacity: 0; left:42px;}'
+        +'  100% {opacity: 0; left:42px;}'
         +'}'
 
         +'.seq01ProdImgName {'
         +'  position: absolute;'
-        +'  width: 90px;'
+        +'  width: 115px;'
         +'  height: auto;'
         +'  left: 50%;'
-        +'  margin-left: -45px;'
-        +'  top: 90px;'
+        +'  margin-left: -57.5px;'
+        +'  top: 105px;'
         +'  animation-name: smartphoneTitleAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in();'
@@ -905,19 +820,21 @@ var NFQDA = (function(my) {
 
         +'@keyframes smartphoneTitleAni {'
         +'  0% {margin-left:-120px;opacity: 0;}'
-        +'  5% {margin-left:-45px;margin-right:auto;opacity: 1;}'
-        +'  25%{margin-left:-45px;margin-right:auto;opacity: 1;}'
-        +'  30%{margin-left:-45px;margin-right:auto;opacity: 0;}'
-        +'  100% {margin-left:-45px;margin-right:auto;opacity: 0;}'
+        +'  5% {margin-left: -57.5px;opacity: 1;}'
+        +'  25%{lmargin-left: -57.5px;opacity: 1;}'
+        +'  30%{margin-left: -57.5px;opacity: 0;}'
+        +'  100% {margin-left: -57.5px;opacity: 0;}'
         +'}'
 
         +'.seq01DisrTopBG {'
         +'  position: absolute;'
         +'  background-image: url('+ my.seq01DisrTopBG +');'
-        +'  width: 120px;'
-        +'  height: 56px;'
+        +'  background-repeat: no-repeat;'
+        +'  width: 200px;'
+        +'  height: 136px;'
         +'  right: 0;'
-        +'  padding-top: 10px;'
+        +'  top: -20px;'
+        +'  padding-top: 30px;'
         +'  transform-origin: left top;'
         +'  animation-name: disturberTopAni;'
         +'  animation-duration: 15s;'
@@ -929,19 +846,21 @@ var NFQDA = (function(my) {
 
         +'.seq01DisrTopTxt {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
+        +'  font-size: 15px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
+        +'  width: 120px;'
+        +'  margin-left: 40px;'
         +'  text-align: center;'
         +'  color: ' + my.seq01DisrTopTxtCol + ';'
         +'}'
         
         +'@keyframes disturberTopAni {'
-        +'  0% {top:0px;opacity:0;}'
-        +'  5% {top:0px;opacity:1;}'
-        +'  25%{top:0px;opacity:1;}'
-        +'  30%{top:0px;opacity:0;}'
-        +'  100% {top:0px;opacity:0;}'
+        +'  0% {opacity:0;}'
+        +'  5% {opacity:1;}'
+        +'  25%{opacity:1;}'
+        +'  30%{opacity:0;}'
+        +'  100% {opacity:0;}'
         +'}'
 
 
@@ -949,9 +868,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken {'
         +'  position: absolute;'
-        +'  width: 120px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top: 0px;'
+        +'  top: -25px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBrokenAni;'
         +'  animation-duration: 15s;'
@@ -971,9 +890,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken2 {'
         +'  position: absolute;'
-        +'  width: 120px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top: 0px;'
+        +'  top:-25px;'
         +'  left: 0px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken2Ani;'
@@ -994,9 +913,9 @@ var NFQDA = (function(my) {
 
         +'.smartphoneBroken3 {'
         +'  position: absolute;'
-        +'  width: 120px;'
+        +'  width: 165px;'
         +'  height: auto;'
-        +'  top: 00px;'
+        +'  top: -25px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken3Ani;'
         +'  animation-duration: 15s;'
@@ -1016,13 +935,12 @@ var NFQDA = (function(my) {
 
         +'.footer_zwei {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
-        +'  line-height: 10px;'
+        +'  font-size: 10px;'
         +'  text-align: center;'
+        +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
-        +'  left: 0px;'
-        +'  width: 120px;'
-        +'  bottom: 5px;'
+        +'  width: 190px;'
+        +'  bottom: 3px;'
         +'  position: absolute;'
         +'  opacity: 0;'
         +'  animation-name: footer_zweiAni;'
@@ -1044,9 +962,14 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxt {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 18px;'
-        +'  padding-top: 33px;'
-        +'  padding-left:10px;'
+        +'  text-align-last: center;'
+        +'  font-size: 26px;'
+        +'  line-height: 24px;'
+        +'  padding-top:50px;'
+        +'  width:180px;'
+        +'  padding-left:18px;'
+        +'  left: 50%;'
+        +'  transform: translate(-50%, 0);'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1057,9 +980,9 @@ var NFQDA = (function(my) {
 
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
-        +'  width:50px;'
-        +'  left: 35px;'
-        +'  top: 10px;'
+        +'  width:70px;'
+        +'  left: 50%;'
+        +'  transform: translate(-50%, 0);'
         +'  height:auto;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1080,23 +1003,24 @@ var NFQDA = (function(my) {
          
         +'.seq02DisrRightTxt {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 15px;'
+        +'  font-size: 17px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  padding-top: 20px;'
-        +'  padding-left: 10px;'
+        +'  width:120px;'
+        +'  padding-top: 30px;'
+        +'  margin-left: 30px;'
         +'  color: ' + my.seq02DisrRightTxtCol + ';'
         +'}'
 
         +'.seq02DisrRightBG {'
         +'  position: absolute;'
-        +'  width: 120px;'
-        +'  height: 137px;'
-        +'  top:90px;'
-        +'  right: 0px;'
+        +'  width: 200px;'
+        +'  height: 171px;'
+        +'  top:120px;'
         +'  opacity: 0;'
-        +'  background: url(' + my.seq02DisrRightBG + ') no-repeat center center / contain;'
+        +'  background: url(' + my.seq02DisrRight2BG + ') no-repeat;'
+        +'  background-size: contain;'
         +'  transform-origin: right center;'
         +'  animation-name: disturberRightAni;'
         +'  animation-duration: 15s;'
@@ -1107,13 +1031,13 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul1 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
+        +'  font-size: 17px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 10px;'
+        +'  margin-top: 12px;'
         +'  padding-left: 20px;'
-        +'  margin-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1125,13 +1049,13 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul2 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
+        +'  font-size: 17px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 2px;'
+        +'  margin-top: 4px;'
         +'  padding-left: 20px;'
-        +'  margin-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni2;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1143,13 +1067,13 @@ var NFQDA = (function(my) {
 
         +'.seq02DisrRightTxtul3 {'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
+        +'  font-size: 17px;'
         +'  line-height: 16px;'
         +'  letter-spacing: 0px;'
         +'  text-align: left;'
-        +'  margin-top: 2px;'
+        +'  margin-top: 4px;'
         +'  padding-left: 20px;'
-        +'  margin-left: 10px;'
+        +'  margin-left: 30px;'
         +'  animation-name: seq02DisrRightTxtAni3;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1193,11 +1117,11 @@ var NFQDA = (function(my) {
 
 
         +'.cta {'
-        +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  position: absolute;'
-        +'  padding: 2px 6px 2px 6px;'
-        +'  left: 10px;'
-        +'  width: 100px;'
+        +'  padding: 6px 6px 5px;'
+        +'  left: 50.3%;'
+        +'  transform: translate(-50%, 0);'
+        +'  width: 130px;'
         +'  text-align: left;'
         +'  background-color: ' + my.seq03CtaBgCol + ';'
         +'  animation-name: ctaAni;'
@@ -1206,21 +1130,21 @@ var NFQDA = (function(my) {
         +'  animation-fill-mode: forwards;'
         +'  animation-iteration-count: 2;'
         +'}'
-        
+
         +'@keyframes ctaAni {'
-        +'  0% {bottom: 125px;opacity: 0;}'
-        +'  62% {bottom: 125px;opacity: 0;}'
-        +'  68% {bottom: 125px;opacity: 1;}'
-        +'  69% {bottom: 123px;opacity: 1;}'
-        +'  70% {bottom: 125px;opacity: 1;}'
-        +'  73% {bottom: 125px;opacity: 1;}'
-        +'  74% {bottom: 123px;opacity: 1;}'
-        +'  75% {bottom: 125px;opacity: 1}'
-        +'  100% {bottom: 125px;opacity: 1}'
+        +'  0% {bottom: 113px;opacity: 0;}'
+        +'  62% {bottom: 113px;opacity: 0;}'
+        +'  68% {bottom: 113px;opacity: 1;}'
+        +'  69% {bottom: 111px;opacity: 1;}'
+        +'  70% {bottom: 113px;opacity: 1;}'
+        +'  73% {bottom: 113px;opacity: 1;}'
+        +'  74% {bottom: 111px;opacity: 1;}'
+        +'  75% {bottom: 113px;opacity: 1}'
+        +'  100% {bottom: 113px;opacity: 1}'
         +'}'
 
         +'.seq03CtaTxt {'
-        +'  font-size: 11px;'
+        +'  font-size: 13px;'
         +'  line-height: 16px;'
         +'  text-align: center;'
         +'  color: ' + my.seq03CtaTxtCol + ';'
@@ -1231,7 +1155,7 @@ var NFQDA = (function(my) {
         +'  height: auto;'
         +'  position: absolute;'
         +'  bottom: 0px;'
-        +'  left: 160px;'
+        +'  left: 200px;'
         +'  animation-name: fingerani;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1240,26 +1164,29 @@ var NFQDA = (function(my) {
         +'}'
 
         +'@keyframes fingerani {'
-        +'  62% {bottom: 0px;left:160px;opacity: 0;}'
-        +'  68% {bottom: 123px;left:100px;opacity: 1;}'
-        +'  69% {bottom: 121px;left:100px;opacity: 1;}'
-        +'  70% {bottom: 123px;left:100px;opacity: 1;}'
-        +'  73% {bottom: 123px;left:100px;opacity: 1;}'
-        +'  74% {bottom: 121px;left:100px;opacity: 1;}'
-        +'  75% {bottom: 123px;left:100px;opacity: 1;}'
-        +'  99.8% {bottom: 123px;left:100px;opacity: 1;}'
-        +'  100% {bottom: 123px;left:100px;opacity: 0;}'
+        +'  0% {bottom: 100px;left:170px;opacity: 0;}'
+        +'  62% {bottom: 100px;left:170px;opacity: 0;}'
+        +'  68% {bottom: 113px;left:150px;opacity: 1;}'
+        +'  69% {bottom: 111px;left:150px;opacity: 1;}'
+        +'  70% {bottom: 113px;left:150px;opacity: 1;}'
+        +'  73% {bottom: 113px;left:150px;opacity: 1;}'
+        +'  74% {bottom: 111px;left:150px;opacity: 1;}'
+        +'  75% {bottom: 113px;left:150px;opacity: 1;}'
+        +'  99.8% {bottom: 113px;left:150px;opacity: 1;}'
+        +'  100% {bottom: 113px;left:150px;opacity: 0;}'
         +'}'
-        
+
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  font-size: 7px;'
+        +'  font-size: 10px;'
         +'  text-align: center;'
         +'  line-height: 10px;'
         +'  letter-spacing: 0px;'
-        +'  left: 0px;'
-        +'  width: 120px;'
         +'  position: absolute;'
+        +'  max-width:190px;'
+        +'  width:180px;'
+        +'  left: 50%;'
+        +'  transform: translate(-50%, 0);'
         +'  opacity: 0;'
         +'  animation-name: footerAni;'
         +'  animation-duration: 15s;'
@@ -1277,11 +1204,13 @@ var NFQDA = (function(my) {
         
         +'.seq03HeadTxt {'
         +'  position: absolute;'
-        +'  font-size: ' + my.seq03HeadTxtSize + ';'
-        +'  max-width:120px;'
-        +'  top:15px;'
-        +'  left:15px;'
+        +'  font-size: 36px;'
+        +'  width: 200px;'
+        +'  top: 12px;'
+        +'  left: 51%;'
+        +'  transform: translate(-50%, 0);'
         +'  line-height: 28px;'
+        +'  letter-spacing: 0.3px;'
         +'  text-align: center;'
         +'  animation-name: headline2Ani;'
         +'  animation-duration: 15s;'
@@ -1293,10 +1222,11 @@ var NFQDA = (function(my) {
 
         +'.seq03HeadTxt2 {'
         +'  position: absolute;'
-        +'  font-size: ' + my.seq03HeadTxt2Size + ';'
-        +'  max-width:120px;'
-        +'  left:15px;'
-        +'  top:40px;'
+        +'  font-size: 31px;'
+        +'  width: 201px;'
+        +'  left: 51.3%;'
+        +'  transform: translate(-50%, 0);'
+        +'  top: 43px;'
         +'  line-height: 28px;'
         +'  text-align: center;'
         +'  animation-name: headline2Ani;'
@@ -1316,11 +1246,14 @@ var NFQDA = (function(my) {
 
         +'.seq03TextWall {'
         +'  position: absolute;'
-        +'  width: 100px;'
+        +'  width: 125px;'
         +'  height: auto;'
         +'  top:80px;'
-        +'  left: 8px;'
-        +'  opacity: 0;'     
+        +'  left: 54%;'
+        +'  transform: translate(-50%, 0);'
+        +'  opacity: 0;' 
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
+        +'  font-size: 12px;'
         +'  transform-origin: right center;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
@@ -1337,13 +1270,18 @@ var NFQDA = (function(my) {
         +'  100% {opacity: 1;}'
         +'}'
 
+        +'.seq03Textul{'
+        +'  margin-left: 12px;'
+        +'}'
         
         +'.seq03Textul2 {'
+        +'  margin-left: 12px;'
         +'  top: 45px;'
         +'  position: absolute;'
         +'}'
 
         +'.seq03Textul3 {'
+        +'  margin-left: 12px;'
         +'  top: 90px;'
         +'  position: absolute;'
         +'}'
@@ -1351,67 +1289,155 @@ var NFQDA = (function(my) {
         +'.seq03TextulBG {'
         +'  position: absolute;'
         +'  width: 27px;'
+        +'  left: 4px;'
+        +'  top: 2px;'
         +'  height: auto;'
-        +'  margin-top: 3px;'
-        +'  margin-left: 8px;'
+        +'  background: url(' + my.seq03TextulImg + ') no-repeat left center / contain;'
+        +'}'
+
+        +'#seq03TextulBG_1 {'
+        +'  position: absolute;'
+        +'  width: 27px;'
+        +'  left: 15px;'
+        +'  top: 2px;'
+        +'  height: auto;'
         +'  background: url(' + my.seq03TextulImg + ') no-repeat left center / contain;'
         +'}'
 
         +'.seq03TextulHead {'
         +'  position: absolute;'
         +'  font-size: 24px;'
-        +'  color: #F8EF1A;'
-        +'  left: 40px;'
+        +'  color: #ffed00;'
+        +'  left: 34px;'
+        +'  top: -1px;'
+        +'  font-family: FrutigerLTPro-77BlkCn, Arial, sans-serif;'
+        +'}'
+
+         +'#seq03TextulHead_1{'
+        +'  margin-left: 12px;'
         +'}'
         
         +'.seq03TextulSub {'
         +'  position: absolute;'
         +'  font-size: 12px;'
-        +'  left: 40px;'
-        +'  top: 26px;'
+        +'  left: 34px;'
+        +'  top: 28px;'
         +'  text-transform: uppercase;'
+        +'}'
+
+        +'#seq03TextulSub_1{'
+        +'  margin-left: 12px;'
         +'}'
         
         +'.underscore {'
         +'  position: absolute;'        
-        +'  top: 135px;'
-        +'  left: -4px;'
-        +'  width: 110px;'
-        +'  height:auto;'
-        +'}'
-
-        +'.pricefootnote {'
-        +'  position: absolute;'
-        +'  font-size: 10px;'
-        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  top: 168px;'
-        +'  left: 37px;'
-        +'}'
-
-
-        +'.pricefrom {'
-        +'  position: absolute;'        
-        +'  top: 140px;'
-        +'  position: absolute;'
-        +'  font-size: 12px;'
-        +'  color: #F8EF1A;'
+        +'  top: 141px;'
+        +'  left: 7px;'
+        +'  width: 107px;'
+        +'  height: auto;'
         +'}'
 
         +'.price {'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'  position: absolute;'        
-        +'  top: 150px;'
-        +'  left: -4px;'
+        +'  top: 138px;'
+        +'  left: 18px;'
         +'  position: absolute;'
-        +'  font-size: 24px;'
-        +'  color: #F8EF1A;'
+        +'  font-size: 73px;'
+        +'  color: #ffed00;'
+        +'}'
+
+        // superscripted numbers of price
+        + 'sup {'
+        + ' vertical-align: middle;'
+        + ' position: relative;'
+        + ' top: -107px;'
+        + ' font-size: 60%;'
+        + ' left: 42px;'
+        + '}'
+
+        +'.seqpricefrom {'
+        +'  position: absolute;'        
+        +'  top: 189px;'
+        +'  left: 0px;'
+        +'  position: absolute;'
+        +'  font-size: 18px;'
+        +'  color: #ffed00;'
+        +'}'
+
+        +'.pricekomma{'
+        +'  font-size: 71px;'
+        +'  font-family: websans_extra_black, Arial, sans-serif;'
+        +'  position: absolute;'
+        +'  top: 135px;'
+        +'  left: 52px;'
+        +'  color: #ffed00;'
+        +'}'
+
+        +
+        '.hovertext {' +
+        '  width:70px;' +
+        '  height:30px;' +
+        '  position: absolute;' +
+        '  opacity:1;' +
+        '  left:50px;' +
+        '  top:267px;' +
+        '  transition: 0.3s;' +
+        '  animation-name: hovertextani;' +
+        '  animation-duration: 15s;' +
+        '  animation-timing-function: ease-in-out();' +
+        '  animation-fill-mode: forwards;' +
+        '  animation-iteration-count: 2;' +
+        '  animation-delay: .2s;' +
+        '}'
+
+        +
+        '@keyframes hovertextani {' +
+        '  0% {opacity: 0; left:-120px;}' +
+        '  60% {opacity: 0; left:-120px;}' +
+        '  61% {opacity: 1; left:120px;}' +
+        '  100% {opacity: 1; left:120px;}' +
+        '}'
+
+        +
+        '.hovertext:hover +.sternchentext {' +
+        '  display:inline;' +
+        '  opacity:1;' +
+        '  left:0px;' +
+        '  transition: left 0.3s;' +
+        '}'
+
+        +'.sternchentext{'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
+        +'  line-height: 14px;'
+        +'  width:100%;'
+        +'  background-color:white;'
+        +'  position:absolute;'
+        +'  bottom:0px;'
+        +'  left:-120px;'
+        +'  padding:5px 4px 4px;'
+        +'  font-size:11px;'
+        +'  color:#000;'
+        +'  display:inline;'
+        +'  opacity:0;'
+        +'  transition: all 0.3s;'
+        +'}'
+        +'.pricefootnote {'
+        +'  position: absolute;'
+        +'  font-size: 14.5px;'
+        +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
+        +'  top: 191px;'
+        +'  left: 78px;'
+        +'  width: 80px;'
+        +'  line-height: 13px;'
         +'}'
         
 
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 93px;'
-        +'  left: 15px;'
+        +'  height: 98px;'
+        +'  left: 52px;'
         +'  top: 333px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
@@ -1424,9 +1450,9 @@ var NFQDA = (function(my) {
         +'.smartphoneSmall2 {'
         +'  position: absolute;'
         +'  width: auto;'
-        +'  height: 110px;'
-        +'  left: 35px;'
-        +'  top: 320px;'
+        +'  height: 115px;'
+        +'  left: 75px;'
+        +'  top: 321px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
         +'  animation-duration: 15s;'
@@ -1440,8 +1466,8 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  width: auto;'
         +'  height: 124px;'
-        +'  left: 55px;'
-        +'  top: 310px;'
+        +'  left: 95px;'
+        +'  top: 313px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneSmallAni;'
         +'  animation-duration: 15s;'
@@ -1457,14 +1483,6 @@ var NFQDA = (function(my) {
         +'  65% {opacity: 1;}'
         +'  100% {opacity: 1;}'
         +'}'
-
-        + 'sup {'
-        + '    vertical-align: middle;'
-        + '    position: relative;'
-        + '    top: -0.6em;'
-        + '    font-size: 45%;'
-        + '}'
-
         
         + '.bannerHTML5, .lkWrap, #bannerBg {'
         + '    position: absolute;'
@@ -1492,6 +1510,7 @@ var NFQDA = (function(my) {
 
         + '#bannerBg {'
         + '    background: ' + my.bgCol + ';'
+        + '    display: none;'
         + '}'
 
         + '.lkWrap {}'
@@ -1680,9 +1699,9 @@ var NFQDA = (function(my) {
                 '<div class="seq03HeadTxt2">'+ my.seq03HeadTxt2 +'</div>'+
                 '<div class="seq03TextWall">'+
                     '<div class="seq03Textul">' + 
-                        '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
-                        '<div class="seq03TextulHead">' + my.seq03TextulHead1 + '</div>' +
-                        '<div class="seq03TextulSub">' + my.seq03TextulSub1 + '</div>' +
+                        '<img class="seq03TextulBG" id="seq03TextulBG_1" src="' + my.seq03TextulImg + '"></img>' +
+                        '<div class="seq03TextulHead" id="seq03TextulHead_1">' + my.seq03TextulHead1 + '</div>' +
+                        '<div class="seq03TextulSub" id="seq03TextulSub_1">' + my.seq03TextulSub1 + '</div>' +
                     '</div>'+
                     '<div class="seq03Textul2">' + 
                         '<img class="seq03TextulBG" src="' + my.seq03TextulImg + '"></img>' +
@@ -1695,12 +1714,9 @@ var NFQDA = (function(my) {
                         '<div class="seq03TextulSub">' + my.seq03TextulSub3 + '</div>' +
                     '</div>'+
                     '<img class="underscore" src="' + my.underscore + '">'+
-                    '<div class="pricefrom">'+ my.seqpricefrom +'</div>'+
-                    '<div class="price">'+ my.price +'</div>'+
-                    '<div class="oldprice">'+ my.oldprice +
-                       '<img class="seqoldpriceline" src="' + my.seqoldpriceline + '">' +
-                       '<div class="seqoldpricetxt">' + my.oldpricetxt + '</div>' +
-                    '</div>'+
+                    '<div class="price">' + my.price + '</div>' +
+                    '<div class="pricekomma">' + my.pricekomma + '</div>' +
+                    '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
                 '</div>'+
 
@@ -1712,306 +1728,17 @@ var NFQDA = (function(my) {
                    '<div class="seq01DisrTopTxt">' + my.seq01DisrTopTxt + '</div>'+
                 '</div>'+
                 '<img class="logo" src="' + my.logo + '">' +
+                '<div class="pricetag">' +
+                '<div class="hovertext">' + '</div>' +
+                    '<div class="sternchentext">' +
+                        '<span>' + my.sternchentext + '</span>' +
+                        '<span>' + my.sternchentext2 + '</span>' +
+                        '<span>' + my.sternchentext3 + '</span>' +
+                        '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
+                    '</div>' +
+                '</div>' +
             '</div>'
         );
-
-        my.lk01Wrap = $(my.targetCtr).find('#lk01Wrap');
-        my.lk01BgImgCtr = $(my.targetCtr).find('.lk01BgImgCtr');
-        my.lk01HLImgCtr = $(my.targetCtr).find('.lk01HLImgCtr');
-        my.lk01DisrLeftCtr = $(my.targetCtr).find('.lk01DisrLeftCtr');
-        my.lk01DisrRightCtr = $(my.targetCtr).find('.lk01DisrRightCtr');
-        my.lk01SPrintCtr = $(my.targetCtr).find('.lk01SPrintCtr');
-
-        my.lk02Wrap = $(my.targetCtr).find('#lk02Wrap');
-        my.lk02BgImgCtr = $(my.targetCtr).find('.lk02BgImgCtr');
-        my.lk02HlTxtCtr = $(my.targetCtr).find('.lk02HlTxtCtr');
-        my.lk02ProdImg = $(my.targetCtr).find('.lk02ProdImg');
-        my.lk02ProdManuImg = $(my.targetCtr).find('.lk02ProdManuImg');
-        my.lk02ProdNameImg = $(my.targetCtr).find('.lk02ProdNameImg');
-        my.lk02CtaCtr = $(my.targetCtr).find('.lk02CtaCtr');
-
-        my.introCtr = $(my.targetCtr).find('.introCtr');
-        my.obaCtr = $(my.targetCtr).find('.obaCtr');
-        if (my.showOBA) {
-            my.obaCtr.append(my.obaTxt);
-            my.obaCtr.css('display', 'block');
-        }
-
-        my.clickButton = $(my.targetCtr).find('#clickButton');
-
-        // check disrupter left anim type
-        switch (my.lk01DisrLeftAnim) {
-        case 'pop':
-            my.lk01DisrLeftCtr.addClass('pop');
-            break;
-        case 'slide':
-            my.lk01DisrLeftCtr.addClass('slide');
-            break;
-        case 'flip':
-        default:
-            my.lk01DisrLeftCtr.addClass('flip');
-            break;
-        }
-
-        // check disrupter right anim type
-        switch (my.lk01DisrRightAnim) {
-        case 'pop':
-            my.lk01DisrRightCtr.addClass('pop');
-            break;
-        case 'slide':
-            my.lk01DisrRightCtr.addClass('slide');
-            break;
-        case 'flip':
-        default:
-            my.lk01DisrRightCtr.addClass('flip');
-            break;
-        }
-
-        // intro look
-        if (my.hasIntro && my.showIntro) {
-            h = ''
-            + '<div id="intro_1" class="introImg">'
-                + '<img id="intro" src="' + my.introImg + '" alt="" />'
-            + '</div>';
-            my.introCtr.append(h);
-            my.introCtr.find('#intro').load(function() {
-                my.introLoaded = true;
-                my.addIntroLook();
-            }).error(function() {
-                my.hasIntro = false;
-            });
-        }
-    };
-
-    return my;
-}(NFQDA || {}));
-// create format html module
-/* eslint-disable no-magic-numbers */
-/* global */
-
-/************************************************************
- * animation module
- * animates the looks
- */
-var NFQDA = (function(my) {
-    'use strict';
-
-    /**
-     * showLook - animation depending on current look
-     * @param {boolean} dir - direction of animation loop, true: forward, false: backward
-     */
-    my.showLook = function() {
-        my.runTime = new Date().getTime() - my.startTime;
-
-        //my.debug(my.lookName + ' ' + my.runTime);
-
-        switch (my.lookName) {
-        case 'intro':
-            // set custom clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtnCstm(my.introLink, 'intro_link');
-
-            // show intro container
-            my.introCtr.removeClass('opac0');
-
-            // animate intro image
-            my.showIntroOutroImg(my.introCtr.find('#intro_1'), 'introImgShow', 0, true);
-
-            // set interval
-            my.currLoopTime = my.introTime;
-            my.setNewTimeout(my.introTime);
-
-            break;
-
-        case 'look01':
-            // set clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtn(my.products[0]);
-
-            // hide possible previous look
-            my.hideIntro();
-
-            // show look01
-            my.lk01Wrap.removeClass('opac0');
-
-            // show right disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrRightAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrRightCtr.addClass('showFlip');
-                    break;
-                }
-            }, 700);
-
-            // show left disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrLeftAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrLeftCtr.addClass('showFlip');
-                    break;
-                }
-            }, 900);
-
-            // hide left right disrupter
-            setTimeout(function() {
-                switch (my.lk01DisrRightAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrRightCtr.removeClass('showFlip');
-                    break;
-                }
-                switch (my.lk01DisrLeftAnim) {
-                case 'flip':
-                default:
-                    my.lk01DisrLeftCtr.removeClass('showFlip');
-                    break;
-                }
-            }, my.look01Time - 200);
-
-            // set timeout for next animation
-            my.currLoopTime = my.look01Time;
-            my.setNewTimeout(my.look01Time);
-
-            break;
-
-        case 'look02':
-            // set clickurl
-            my.clickButton.off('click mouseenter mouseleave');
-            my.setClkBtn(my.products[0]);
-
-            // show look02
-            my.lk02Wrap.removeClass('opac0');
-
-            // show cta
-            setTimeout(function() {
-                my.lk02CtaCtr.addClass('lk02CtaCtrShow');
-            }, 1000);
-
-            //************************************************************
-            // reset elements to be reset and start end animation or stop animation if needed
-            if (my.gdnStopTime === 0 || (my.runTime + my.look02Time < my.gdnStopTime)) {
-                my.lk01Wrap.addClass('opac0');
-                setTimeout(function() {
-                    my.lk02Wrap.addClass('opac0');
-                    switch (my.lk01DisrRightAnim) {
-                    case 'flip':
-                    default:
-                        my.lk01DisrRightCtr.removeClass('showFlip');
-                        break;
-                    }
-                    switch (my.lk01DisrLeftAnim) {
-                    case 'flip':
-                    default:
-                        my.lk01DisrLeftCtr.removeClass('showFlip');
-                        break;
-                    }
-                }, my.look02Time - 300);
-
-                setTimeout(function() {
-                    my.lk02CtaCtr.removeClass('lk02CtaCtrShow');
-                }, my.look02Time + 800);
-            } else {
-                // gdn brake
-                my.killLookTimer();
-
-                return;
-            }
-
-            // set timeout for next animation
-            my.currLoopTime = my.look02Time;
-            my.setNewTimeout(my.look02Time);
-
-            break;
-        // no default
-        }
-    };
-
-    return my;
-}(NFQDA || {}));
-// create format html module
-/* global */
-
-/* ***********************************************************
- * animation helper functions module
- */
-var NFQDA = (function(my) {
-    'use strict';
-
-    /**
-     * startAnimation - start (init) animation
-     */
-    my.startAnimation = function() {
-        my.debug('- starting animation\n\n', true);
-        // remove loader display
-        $(my.targetCtr).find('#html-loader').remove();
-
-        // start animation
-        my.startTime = new Date().getTime();
-
-        setTimeout(function() {
-            my.showNextLook();
-        }, 10); // eslint-disable-line no-magic-numbers
-    };
-
-    /**
-     * showNextLook - show next look
-     * @param {boolean} user - flag for user initiated look switch
-     */
-    my.showNextLook = function(user) {
-        if (++my.currLook > my.numAllLooks) {
-            my.currLook = 1;
-        }
-        my.lookName = my.looks[my.currLook - 1]; // eslint-disable-line no-magic-numbers
-        if (user && my.lookName === 'intro') {
-            my.showNextLook();
-        } else {
-            my.showLook(true);
-        }
-    };
-
-    /**
-     * hideIntro - hide intro look
-     */
-    my.hideIntro = function() {
-        if (my.hasIntro && my.introLoaded && my.showIntro) {
-            // hide intro container
-            my.showIntroOutroImg(my.introCtr.find('#intro_1'), 'introImgShow', 0, false); // eslint-disable-line no-magic-numbers
-            // hide intro container
-            my.introCtr.addClass('opac0');
-        }
-    };
-
-    /**
-     * showIntroOutroImg - show or hide intro image
-     * @param {object} img - image element
-     * @param {string} c - class name
-     * @param {number} d - delay
-     * @param {boolean} p - flag for add or remove class
-     */
-    my.showIntroOutroImg = function(img, c, d, p) {
-        setTimeout(function() {
-            if (p) {
-                img.addClass(c);
-            } else {
-                img.removeClass(c);
-            }
-        }, d);
-    };
-
-    /**
-     * setNewTimeout - set new interval
-     * @param {number} ms - milliseconds of interval
-     */
-    my.setNewTimeout = function(ms) {
-        clearTimeout(my.lookTimer);
-        if (my.gdnStopped) {
-            return;
-        }
-        my.lookTimer = setTimeout(function() {
-            my.showNextLook();
-        }, ms);
     };
 
     return my;
