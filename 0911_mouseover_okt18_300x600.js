@@ -435,6 +435,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02HeadTxt_second', emptyStr, str);
         my.getTmplAttr('seq02DisrRightBGColor', emptyStr, str);
         my.getTmplAttr('footer_zwei', emptyStr, str);
     
@@ -997,6 +998,23 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 30px;'
         +'  padding-top:55px;'
+        +'  width:300px;'
+        +'  text-align: center;'
+        +'  left: 50%;'
+        +'  transform: translate(-50%, 0);'
+        +'  animation-name: headlineAni;'
+        +'  animation-duration: 15s;'
+        +'  animation-timing-function: ease-in-out();'
+        +'  animation-fill-mode: forwards;'
+        +'  animation-delay: .1s;'
+        +'  animation-iteration-count: 2;'
+        +'}'
+
+        +'.seq02HeadTxt_second {'
+        +'  position: absolute;'
+        +'  font-family: FrutigerLTPro-77BlkCn;'
+        +'  font-size: 30px;'
+        +'  padding-top: 85px;'
         +'  width:300px;'
         +'  text-align: center;'
         +'  left: 50%;'
@@ -1693,6 +1711,7 @@ var NFQDA = (function(my) {
                 '</div>'+
 
                 '<div class="seq02HeadTxt">'+'<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+ my.seq02HeadTxt +'</div>'+
+                '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
 
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
 

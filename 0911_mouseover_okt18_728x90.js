@@ -435,6 +435,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02HeadTxt_second', emptyStr, str);
     
         // SEQUENCE 3
         my.getTmplAttr('seq03CtaTxt', my.seq03CtaTxt, str);
@@ -973,8 +974,23 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 22px;'
         +'  padding-top:25px;'
+        +'  top: -4px;'
+        +'  left: 180px;'
+        +'  animation-name: headlineAni;'
+        +'  animation-duration: 15s;'
+        +'  animation-timing-function: ease-in-out();'
+        +'  animation-fill-mode: forwards;'
+        +'  animation-delay: .1s;'
+        +'  animation-iteration-count: 2;'
+        +'}'
+
+        +'.seq02HeadTxt_second {'
+        +'  position: absolute;'
+        +'  font-family: FrutigerLTPro-77BlkCn;'
+        +'  font-size: 22px;'
+        +'  padding-top:40px;'
         +'  top: 2px;'
-        +'  left: 170px;'
+        +'  left: 180px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -985,9 +1001,9 @@ var NFQDA = (function(my) {
 
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
-        +'  width:52px;'
-        +'  top: 28px;'
-        +'  left: 110px;'
+        +'  width: 77px;'
+        +'  top: 26px;'
+        +'  left: 91px;'
         +'  height:auto;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1680,6 +1696,7 @@ var NFQDA = (function(my) {
                 '</div>'+
                 '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
+                '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
 
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
                 '<div class="seq03TextWall">'+

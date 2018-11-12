@@ -434,6 +434,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02HeadTxt_second', emptyStr, str);
     
         // SEQUENCE 3
 
@@ -998,6 +999,21 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
+        +'.seq02HeadTxt_second {'
+        +'  position: absolute;'
+        +'  font-family: FrutigerLTPro-77BlkCn;'
+        +'  font-size: 21px;'
+        +'  top:12px;'
+        +'  padding-left:122px;'
+        +'  left: 90px;'
+        +'  animation-name: headlineAni;'
+        +'  animation-duration: 15s;'
+        +'  animation-timing-function: ease-in-out();'
+        +'  animation-fill-mode: forwards;'
+        +'  animation-delay: .1s;'
+        +'  animation-iteration-count: 2;'
+        +'}'
+
         +'@keyframes headlineAni {'
         +'  0% {opacity: 0;}'
         +'  30% {opacity: 0;}'
@@ -1393,7 +1409,7 @@ var NFQDA = (function(my) {
 
         +'.seqpricefrom {'
         +'  position: absolute;'        
-        +'  top: 139px;'
+        +'  top: 136px;'
         +'  left: 24px;'
         +'  position: absolute;'
         +'  font-size: 16px;'
@@ -1533,10 +1549,11 @@ var NFQDA = (function(my) {
         +'}'
 
         + 'sup {'
-        + '    vertical-align: middle;'
-        + '    position: relative;'
-        + '    top: -0.6em;'
-        + '    font-size: 45%;'
+        + ' vertical-align: middle;'
+        + ' position: relative;'
+        + ' top: -16px;'
+        + ' left: -9px;'
+        + ' font-size: 47%;'
         + '}'
 
         
@@ -1746,6 +1763,7 @@ var NFQDA = (function(my) {
                 '</div>'+
                 '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG"></img>'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
+                '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
                 '<div class="seq03TextWall">'+
                     '<div class="seq03Textul">' + 
