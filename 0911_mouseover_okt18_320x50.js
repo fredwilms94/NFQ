@@ -435,6 +435,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02HeadTxt_second', emptyStr, str);
     
         // SEQUENCE 3
         my.getTmplAttr('seq03CtaTxtSmall', my.seq03CtaTxtSmall, str);
@@ -460,6 +461,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
         my.getTmplAttr('seqprice', my.seqprice, url);
+        my.getTmplAttr('pricekomma', my.pricekomma, str);
         
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('seqoldpriceline', my.seqoldpriceline, url);
@@ -973,7 +975,7 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 14px;'
-        +'  top: 17px;'
+        +'  top: 7px;'
         +'  padding-left: 32px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -986,9 +988,24 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
         +'  width:30px;'
-        +'  top: 17px;'
+        +'  top: 9px;'
         +'  left: 50px;'
         +'  height:auto;'
+        +'  animation-name: headlineAni;'
+        +'  animation-duration: 15s;'
+        +'  animation-timing-function: ease-in-out();'
+        +'  animation-fill-mode: forwards;'
+        +'  animation-delay: .1s;'
+        +'  animation-iteration-count: 2;'
+        +'}'
+
+        +'.seq02HeadTxt_second {'
+        +'  position: absolute;'
+        +'  font-family: FrutigerLTPro-77BlkCn;'
+        +'  font-size: 14px;'
+        +'  top:20px;'
+        +'  padding-left:52px;'
+        +'  left: 90px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1136,14 +1153,15 @@ var NFQDA = (function(my) {
 
         +'@keyframes ctaAni {'
         +'  0% {top: 9px;opacity: 0}'
-        +'  89% {top: 9px;opacity: 0}'
-        +'  91% {top: 9px;opacity: 1}'
-        +'  92% {top: 11px;opacity: 1}'
-        +'  93% {top: 9px;opacity: 1}'
-        +'  96% {top: 9px;opacity: 1}'
-        +'  97% {top: 11px;opacity: 1}'
-        +'  98% {top: 9px;opacity: 1}'
-        +'  100% {top: 9px;opacity: 1}'
+        +'  75% {top: 9px;opacity: 0}'
+        +'  80% {top: 9px;opacity: 1}'
+        +'  81% {top: 11px;opacity: 1}'
+        +'  82% {top: 9px;opacity: 1}'
+        +'  84% {top: 9px;opacity: 1}'
+        +'  85% {top: 11px;opacity: 1}'
+        +'  86% {top: 9px;opacity: 1}'
+        +'  87% {top: 9px;opacity: 0}'
+        +'  100% {top: 9px;opacity: 0}'
         +'}'
 
         +'.seq03CtaTxt {'
@@ -1168,14 +1186,14 @@ var NFQDA = (function(my) {
 
         +'@keyframes fingerani {'
         +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  75%  {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  80%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  81%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  82%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  84%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  85%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  86%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  87% {bottom: 6px;right: 10px; opacity: 0;}'
         +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
         +'}'
 
@@ -1210,7 +1228,7 @@ var NFQDA = (function(my) {
         +'.seq03HeadTxt {'
         +'  position: absolute;'
         +'  font-size: 18px;'
-        +'  top: 9px;'
+        +'  top: 12px;'
         +'  left: 63px;'
         +'  line-height: 28px;'
         +'  text-align: left;'
@@ -1249,6 +1267,7 @@ var NFQDA = (function(my) {
 
         +'.seq03TextWall {'
         +'  position: absolute;'
+        +'  left: 156px;'
         +'  transform-origin: right center;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
@@ -1311,36 +1330,36 @@ var NFQDA = (function(my) {
 
         +'.seqpricefrom {'
         +'  position: absolute;'        
-        +'  top: -18px;'
+        +'  top: -17px;'
         +'  left: 42px;'
-        +'  font-size: 16px;'
+        +'  font-size: 14px;'
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
 
         +'.pricekomma {'
         +'  position: absolute;'        
-        +'  top: -68px;'
-        +'  left: 91px;'
-        +'  font-size: 66px;'
+        +'  top: -63px;'
+        +'  left: 87px;'
+        +'  font-size: 56px;'
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
 
         +'.price {'
         +'  position: absolute;'        
-        +'  top: -64px;'
+        +'  top: -52px;'
         +'  left: 61px;'
         +'  width: 140px;'
         +'  position: absolute;'
-        +'  font-size: 66px;'
+        +'  font-size: 50px;'
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
         +
         '.hovertext {' +
-        '  width:320px;' +
-        '  height:50px;' +
+        '  width:50px;' +
+        '  height:27px;' +
         '  position: absolute;' +
         '  opacity:1;' +
         '  left:0px;' +
@@ -1359,8 +1378,8 @@ var NFQDA = (function(my) {
         '@keyframes hovertextani {' +
         '  0% {opacity: 0; left:-120px;}' +
         '  60% {opacity: 0; left:-120px;}' +
-        '  61% {opacity: 1; left:420px;}' +
-        '  100% {opacity: 1; left:420px;}' +
+        '  61% {opacity: 1; left:255px;}' +
+        '  100% {opacity: 1; left:255px;}' +
         '}'
 
         +
@@ -1391,14 +1410,13 @@ var NFQDA = (function(my) {
         +'  -ms-user-select: none;'
         +'  user-select: none;'
         +'}'
-        +'}'
         
         +'.pricefootnote {'
         +'  position: absolute;'
         +'  font-size: 9px;'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
-        +'  top: 22px;'
-        +'  left: 255px;'
+        +'  top: -23px;'
+        +'  left: 105px;'
         +'  width: 56px;'
         +'  z-index: 2;'
         +'  -webkit-user-select: none;'
@@ -1682,14 +1700,15 @@ var NFQDA = (function(my) {
                 '</div>'+
                 '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
+                '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
-                // '<div class="seq03TextWall">'+
-                //     '<img class="underscore" src="' + my.underscore + '">'+
-                //     '<div class="price">' + my.price + '</div>' +
-                //     '<div class="pricekomma">' + my.pricekomma + '</div>' +
-                //     '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
-                //     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
-                // '</div>'+
+                '<div class="seq03TextWall">'+
+                    '<img class="underscore" src="' + my.underscore + '">'+
+                    '<div class="price">' + my.price + '</div>' +
+                    '<div class="pricekomma">' + my.pricekomma + '</div>' +
+                    '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
+                    '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                '</div>'+
 
 
                 '<div class="banner2BG"></div>' +
