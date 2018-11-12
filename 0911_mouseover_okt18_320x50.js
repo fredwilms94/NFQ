@@ -1134,17 +1134,17 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
-        // +'@keyframes ctaAni {'
-        // +'  0% {top: 9px;opacity: 0}'
-        // +'  89% {top: 9px;opacity: 0}'
-        // +'  91% {top: 9px;opacity: 1}'
-        // +'  92% {top: 11px;opacity: 1}'
-        // +'  93% {top: 9px;opacity: 1}'
-        // +'  96% {top: 9px;opacity: 1}'
-        // +'  97% {top: 11px;opacity: 1}'
-        // +'  98% {top: 9px;opacity: 1}'
-        // +'  100% {top: 9px;opacity: 1}'
-        // +'}'
+        +'@keyframes ctaAni {'
+        +'  0% {top: 9px;opacity: 0}'
+        +'  89% {top: 9px;opacity: 0}'
+        +'  91% {top: 9px;opacity: 1}'
+        +'  92% {top: 11px;opacity: 1}'
+        +'  93% {top: 9px;opacity: 1}'
+        +'  96% {top: 9px;opacity: 1}'
+        +'  97% {top: 11px;opacity: 1}'
+        +'  98% {top: 9px;opacity: 1}'
+        +'  100% {top: 9px;opacity: 1}'
+        +'}'
 
         +'.seq03CtaTxt {'
         +'  font-size: 8px;'
@@ -1166,18 +1166,18 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
-        // +'@keyframes fingerani {'
-        // +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
-        // +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
-        // +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
-        // +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
-        // +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
-        // +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
-        // +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
-        // +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
-        // +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
-        // +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
-        // +'}'
+        +'@keyframes fingerani {'
+        +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  89%  {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  91%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  92%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  93%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  97%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  98%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  99.8% {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
+        +'}'
 
         +'.footer {'
         +'  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;'
@@ -1258,15 +1258,15 @@ var NFQDA = (function(my) {
         +'  animation-delay: .2s;'
         +'}'
 
-        // +'@keyframes disturberRight2Ani {'
-        // +'  0% {opacity: 0;}'
-        // +'  70% {opacity: 0;}'
-        // +'  75% {opacity: 0;}'
-        // +'  85% {opacity: 0;}'
-        // +'  90% {opacity: 1;}'
-        // +'  99.8% {opacity: 1;}'
-        // +'  100% {opacity: 0;}'
-        // +'}'
+        +'@keyframes disturberRight2Ani {'
+        +'  0% {opacity: 0;}'
+        +'  70% {opacity: 0;}'
+        +'  75% {opacity: 0;}'
+        +'  85% {opacity: 0;}'
+        +'  90% {opacity: 1;}'
+        +'  99.8% {opacity: 1;}'
+        +'  100% {opacity: 0;}'
+        +'}'
 
         
         +'.seq03Textul2 {'
@@ -1355,13 +1355,13 @@ var NFQDA = (function(my) {
         '  animation-delay: .2s;' +
         '}'
 
-        // +
-        // '@keyframes hovertextani {' +
-        // '  0% {opacity: 0; left:-120px;}' +
-        // '  60% {opacity: 0; left:-120px;}' +
-        // '  61% {opacity: 1; left:420px;}' +
-        // '  100% {opacity: 1; left:420px;}' +
-        // '}'
+        +
+        '@keyframes hovertextani {' +
+        '  0% {opacity: 0; left:-120px;}' +
+        '  60% {opacity: 0; left:-120px;}' +
+        '  61% {opacity: 1; left:420px;}' +
+        '  100% {opacity: 1; left:420px;}' +
+        '}'
 
         +
         '.hovertext:hover +.sternchentext {' +

@@ -436,6 +436,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('seq02HeadTxt', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtCol', emptyStr, str);
         my.getTmplAttr('seq02HeadTxtBG', my.seq02HeadTxtBG, url);
+        my.getTmplAttr('seq02HeadTxt_second', emptyStr, str);
         my.getTmplAttr('seq02DisrRightBGColor', emptyStr, str);    
         // SEQUENCE 3
         my.getTmplAttr('SecondDisrRight970', my.SecondDisrRight970, url);
@@ -882,7 +883,7 @@ var NFQDA = (function(my) {
         +'  width: 970px;'
         +'  height: auto;'
         +'  top: 0px;'
-        +'  left: 0px;'
+        +'  left: 100px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBrokenAni;'
         +'  animation-duration: 15s;'
@@ -905,7 +906,7 @@ var NFQDA = (function(my) {
         +'  width: 970px;'
         +'  height: auto;'
         +'  top: 0px;'
-        +'  left: 0px;'
+        +'  left: 100px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken2Ani;'
         +'  animation-duration: 15s;'
@@ -928,7 +929,7 @@ var NFQDA = (function(my) {
         +'  width: 970px;'
         +'  height: auto;'
         +'  top: 0px;'
-        +'  left: 0px;'
+        +'  left: 100px;'
         +'  opacity: 0;'
         +'  animation-name: smartphoneBroken3Ani;'
         +'  animation-duration: 15s;'
@@ -975,9 +976,23 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxt {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 36px;'
+        +'  font-size: 32px;'
         +'  top: 104px;'
         +'  left: 110px;'
+        +'  animation-name: headlineAni;'
+        +'  animation-duration: 15s;'
+        +'  animation-timing-function: ease-in-out();'
+        +'  animation-fill-mode: forwards;'
+        +'  animation-delay: .1s;'
+        +'  animation-iteration-count: 2;'
+        +'}'
+
+        +'.seq02HeadTxt_second {'
+        +'  position: absolute;'
+        +'  font-family: FrutigerLTPro-77BlkCn;'
+        +'  font-size: 32px;'
+        +'  top: 104px;'
+        +'  left: 298px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1708,6 +1723,7 @@ var NFQDA = (function(my) {
 
                 '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
                 '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
+                '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
 
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
               
