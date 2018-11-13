@@ -460,6 +460,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('pricefootnote', my.pricefootnote, str);
         my.getTmplAttr('pricekomma', my.pricekomma, str);
@@ -997,10 +998,10 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 30px;'
-        +'  padding-top:55px;'
+        +'  padding-top:44px;'
         +'  width:300px;'
         +'  text-align: center;'
-        +'  left: 50%;'
+        +'  left: 35%;'
         +'  transform: translate(-50%, 0);'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1014,10 +1015,10 @@ var NFQDA = (function(my) {
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 30px;'
-        +'  padding-top: 85px;'
+        +'  padding-top: 44px;'
         +'  width:300px;'
         +'  text-align: center;'
-        +'  left: 50%;'
+        +'  left: 77.9%;'
         +'  transform: translate(-50%, 0);'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
@@ -1451,7 +1452,16 @@ var NFQDA = (function(my) {
         +'  line-height: 13px;'
         +'}'
         
-
+        +
+        '.preis_sternchen {' +
+        '  position: absolute;' +
+        '  font-size: 20px;' +
+        '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+        '  top: 194px;' +
+        '  left: 191px;' +
+        '  width: 65px;' +
+        '  line-height: 12px;' +
+        '}'
 
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
@@ -1710,7 +1720,8 @@ var NFQDA = (function(my) {
                     '<div class="seq02DisrRightTxtul3">' + my.seq02DisrRightTxtul3 + '</div>'+
                 '</div>'+
 
-                '<div class="seq02HeadTxt">'+'<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+ my.seq02HeadTxt +'</div>'+
+                '<img src="' + my.seq02HeadTxtBG + '" class="seq02HeadTxtBG">'+
+                '<div class="seq02HeadTxt">'+ my.seq02HeadTxt +'</div>'+
                 '<div class="seq02HeadTxt_second">' + my.seq02HeadTxt_second + '</div>' +
 
                 '<div class="seq03HeadTxt">'+ my.seq03HeadTxt768 +'</div>'+
@@ -1736,6 +1747,7 @@ var NFQDA = (function(my) {
                     '<div class="pricekomma">' + my.pricekomma + '</div>' +
                     '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                    '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
                 '</div>'+
 
                 '<div class="banner2BG"></div>' +
@@ -1755,6 +1767,10 @@ var NFQDA = (function(my) {
                         '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                     '</div>' +
                 '</div>' +
+                '<div id="clickButton">'+
+                '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+                + '" height="' + my.bannerH + '"/>'+
+                '</div>'+
             '</div>'
         );
     };

@@ -460,6 +460,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('seqprice', my.seqprice, url);
         my.getTmplAttr('pricekomma', my.pricekomma, str);
         
@@ -974,9 +975,10 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxt {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
-        +'  top: 7px;'
-        +'  padding-left: 32px;'
+        +'  font-size: 12px;'
+        +'  top: 9px;'
+        +'  opacity: 0;'
+        +'  padding-left: 47px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -987,8 +989,9 @@ var NFQDA = (function(my) {
 
         +'.seq02HeadTxtBG {'
         +'  position: absolute;'
-        +'  width:30px;'
-        +'  top: 9px;'
+        +'  opacity: 0;'
+        +'  width:42px;'
+        +'  top: 11px;'
         +'  left: 50px;'
         +'  height:auto;'
         +'  animation-name: headlineAni;'
@@ -1002,10 +1005,11 @@ var NFQDA = (function(my) {
         +'.seq02HeadTxt_second {'
         +'  position: absolute;'
         +'  font-family: FrutigerLTPro-77BlkCn;'
-        +'  font-size: 14px;'
+        +'  font-size: 12px;'
         +'  top:20px;'
-        +'  padding-left:52px;'
+        +'  padding-left:65px;'
         +'  left: 90px;'
+        +'  opacity: 0;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1151,17 +1155,18 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'}'
 
+        // animation CTA
         +'@keyframes ctaAni {'
         +'  0% {top: 9px;opacity: 0}'
-        +'  75% {top: 9px;opacity: 0}'
-        +'  80% {top: 9px;opacity: 1}'
-        +'  81% {top: 11px;opacity: 1}'
-        +'  82% {top: 9px;opacity: 1}'
-        +'  84% {top: 9px;opacity: 1}'
-        +'  85% {top: 11px;opacity: 1}'
-        +'  86% {top: 9px;opacity: 1}'
         +'  87% {top: 9px;opacity: 0}'
-        +'  100% {top: 9px;opacity: 0}'
+        +'  90% {top: 9px;opacity: 1}'
+        +'  91% {top: 11px;opacity: 1}'
+        +'  92% {top: 9px;opacity: 1}'
+        +'  94% {top: 9px;opacity: 1}'
+        +'  95% {top: 11px;opacity: 1}'
+        +'  99% {top: 9px;opacity: 1}'
+        +'  99.8% {top: 9px;opacity: 1}'
+        +'  100% {top: 9px;opacity: 1}'
         +'}'
 
         +'.seq03CtaTxt {'
@@ -1186,14 +1191,14 @@ var NFQDA = (function(my) {
 
         +'@keyframes fingerani {'
         +'  0%   {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  75%  {bottom: 0px;right:-100px;opacity: 0;}'
-        +'  80%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  81%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  82%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  84%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  85%  {bottom: 4px;right: 10px; opacity: 1;}'
-        +'  86%  {bottom: 6px;right: 10px; opacity: 1;}'
-        +'  87% {bottom: 6px;right: 10px; opacity: 0;}'
+        +'  87%  {bottom: 0px;right:-100px;opacity: 0;}'
+        +'  90%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  91%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  92%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  94%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  95%  {bottom: 4px;right: 10px; opacity: 1;}'
+        +'  96%  {bottom: 6px;right: 10px; opacity: 1;}'
+        +'  97% {bottom: 6px;right: 10px; opacity: 0;}'
         +'  100% {bottom: 6px;right: 10px; opacity: 0;}'
         +'}'
 
@@ -1228,9 +1233,11 @@ var NFQDA = (function(my) {
         +'.seq03HeadTxt {'
         +'  position: absolute;'
         +'  font-size: 18px;'
-        +'  top: 12px;'
+        +'  top: 50%;'
+        +'  transform: translate(0%,-50%);'
         +'  left: 63px;'
         +'  line-height: 28px;'
+        +'  opacity: 0;'
         +'  text-align: left;'
         +'  animation-name: headline2Ani;'
         +'  animation-duration: 15s;'
@@ -1268,6 +1275,7 @@ var NFQDA = (function(my) {
         +'.seq03TextWall {'
         +'  position: absolute;'
         +'  left: 147px;'
+        +'  opacity: 0;'
         +'  transform-origin: right center;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
@@ -1277,16 +1285,16 @@ var NFQDA = (function(my) {
         +'  animation-delay: .2s;'
         +'}'
 
+// animation price
         +'@keyframes disturberRight2Ani {'
         +'  0% {opacity: 0;}'
         +'  70% {opacity: 0;}'
-        +'  75% {opacity: 0;}'
-        +'  85% {opacity: 0;}'
-        +'  90% {opacity: 1;}'
-        +'  99.8% {opacity: 1;}'
+        +'  74% {opacity: 1;}'
+        +'  84% {opacity: 1;}'
+        +'  87% {opacity: 0;}'
+        +'  99.8% {opacity: 0;}'
         +'  100% {opacity: 0;}'
         +'}'
-
         
         +'.seq03Textul2 {'
         +'  top: 45px;'
@@ -1356,6 +1364,7 @@ var NFQDA = (function(my) {
         +'  color: #ffed00;'
         +'  font-family: websans_extra_black, Arial, sans-serif;'
         +'}'
+        
         +
         '.hovertext {' +
         '  width:50px;' +
@@ -1387,7 +1396,8 @@ var NFQDA = (function(my) {
         '  display:inline;' +
         '  opacity:1;' +
         '  bottom:0px;' +
-        '  transition: bottom 3s;' +
+        '  transition: bottom 12s;' +
+        '  transition-delay: -2s;' +
         '}'
 
         +'.sternchentext{'
@@ -1423,6 +1433,7 @@ var NFQDA = (function(my) {
         +'  -moz-user-select: none;'
         +'  -ms-user-select: none;'
         +'  user-select: none;'
+        +'  opacity: 0;'
         +'  animation-name: disturberRight2Ani;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1430,6 +1441,17 @@ var NFQDA = (function(my) {
         +'  animation-iteration-count: 2;'
         +'  animation-delay: .2s;'
         +'}'
+
+        +
+        '.preis_sternchen {' +
+        '  position: absolute;' +
+        '  font-size: 20px;' +
+        '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+        '  top: -10px;' +
+        '  left: 140px;' +
+        '  width: 65px;' +
+        '  line-height: 12px;' +
+        '}'
 
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
@@ -1487,6 +1509,7 @@ var NFQDA = (function(my) {
         + '    position: relative;'
         + '    top: -0.6em;'
         + '    font-size: 45%;'
+        + '    left: -9px;'
         + '}'
 
         
@@ -1708,6 +1731,7 @@ var NFQDA = (function(my) {
                     '<div class="pricekomma">' + my.pricekomma + '</div>' +
                     '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                    '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
                 '</div>'+
 
 
@@ -1725,6 +1749,10 @@ var NFQDA = (function(my) {
                         '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                     '</div>' +
                 '</div>' +
+                '<div id="clickButton">'+
+                '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+                + '" height="' + my.bannerH + '"/>'+
+                '</div>'+
             '</div>'
         );
     };

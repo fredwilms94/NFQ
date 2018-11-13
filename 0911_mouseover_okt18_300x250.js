@@ -461,6 +461,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('seqprice', my.seqprice, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('pricefootnote', my.pricefootnote, str);
@@ -1005,7 +1006,7 @@ var NFQDA = (function(my) {
         +'  font-size: 21px;'
         +'  top:12px;'
         +'  padding-left:122px;'
-        +'  left: 90px;'
+        +'  left: 88px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1499,6 +1500,17 @@ var NFQDA = (function(my) {
         +'  user-select: none;'
         +'}'
 
+        +
+        '.preis_sternchen {' +
+        '  position: absolute;' +
+        '  font-size: 18px;' +
+        '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+        '  top: 146px;' +
+        '  left: 135px;' +
+        '  width: 65px;' +
+        '  line-height: 12px;' +
+        '}'
+
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
         +'  width: auto;'
@@ -1551,9 +1563,9 @@ var NFQDA = (function(my) {
         + 'sup {'
         + ' vertical-align: middle;'
         + ' position: relative;'
-        + ' top: -16px;'
-        + ' left: -9px;'
-        + ' font-size: 47%;'
+        + ' top: -18px;'
+        + ' left: -11px;'
+        + ' font-size: 53%;'
         + '}'
 
         
@@ -1579,6 +1591,7 @@ var NFQDA = (function(my) {
         + '#clickButton {'
         + '    border: ' + my.border + ';'
         + '    cursor: pointer;'
+        + '    z-index: 99999;'
         + '}'
 
         + '#bannerBg {'
@@ -1786,6 +1799,7 @@ var NFQDA = (function(my) {
                     '<div class="pricekomma">' + my.pricekomma + '</div>' +
                     '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
                     '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                    '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
                 '</div>'+
 
                 '<div class="banner2BG"></div>' +
@@ -1809,6 +1823,10 @@ var NFQDA = (function(my) {
                         '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                     '</div>' +
                 '</div>' +
+                '<div id="clickButton">'+
+                '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+                + '" height="' + my.bannerH + '"/>'+
+                '</div>'+
             '</div>'
         );
     };
