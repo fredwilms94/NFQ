@@ -497,6 +497,7 @@ var NFQDA = (function (my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('pricefooter', my.pricefooter, str);
         my.getTmplAttr('pricekomma', my.pricekomma, str);
@@ -1234,15 +1235,15 @@ var NFQDA = (function (my) {
 
             +
             '@keyframes ctaAni {' +
-            '  0% {bottom: 116px;opacity: 0;}' +
-            '  62% {bottom: 116px;opacity: 0;}' +
-            '  68% {bottom: 116px;opacity: 1;}' +
-            '  69% {bottom: 114px;opacity: 1;}' +
-            '  70% {bottom: 116px;opacity: 1;}' +
-            '  73% {bottom: 116px;opacity: 1;}' +
-            '  74% {bottom: 114px;opacity: 1;}' +
-            '  75% {bottom: 116px;opacity: 1}' +
-            '  100% {bottom: 116px;opacity: 1}' +
+            '  0% {bottom: 126px;opacity: 0;}' +
+            '  62% {bottom: 126px;opacity: 0;}' +
+            '  68% {bottom: 126px;opacity: 1;}' +
+            '  69% {bottom: 124px;opacity: 1;}' +
+            '  70% {bottom: 126px;opacity: 1;}' +
+            '  73% {bottom: 126px;opacity: 1;}' +
+            '  74% {bottom: 124px;opacity: 1;}' +
+            '  75% {bottom: 126px;opacity: 1}' +
+            '  100% {bottom: 126px;opacity: 1}' +
             '}'
 
             +
@@ -1270,14 +1271,14 @@ var NFQDA = (function (my) {
             +
             '@keyframes fingerani {' +
             '  62% {bottom: 0px;left:160px;opacity: 0;}' +
-            '  68% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  69% {bottom: 112px;left:102px;opacity: 1;}' +
-            '  70% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  73% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  74% {bottom: 112px;left:102px;opacity: 1;}' +
-            '  75% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  99.8% {bottom: 114px;left:102px;opacity: 1;}' +
-            '  100% {bottom: 114px;left:102px;opacity: 0;}' +
+            '  68% {bottom: 124px;left:102px;opacity: 1;}' +
+            '  69% {bottom: 122px;left:102px;opacity: 1;}' +
+            '  70% {bottom: 124px;left:102px;opacity: 1;}' +
+            '  73% {bottom: 124px;left:102px;opacity: 1;}' +
+            '  74% {bottom: 122px;left:102px;opacity: 1;}' +
+            '  75% {bottom: 124px;left:102px;opacity: 1;}' +
+            '  99.8% {bottom: 124px;left:102px;opacity: 1;}' +
+            '  100% {bottom: 124px;left:102px;opacity: 0;}' +
             '}'
 
             +
@@ -1524,12 +1525,23 @@ var NFQDA = (function (my) {
             +
             '.pricefootnote {' +
             '  position: absolute;' +
-            '  font-size: 10.5px;' +
+            '  font-size: 10px;' +
             '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
             '  top: 172px;' +
             '  left: 61px;' +
             '  width: 65px;' +
             '  line-height: 11px;' +
+            '}'
+
+            +
+            '.preis_sternchen {' +
+            '  position: absolute;' +
+            '  font-size: 20px;' +
+            '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+            '  top: 184px;' +
+            '  left: 100px;' +
+            '  width: 65px;' +
+            '  line-height: 12px;' +
             '}'
 
             +
@@ -1762,6 +1774,7 @@ var NFQDA = (function (my) {
             '<div class="pricekomma">' + my.pricekomma + '</div>' +
             '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
             '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+            '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
             '</div>' +
             '<div class="banner2BG"></div>' +
             '<img class="seq01ProdImgName" src="' + my.seq01ProdImgName + '"></img>' +
@@ -1780,6 +1793,10 @@ var NFQDA = (function (my) {
                     '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                 '</div>' +
             '</div>' +
+            '<div id="clickButton">'+
+            '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+            + '" height="' + my.bannerH + '"/>'+
+            '</div>'+
             '</div>'
         );
     };

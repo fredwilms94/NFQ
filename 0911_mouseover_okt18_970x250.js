@@ -465,6 +465,7 @@ var NFQDA = (function(my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('pricefrom', my.pricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('pricekomma', my.pricekomma, str);
         my.getTmplAttr('seqprice', my.seqprice, url);  
         my.getTmplAttr('pricefooter', my.pricefooter, str);
@@ -992,7 +993,7 @@ var NFQDA = (function(my) {
         +'  font-family: FrutigerLTPro-77BlkCn;'
         +'  font-size: 32px;'
         +'  top: 104px;'
-        +'  left: 298px;'
+        +'  left: 293px;'
         +'  animation-name: headlineAni;'
         +'  animation-duration: 15s;'
         +'  animation-timing-function: ease-in-out();'
@@ -1471,6 +1472,17 @@ var NFQDA = (function(my) {
         +'  animation-delay: .2s;'
         +'}'
 
+        +
+        '.preis_sternchen {' +
+        '  position: absolute;' +
+        '  font-size: 23px;' +
+        '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+        '  top: 199px;' +
+        '  left: 186px;' +
+        '  width: 65px;' +
+        '  line-height: 12px;' +
+        '}'
+
         +'.smartphoneSmall1 {'
         +'  position: absolute;'
         +'  width: auto;'
@@ -1748,6 +1760,7 @@ var NFQDA = (function(my) {
                 '<div class="pricekomma">' + my.pricekomma + '</div>' +
                 '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
                 '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+                '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
             '</div>'+
 
                 '<div class="banner2BG"></div>' +
@@ -1773,6 +1786,10 @@ var NFQDA = (function(my) {
                         '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                     '</div>' +
                 '</div>' +
+                '<div id="clickButton">'+
+                '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+                + '" height="' + my.bannerH + '"/>'+
+                '</div>'+
             '</div>'
         );
     };

@@ -500,6 +500,7 @@ var NFQDA = (function (my) {
         my.getTmplAttr('underscore', my.underscore, url);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('price', my.price, str);
+        my.getTmplAttr('preis_sternchen', my.preis_sternchen, str);
         my.getTmplAttr('seqpricefrom', my.seqpricefrom, str);
         my.getTmplAttr('pricefootnote', my.pricefootnote, str);
         my.getTmplAttr('pricekomma', my.pricekomma, str);
@@ -1224,15 +1225,15 @@ var NFQDA = (function (my) {
 
             +
             '@keyframes ctaAni {' +
-            '  0% {bottom: 115px;opacity: 0;}' +
-            '  62% {bottom: 115px;opacity: 0;}' +
-            '  68% {bottom: 115px;opacity: 1;}' +
-            '  69% {bottom: 113px;opacity: 1;}' +
-            '  70% {bottom: 115px;opacity: 1;}' +
-            '  73% {bottom: 115px;opacity: 1;}' +
-            '  74% {bottom: 113px;opacity: 1;}' +
-            '  75% {bottom: 115px;opacity: 1}' +
-            '  100% {bottom: 115px;opacity: 1}' +
+            '  0% {bottom: 125px;opacity: 0;}' +
+            '  62% {bottom: 125px;opacity: 0;}' +
+            '  68% {bottom: 125px;opacity: 1;}' +
+            '  69% {bottom: 123px;opacity: 1;}' +
+            '  70% {bottom: 125px;opacity: 1;}' +
+            '  73% {bottom: 125px;opacity: 1;}' +
+            '  74% {bottom: 123px;opacity: 1;}' +
+            '  75% {bottom: 125px;opacity: 1}' +
+            '  100% {bottom: 125px;opacity: 1}' +
             '}'
 
             +
@@ -1260,14 +1261,14 @@ var NFQDA = (function (my) {
             +
             '@keyframes fingerani {' +
             '  62% {bottom: 0px;left:160px;opacity: 0;}' +
-            '  68% {bottom: 113px;left:125px;opacity: 1;}' +
-            '  69% {bottom: 111px;left:125px;opacity: 1;}' +
-            '  70% {bottom: 113px;left:125px;opacity: 1;}' +
-            '  73% {bottom: 113px;left:125px;opacity: 1;}' +
-            '  74% {bottom: 111px;left:125px;opacity: 1;}' +
-            '  75% {bottom: 113px;left:125px;opacity: 1;}' +
-            '  99.8% {bottom: 113px;left:125px;opacity: 1;}' +
-            '  100% {bottom: 113px;left:125px;opacity: 0;}' +
+            '  68% {bottom: 123px;left:125px;opacity: 1;}' +
+            '  69% {bottom: 121px;left:125px;opacity: 1;}' +
+            '  70% {bottom: 123px;left:125px;opacity: 1;}' +
+            '  73% {bottom: 123px;left:125px;opacity: 1;}' +
+            '  74% {bottom: 121px;left:125px;opacity: 1;}' +
+            '  75% {bottom: 123px;left:125px;opacity: 1;}' +
+            '  99.8% {bottom: 123px;left:125px;opacity: 1;}' +
+            '  100% {bottom: 123px;left:125px;opacity: 0;}' +
             '}'
 
             +
@@ -1552,6 +1553,17 @@ var NFQDA = (function (my) {
             '}'
 
             +
+            '.preis_sternchen {' +
+            '  position: absolute;' +
+            '  font-size: 22px;' +
+            '  font-family: FrutigerLTPro-57Cn, Arial, sans-serif;' +
+            '  top: 189px;' +
+            '  left: 121px;' +
+            '  width: 65px;' +
+            '  line-height: 12px;' +
+            '}'
+
+            +
             '.smartphoneSmall1 {' +
             '  position: absolute;' +
             '  width: auto;' +
@@ -1780,6 +1792,7 @@ var NFQDA = (function (my) {
             '<div class="pricekomma">' + my.pricekomma + '</div>' +
             '<div class="seqpricefrom">' + my.seqpricefrom + '</div>' +
             '<div class="pricefootnote">' + my.pricefootnote + '</div>' +
+            '<div class="preis_sternchen">' + my.preis_sternchen + '</div>' +
             '</div>' +
 
             '<div class="banner2BG"></div>' +
@@ -1799,6 +1812,10 @@ var NFQDA = (function (my) {
                     '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                 '</div>' +
             '</div>' +
+            '<div id="clickButton">'+
+            '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
+            + '" height="' + my.bannerH + '"/>'+
+            '</div>'+
             '</div>'
         );
     };
