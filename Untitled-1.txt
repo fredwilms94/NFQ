@@ -1793,10 +1793,6 @@ var NFQDA = (function (my) {
                     '<span>' + "Preise inkl. MwSt. 1&1 Telecom GmbH, Elgendorfer Straße 57, 56410 Montabaur" + '</span>' +
                 '</div>' +
             '</div>' +
-            '<div id="clickButton">'+
-            '<img src="' + my.emptyPng + '" alt="" width="' + my.bannerW
-            + '" height="' + my.bannerH + '"/>'+
-            '</div>'+
             '</div>'
         );
     };
