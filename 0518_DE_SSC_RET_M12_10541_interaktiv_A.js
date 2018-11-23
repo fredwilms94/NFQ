@@ -443,6 +443,9 @@ var NFQDA = (function (my) {
         my.getTmplAttr('bgCol', my.defBgCol, str);
         my.getTmplAttr('border', my.defBorder, str);
 
+        my.getTmplAttr('BannerBG_120', my.bgspot_120, url);
+        my.getTmplAttr('logo', my.logo, url);
+
 
         // ************************************************************
         // products
@@ -658,30 +661,29 @@ var NFQDA = (function (my) {
             '}'
 
             +
-            '.logo {' +
-            '  background-repeat: no-repeat;' +
-            '  background-size: contain;' +
-            '  width: 76px;' +
-            '  height: auto;' +
-            '  position: absolute;' +
-            '  bottom: 30px;' +
-            '  left: 50%;' +
-            '  transform: translate(-50%,0%);' +
+            '#banner {' +
+            '   background-image: url(' + my.bgspot_120 + ');' +
+            '   background-size: 100%;'+
+            '   background-repeat: no-repeat;'+
+            '   background-color: #0e3274;' +
+            '   width: 100%;' +
+            '   height: 100%;' +
+            '   position: absolute;'+
+            '   left: 0px;' +
+            '   top: 0px;' +
             '}'
-
+           
             +
-            '#BannerBG {' +
-            '  background-image: url(' + my.BannerBG_120 + ');' +
-            '  background-color: #0d3374;' +
-            '  width: 100%;' +
-            '  height: 100%;' +
-            '  left: 0px;' +
-            '  top: 0px;' +
-            '  animation-name: bannerBGAni;' +
-            '  animation-duration: 15s;' +
-            '  animation-timing-function: ease-in-out();' +
-            '  animation-fill-mode: forwards;' +
-            '  animation-iteration-count: 2;' +
+            '.logo {' +
+            '   height: auto;' +
+            '   width: 50px;' +
+            '   position: absolute;' +
+            '   bottom: 30px;' +
+            '   left: 50%;' +
+            '   transform: translate(-50%,0%);' +
+            '   outline-color: white;' +
+            '   outline-style: solid;' +
+            '   outline-width: 1px;' +
             '}'
 
             +
@@ -811,8 +813,16 @@ var NFQDA = (function (my) {
         // put html into target container
         $(my.targetCtr).html(
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
-            '<div id="BannerBG"></div>' +
- 
+                '<div id="banner">'+
+                    '<div id="title"></div>'+
+                    '<div id="image"></div>'+
+                    '<div id="preis"></div>'+
+                    '<div id="cta"><span id="btn-cta"></span></div>'+
+                    '<div id="items">'+
+
+                    '</div>'+
+                    '<img class="logo" src="' + my.logo + '">' +
+                '</div>'+
             '</div>'
         );
     };
