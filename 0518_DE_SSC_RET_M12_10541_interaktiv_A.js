@@ -687,6 +687,17 @@ var NFQDA = (function (my) {
             '}'
 
             +
+            '#title {' +
+            '   font-family: FrutigerLTPro-77BlkCn;' +
+            '   font-size:16px;'+
+            '   color:#134093;'+
+            '   text-align:center;'+
+            '   padding-top:5px;'+
+            '   height: 30px;' +
+            '   background-color: #ffed00;' +
+            '}'
+
+            +
             '.bannerHTML5, .lkWrap, #bannerBg {' +
             '    position: absolute;' +
             '    top: 0;' +
@@ -814,7 +825,7 @@ var NFQDA = (function (my) {
         $(my.targetCtr).html(
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
                 '<div id="banner">'+
-                    '<div id="title"></div>'+
+                    '<div id="title">HUAWEI P20</div>'+
                     '<div id="image"></div>'+
                     '<div id="preis"></div>'+
                     '<div id="cta"><span id="btn-cta"></span></div>'+
