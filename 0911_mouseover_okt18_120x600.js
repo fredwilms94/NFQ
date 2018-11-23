@@ -1485,8 +1485,8 @@ var NFQDA = (function (my) {
             '@keyframes hovertextani {' +
             '  0% {opacity: 0; left:-120px;}' +
             '  60% {opacity: 0; left:-120px;}' +
-            '  61% {opacity: 1; left:50px;}' +
-            '  100% {opacity: 1; left:50px;}' +
+            '  61% {opacity: 1; left:58px;}' +
+            '  100% {opacity: 1; left:58px;}' +
             '}'
 
             +
