@@ -458,6 +458,12 @@ var NFQDA = (function (my) {
         my.getTmplAttr('product_title_size_4', emptyStr, str);
         my.getTmplAttr('product_title_size_5', emptyStr, str);
 
+        my.getTmplAttr('product_image_1', my.product_image_1, url);
+        my.getTmplAttr('product_image_2', my.product_image_2, url);
+        my.getTmplAttr('product_image_3', my.product_image_3, url);
+        my.getTmplAttr('product_image_4', my.product_image_4, url);
+        my.getTmplAttr('product_image_5', my.product_image_5, url);
+
         
 
         // ************************************************************
@@ -743,6 +749,50 @@ var NFQDA = (function (my) {
             '}'
 
             +
+            '.product_image_1 {' +
+            '   position: absolute;' +
+            '   transform: translate(-50%, -50%);'+
+            '   width: 90px;' +
+            '   height: auto;' +
+            '   top: 135px;' +
+            '   left: 50%;' +
+            '}'
+
+            +
+            '.itemwrapper {' +
+            '   width: 40px;' +
+            '   height: auto;' +
+            '   padding: 2px 4px 20px 4px;'+
+            '}'
+
+            +
+            '.itemwrapper:hover {' +
+            '   background-color: #ffed00;' +
+            '}'
+
+            +
+            '.product_item_1 {' +
+            '   width: 100%;' +
+            '   height: auto;' +
+            '}'
+
+            +
+            '#items {' +
+            '   position: absolute;' +
+            '   transform: translate(-50%, 0%);'+
+            '   left: 50%;' +
+            '   width: 100px;' +
+            '   height: 200px;' +
+            '   bottom: 50px;' +
+            '   display: flex;'+
+            '   justify-content: space-evenly;'+
+            '   flex-wrap: wrap;'+
+            '   align-items: center;'+
+            '}'
+
+            
+
+            +
             '.bannerHTML5, .lkWrap, #bannerBg {' +
             '    position: absolute;' +
             '    top: 0;' +
@@ -871,23 +921,29 @@ var NFQDA = (function (my) {
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
             '<div id="banner">' +
             '<div id="title">' +
-            '<span class="product_title_1">' + my.product_title_1 + '</span>' +
-            '<span class="product_title_2">' + my.product_title_2 + '</span>' +
-            '<span class="product_title_3">' + my.product_title_3 + '</span>' +
-            '<span class="product_title_4">' + my.product_title_4 + '</span>' +
-            '<span class="product_title_5">' + my.product_title_5 + '</span>' +
+                '<span class="product_title_1">' + my.product_title_1 + '</span>' +
+                // '<span class="product_title_2">' + my.product_title_2 + '</span>' +
+                // '<span class="product_title_3">' + my.product_title_3 + '</span>' +
+                // '<span class="product_title_4">' + my.product_title_4 + '</span>' +
+                // '<span class="product_title_5">' + my.product_title_5 + '</span>' +
             '</div>' +
             '<div id="image">' +
-            '<img class="product_image_1" src="' + my.product_image_1 + '"></img>' +
-            '<img class="product_image_2" src="' + my.product_image_2 + '"></img>' +
-            '<img class="product_image_3" src="' + my.product_image_3 + '"></img>' +
-            '<img class="product_image_4" src="' + my.product_image_4 + '"></img>' +
-            '<img class="product_image_5" src="' + my.product_image_5 + '"></img>' +
+                '<img class="product_image_1" src="' + my.product_image_1 + '"></img>' +
+                // '<img class="product_image_2" src="' + my.product_image_2 + '"></img>' +
+                // '<img class="product_image_3" src="' + my.product_image_3 + '"></img>' +
+                // '<img class="product_image_4" src="' + my.product_image_4 + '"></img>' +
+                // '<img class="product_image_5" src="' + my.product_image_5 + '"></img>' +
             '</div>' +
             '<div id="preis"></div>' +
             '<div id="cta"><span id="btn-cta"></span></div>' +
             '<div id="items">' +
-
+                '<div class="itemwrapper">' +
+                    '<img class="product_item_1" src="' + my.product_image_1 + '"></img>' +
+                '</div>' +        
+                    // '<img class="product_item_2" src="' + my.product_image_2 + '"></img>' +
+                    // '<img class="product_item_3" src="' + my.product_image_3 + '"></img>' +
+                    // '<img class="product_item_4" src="' + my.product_image_4 + '"></img>' +
+                    // '<img class="product_item_5" src="' + my.product_image_5 + '"></img>' +
             '</div>' +
             '<img class="logo" src="' + my.logo + '">' +
             '</div>' +
