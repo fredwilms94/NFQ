@@ -825,7 +825,12 @@ var NFQDA = (function (my) {
         $(my.targetCtr).html(
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
                 '<div id="banner">'+
-                    '<div id="title">HUAWEI P20</div>'+
+                    '<div id="title">'+
+                        '<span class="product_title_1">' + my.product_title_1 + '</span>'+
+                        '<span class="product_title_2">' + my.product_title_2 + '</span>'+
+                        '<span class="product_title_3">' + my.product_title_3 + '</span>'+
+                        '<span class="product_title_4">' + my.product_title_4 + '</span>'+
+                    '</div>'+
                     '<div id="image"></div>'+
                     '<div id="preis"></div>'+
                     '<div id="cta"><span id="btn-cta"></span></div>'+
