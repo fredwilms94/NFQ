@@ -443,9 +443,22 @@ var NFQDA = (function (my) {
         my.getTmplAttr('bgCol', my.defBgCol, str);
         my.getTmplAttr('border', my.defBorder, str);
 
-        my.getTmplAttr('BannerBG_120', my.bgspot_120, url);
+        my.getTmplAttr('bgspot_200', my.bgspot_200, url);
         my.getTmplAttr('logo', my.logo, url);
 
+        my.getTmplAttr('product_title_1', emptyStr, str);
+        my.getTmplAttr('product_title_2', emptyStr, str);
+        my.getTmplAttr('product_title_3', emptyStr, str);
+        my.getTmplAttr('product_title_4', emptyStr, str);
+        my.getTmplAttr('product_title_5', emptyStr, str);
+
+        my.getTmplAttr('product_title_size_1', emptyStr, str);
+        my.getTmplAttr('product_title_size_2', emptyStr, str);
+        my.getTmplAttr('product_title_size_3', emptyStr, str);
+        my.getTmplAttr('product_title_size_4', emptyStr, str);
+        my.getTmplAttr('product_title_size_5', emptyStr, str);
+
+        
 
         // ************************************************************
         // products
@@ -662,23 +675,23 @@ var NFQDA = (function (my) {
 
             +
             '#banner {' +
-            '   background-image: url(' + my.bgspot_120 + ');' +
-            '   background-size: 100%;'+
-            '   background-repeat: no-repeat;'+
+            '   background-image: url(' + my.bgspot_200 + ');' +
+            '   background-size: cover;' +
+            '   background-repeat: no-repeat;' +
             '   background-color: #0e3274;' +
             '   width: 100%;' +
             '   height: 100%;' +
-            '   position: absolute;'+
+            '   position: absolute;' +
             '   left: 0px;' +
             '   top: 0px;' +
             '}'
-           
+
             +
             '.logo {' +
             '   height: auto;' +
             '   width: 50px;' +
             '   position: absolute;' +
-            '   bottom: 30px;' +
+            '   bottom: 15px;' +
             '   left: 50%;' +
             '   transform: translate(-50%,0%);' +
             '   outline-color: white;' +
@@ -689,12 +702,44 @@ var NFQDA = (function (my) {
             +
             '#title {' +
             '   font-family: FrutigerLTPro-77BlkCn;' +
-            '   font-size:16px;'+
-            '   color:#134093;'+
-            '   text-align:center;'+
-            '   padding-top:5px;'+
+            '   font-size:16px;' +
+            '   color:#134093;' +
+            '   text-align:center;' +
+            '   padding-top:5px;' +
             '   height: 30px;' +
             '   background-color: #ffed00;' +
+            '   display: flex;' +
+            '   justify-content: center;' +
+            '}'
+
+            +
+            '.product_title_1 {' +
+            '   position: absolute;' +
+            '   font-size: ' + my.product_title_size_1 + ';' +
+            '}'
+
+            +
+            '.product_title_2 {' +
+            '   position: absolute;' +
+            '   font-size: ' + my.product_title_size_2 + ';' +
+            '}'
+
+            +
+            '.product_title_3 {' +
+            '   position: absolute;' +
+            '   font-size: ' + my.product_title_size_3 + ';' +
+            '}'
+
+            +
+            '.product_title_4 {' +
+            '   position: absolute;' +
+            '   font-size: ' + my.product_title_size_4 + ';' +
+            '}'
+
+            +
+            '.product_title_5 {' +
+            '   position: absolute;' +
+            '   font-size: ' + my.product_title_size_5 + ';' +
             '}'
 
             +
@@ -824,21 +869,28 @@ var NFQDA = (function (my) {
         // put html into target container
         $(my.targetCtr).html(
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
-                '<div id="banner">'+
-                    '<div id="title">'+
-                        '<span class="product_title_1">' + my.product_title_1 + '</span>'+
-                        '<span class="product_title_2">' + my.product_title_2 + '</span>'+
-                        '<span class="product_title_3">' + my.product_title_3 + '</span>'+
-                        '<span class="product_title_4">' + my.product_title_4 + '</span>'+
-                    '</div>'+
-                    '<div id="image"></div>'+
-                    '<div id="preis"></div>'+
-                    '<div id="cta"><span id="btn-cta"></span></div>'+
-                    '<div id="items">'+
+            '<div id="banner">' +
+            '<div id="title">' +
+            '<span class="product_title_1">' + my.product_title_1 + '</span>' +
+            '<span class="product_title_2">' + my.product_title_2 + '</span>' +
+            '<span class="product_title_3">' + my.product_title_3 + '</span>' +
+            '<span class="product_title_4">' + my.product_title_4 + '</span>' +
+            '<span class="product_title_5">' + my.product_title_5 + '</span>' +
+            '</div>' +
+            '<div id="image">' +
+            '<img class="product_image_1" src="' + my.product_image_1 + '"></img>' +
+            '<img class="product_image_2" src="' + my.product_image_2 + '"></img>' +
+            '<img class="product_image_3" src="' + my.product_image_3 + '"></img>' +
+            '<img class="product_image_4" src="' + my.product_image_4 + '"></img>' +
+            '<img class="product_image_5" src="' + my.product_image_5 + '"></img>' +
+            '</div>' +
+            '<div id="preis"></div>' +
+            '<div id="cta"><span id="btn-cta"></span></div>' +
+            '<div id="items">' +
 
-                    '</div>'+
-                    '<img class="logo" src="' + my.logo + '">' +
-                '</div>'+
+            '</div>' +
+            '<img class="logo" src="' + my.logo + '">' +
+            '</div>' +
             '</div>'
         );
     };
