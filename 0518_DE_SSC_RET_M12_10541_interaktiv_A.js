@@ -771,7 +771,7 @@ var NFQDA = (function (my) {
             '}'
 
             +
-            '.product_item_1 {' +
+            '.product_item {' +
             '   width: 100%;' +
             '   height: auto;' +
             '}'
@@ -938,12 +938,20 @@ var NFQDA = (function (my) {
             '<div id="cta"><span id="btn-cta"></span></div>' +
             '<div id="items">' +
                 '<div class="itemwrapper">' +
-                    '<img class="product_item_1" src="' + my.product_image_1 + '"></img>' +
-                '</div>' +        
-                    // '<img class="product_item_2" src="' + my.product_image_2 + '"></img>' +
-                    // '<img class="product_item_3" src="' + my.product_image_3 + '"></img>' +
-                    // '<img class="product_item_4" src="' + my.product_image_4 + '"></img>' +
-                    // '<img class="product_item_5" src="' + my.product_image_5 + '"></img>' +
+                    '<img class="product_item" src="' + my.product_image_1 + '"></img>' +
+                '</div>' +  
+                '<div class="itemwrapper">' +
+                    '<img class="product_item" src="' + my.product_image_2 + '"></img>' +
+                '</div>' +
+                '<div class="itemwrapper">' +
+                    '<img class="product_item" src="' + my.product_image_3 + '"></img>' +
+                '</div>' +
+                '<div class="itemwrapper">' +
+                    '<img class="product_item" src="' + my.product_image_4 + '"></img>' +
+                '</div>' +
+                '<div class="itemwrapper">' +
+                    '<img class="product_item" src="' + my.product_image_5 + '"></img>' +
+                '</div>' +
             '</div>' +
             '<img class="logo" src="' + my.logo + '">' +
             '</div>' +
