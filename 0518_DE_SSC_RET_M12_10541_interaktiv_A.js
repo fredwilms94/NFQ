@@ -777,6 +777,12 @@ var NFQDA = (function (my) {
             '}'
 
             +
+            '.product_item_title {' +
+            '   font-size:9px;' +
+            '   height: auto;' +
+            '}'
+
+            +
             '#items {' +
             '   position: absolute;' +
             '   transform: translate(-50%, 0%);'+
@@ -939,18 +945,15 @@ var NFQDA = (function (my) {
             '<div id="items">' +
                 '<div class="itemwrapper">' +
                     '<img class="product_item" src="' + my.product_image_1 + '"></img>' +
+                    '<span class="product_item_title">' + my.product_title_1 + '</span>' +
                 '</div>' +  
                 '<div class="itemwrapper">' +
                     '<img class="product_item" src="' + my.product_image_2 + '"></img>' +
+                    '<span class="product_item_title">' + my.product_title_2 + '</span>' +
                 '</div>' +
                 '<div class="itemwrapper">' +
                     '<img class="product_item" src="' + my.product_image_3 + '"></img>' +
-                '</div>' +
-                '<div class="itemwrapper">' +
-                    '<img class="product_item" src="' + my.product_image_4 + '"></img>' +
-                '</div>' +
-                '<div class="itemwrapper">' +
-                    '<img class="product_item" src="' + my.product_image_5 + '"></img>' +
+                    '<span class="product_item_title">' + my.product_title_3 + '</span>' +
                 '</div>' +
             '</div>' +
             '<img class="logo" src="' + my.logo + '">' +
