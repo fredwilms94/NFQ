@@ -695,7 +695,7 @@ var NFQDA = (function (my) {
             +
             '.logo {' +
             '   height: auto;' +
-            '   width: 50px;' +
+            '   width: 52px;' +
             '   position: absolute;' +
             '   bottom: 15px;' +
             '   left: 50%;' +
@@ -751,10 +751,10 @@ var NFQDA = (function (my) {
             +
             '.product_image_1 {' +
             '   position: absolute;' +
-            '   transform: translate(-50%, -50%);'+
-            '   width: 90px;' +
+            '   transform: translate(-50%, 0%);'+
+            '   width: 105px;' +
             '   height: auto;' +
-            '   top: 135px;' +
+            '   top: 50px;' +
             '   left: 50%;' +
             '}'
 
@@ -762,7 +762,10 @@ var NFQDA = (function (my) {
             '.itemwrapper {' +
             '   width: 40px;' +
             '   height: auto;' +
-            '   padding: 2px 4px 20px 4px;'+
+            '   padding: 2px 4px 5px 4px;'+
+            '   display: flex;'+
+            '   flex-wrap: wrap;'+
+            '   align-items: flex-start;'+
             '}'
 
             +
@@ -778,8 +781,11 @@ var NFQDA = (function (my) {
 
             +
             '.product_item_title {' +
-            '   font-size:9px;' +
+            '   font-size:8px;' +
             '   height: auto;' +
+            '   margin-top: 5px;' +
+            '   text-align: center;' +
+            '   color: black;' +
             '}'
 
             +
@@ -787,13 +793,12 @@ var NFQDA = (function (my) {
             '   position: absolute;' +
             '   transform: translate(-50%, 0%);'+
             '   left: 50%;' +
-            '   width: 100px;' +
-            '   height: 200px;' +
-            '   bottom: 50px;' +
+            '   width: 120px;' +
+            '   bottom: 90px;' +
             '   display: flex;'+
             '   justify-content: space-evenly;'+
             '   flex-wrap: wrap;'+
-            '   align-items: center;'+
+            '   align-items: flex-start;'+
             '}'
 
             
@@ -927,14 +932,14 @@ var NFQDA = (function (my) {
             '<div id="' + my.bannerName + '" class="bannerHTML5">' +
             '<div id="banner">' +
             '<div id="title">' +
-                '<span class="product_title_1">' + my.product_title_1 + '</span>' +
+                '<span class="product_title_1">' + my.product_title_5 + '</span>' +
                 // '<span class="product_title_2">' + my.product_title_2 + '</span>' +
                 // '<span class="product_title_3">' + my.product_title_3 + '</span>' +
                 // '<span class="product_title_4">' + my.product_title_4 + '</span>' +
                 // '<span class="product_title_5">' + my.product_title_5 + '</span>' +
             '</div>' +
             '<div id="image">' +
-                '<img class="product_image_1" src="' + my.product_image_1 + '"></img>' +
+                '<img class="product_image_1" src="' + my.product_image_5 + '"></img>' +
                 // '<img class="product_image_2" src="' + my.product_image_2 + '"></img>' +
                 // '<img class="product_image_3" src="' + my.product_image_3 + '"></img>' +
                 // '<img class="product_image_4" src="' + my.product_image_4 + '"></img>' +
@@ -944,16 +949,16 @@ var NFQDA = (function (my) {
             '<div id="cta"><span id="btn-cta"></span></div>' +
             '<div id="items">' +
                 '<div class="itemwrapper">' +
-                    '<img class="product_item" src="' + my.product_image_1 + '"></img>' +
-                    '<span class="product_item_title">' + my.product_title_1 + '</span>' +
+                    '<img class="product_item" src="' + my.product_image_5 + '"></img>' +
+                    '<div class="product_item_title">' + my.product_title_5 + '</div>' +
                 '</div>' +  
                 '<div class="itemwrapper">' +
-                    '<img class="product_item" src="' + my.product_image_2 + '"></img>' +
-                    '<span class="product_item_title">' + my.product_title_2 + '</span>' +
+                    '<img class="product_item" src="' + my.product_image_4 + '"></img>' +
+                    '<div class="product_item_title">' + my.product_title_4 + '</div>' +
                 '</div>' +
                 '<div class="itemwrapper">' +
-                    '<img class="product_item" src="' + my.product_image_3 + '"></img>' +
-                    '<span class="product_item_title">' + my.product_title_3 + '</span>' +
+                    '<img class="product_item" src="' + my.product_image_2 + '"></img>' +
+                    '<div class="product_item_title">' + my.product_title_2 + '</div>' +
                 '</div>' +
             '</div>' +
             '<img class="logo" src="' + my.logo + '">' +
